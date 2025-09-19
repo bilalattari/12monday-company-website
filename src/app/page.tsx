@@ -48,7 +48,7 @@ export default function Home() {
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               From concept to launch, we provide comprehensive development services 
-              tailored to your startup's unique needs.
+              tailored to your startup&apos;s unique needs.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export default function Home() {
               Featured Projects
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore some of our recent work and see how we've helped startups 
+              Explore some of our recent work and see how we&apos;ve helped startups 
               transform their ideas into successful applications.
             </p>
           </div>

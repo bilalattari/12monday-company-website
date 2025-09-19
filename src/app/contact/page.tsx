@@ -11,11 +11,11 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Let's Build Your Startup Together
+              Let&apos;s Build Your Startup Together
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-100">
               Ready to turn your innovative idea into a successful mobile application? 
-              Get in touch and let's discuss your project.
+              Get in touch and let&apos;s discuss your project.
             </p>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function Contact() {
                     <option value="25k-50k">$25,000 - $50,000</option>
                     <option value="50k-100k">$50,000 - $100,000</option>
                     <option value="over-100k">Over $100,000</option>
-                    <option value="discuss">Let's discuss</option>
+                    <option value="discuss">Let&apos;s discuss</option>
                   </select>
                 </div>
 
