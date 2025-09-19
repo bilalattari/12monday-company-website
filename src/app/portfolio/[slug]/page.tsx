@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import PortfolioCard from '@/components/PortfolioCard';
 import Image from 'next/image';
 import Link from 'next/link';
-import { portfolioData, PortfolioItem } from '@/data/portfolioData';
+import { portfolioData } from '@/data/portfolioData';
 import { notFound } from 'next/navigation';
 
 interface PortfolioDetailPageProps {
@@ -226,7 +226,7 @@ export default function PortfolioDetailPage({ params }: PortfolioDetailPageProps
               <div className="bg-[#01624B] rounded-xl p-6 text-white">
                 <h3 className="text-xl font-bold mb-4">Interested in Similar Work?</h3>
                 <p className="text-gray-200 mb-6">
-                  Let's discuss how we can help bring your project to life.
+                  Let&apos;s discuss how we can help bring your project to life.
                 </p>
                 <Link
                   href="/contact"

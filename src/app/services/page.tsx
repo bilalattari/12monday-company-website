@@ -121,7 +121,7 @@ export default function Services() {
               Our Services
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-100">
-              Comprehensive development services tailored to your startup's unique needs. 
+              Comprehensive development services tailored to your startup&apos;s unique needs. 
               From mobile apps to full-stack solutions, we build it all from scratch.
             </p>
           </div>
@@ -235,7 +235,7 @@ export default function Services() {
               Why Choose 12Monday Technologies?
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We're not just developers - we're your technology partners in building successful startups
+              We&apos;re not just developers - we&apos;re your technology partners in building successful startups
             </p>
           </div>
 
@@ -322,7 +322,7 @@ export default function Services() {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl mb-8 text-gray-200">
-            Let's discuss your requirements and see how we can help bring your startup vision to life.
+            Let&apos;s discuss your requirements and see how we can help bring your startup vision to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

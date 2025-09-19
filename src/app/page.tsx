@@ -167,7 +167,7 @@ export default function Home() {
             Ready to Build Your Startup?
           </h2>
           <p className="text-xl mb-8 text-gray-200">
-            Let's discuss your project and turn your innovative idea into a successful mobile application.
+            Let&apos;s discuss your project and turn your innovative idea into a successful mobile application.
           </p>
           <Link
             href="/contact"

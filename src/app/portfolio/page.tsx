@@ -17,7 +17,7 @@ export default function Portfolio() {
               Our Portfolio
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-100">
-              Explore our recent projects and see how we've helped startups 
+              Explore our recent projects and see how we&apos;ve helped startups 
               transform their ideas into successful applications.
             </p>
           </div>
@@ -42,7 +42,7 @@ export default function Portfolio() {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-gray-600 mb-8">
-            Let's discuss how we can help bring your innovative idea to life with our 
+            Let&apos;s discuss how we can help bring your innovative idea to life with our 
             mobile app development expertise.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
