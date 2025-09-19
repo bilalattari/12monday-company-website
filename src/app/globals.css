@@ -12,8 +12,9 @@
   --color-foreground: var(--foreground);
   --color-primary-green: var(--primary-green);
   --color-dark-green: var(--dark-green);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+  --font-display: var(--font-space-grotesk);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,7 +27,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+/* Font utility classes */
+.font-heading {
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-space-grotesk), sans-serif;
 }
 
 /* Custom scrollbar */
@@ -78,4 +88,39 @@ body {
 
 .drop-shadow-xl {
   filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.9));
+}
+
+/* Custom Animations */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+/* Custom hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }

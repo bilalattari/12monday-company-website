@@ -34,7 +34,7 @@ export default function Header() {
           <nav className="hidden md:flex space-x-8">
             <Link
               href="/"
-              className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
                 isActive('/') 
                   ? 'text-[#1BC47D] font-bold' 
                   : 'text-gray-700 hover:text-[#1BC47D]'
@@ -47,7 +47,7 @@ export default function Header() {
             </Link>
             <Link
               href="/services"
-              className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
                 isActive('/services') 
                   ? 'text-[#1BC47D] font-bold' 
                   : 'text-gray-700 hover:text-[#1BC47D]'
@@ -60,7 +60,7 @@ export default function Header() {
             </Link>
             <Link
               href="/portfolio"
-              className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
                 isActive('/portfolio') 
                   ? 'text-[#1BC47D] font-bold' 
                   : 'text-gray-700 hover:text-[#1BC47D]'
@@ -73,7 +73,7 @@ export default function Header() {
             </Link>
             <Link
               href="/about"
-              className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
                 isActive('/about') 
                   ? 'text-[#1BC47D] font-bold' 
                   : 'text-gray-700 hover:text-[#1BC47D]'
@@ -86,7 +86,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className={`relative px-3 py-2 text-sm font-medium transition-all duration-300 ${
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
                 isActive('/contact') 
                   ? 'text-[#1BC47D] font-bold' 
                   : 'text-gray-700 hover:text-[#1BC47D]'
