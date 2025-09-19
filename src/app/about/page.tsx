@@ -15,7 +15,7 @@ export default function About() {
               About 12Monday Technologies
             </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-100">
-              We're passionate about building startups from scratch, 
+              We&apos;re passionate about building startups from scratch, 
               specializing in mobile app development and innovative solutions.
             </p>
           </div>
@@ -266,7 +266,7 @@ export default function About() {
             Ready to Work With Us?
           </h2>
           <p className="text-xl mb-8 text-gray-200">
-            Let's discuss your project and see how we can help bring your startup vision to life.
+            Let&apos;s discuss your project and see how we can help bring your startup vision to life.
           </p>
           <Link
             href="/contact"
