@@ -1,5 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { portfolioData } from '@/data/portfolioData';
 import { 
   Code, 
   Database, 
@@ -295,6 +297,8 @@ function App() {
         </div>
       </section>
 
+
+
       {/* Services Section */}
       <section id="services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -391,6 +395,58 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+            {/* Portfolio Section */}
+            <section id="portfolio" className="relative py-20 bg-white">
+        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[100vw] pointer-events-none">
+          <div className="absolute -top-24 left-0 w-80 h-80 bg-gradient-to-tr from-[#b1f0e2] to-transparent rounded-full blur-3xl opacity-60"></div>
+          <div className="absolute -bottom-24 right-0 w-96 h-96 bg-gradient-to-bl from-[#86efd8] to-transparent rounded-full blur-3xl opacity-60"></div>
+          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">Our Work</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">A selection of products we’ve designed, engineered, and shipped.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {portfolioData.slice(0, 9).map((item) => (
+              <Link
+                key={item.id}
+                href={`/portfolio/${item.slug}`}
+                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+              >
+                <div className="relative h-56 w-full overflow-hidden">
+                  <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-70"></div>
+                  <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2">
+                    {item.technologies.slice(0, 3).map((tech, idx) => (
+                      <span key={idx} className="text-xs px-2 py-1 rounded-full bg-white/90 text-gray-800 backdrop-blur">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-[#02654F] transition-colors">{item.name}</h3>
+                  <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
+                  <div className="mt-4 flex items-center text-[#02654F] font-medium">
+                    View case study
+                    <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link href="/portfolio" className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#02654F] to-[#17C381] text-white font-semibold shadow-md hover:shadow-lg">
+              View All Projects
+              <svg className="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </Link>
           </div>
         </div>
       </section>
