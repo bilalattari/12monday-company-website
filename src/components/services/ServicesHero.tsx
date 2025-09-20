@@ -91,13 +91,13 @@ export default function ServicesHero({
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fadeInUp">
-          <div className="inline-flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 mb-8">
+          <div className="inline-flex mt-10 items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 mb-8">
             <Sparkles className="w-4 h-4 text-[#02654F] mr-2" />
             <span className="text-sm font-medium text-gray-700">Comprehensive Development Services</span>
           </div>
           
           <h1 className="text-2xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Professional
+            <span className="block">Professional</span>
             <span className="block bg-gradient-to-r from-[#02654F] via-[#17C381] to-pink-600 bg-clip-text text-transparent">
               Development Services
             </span>

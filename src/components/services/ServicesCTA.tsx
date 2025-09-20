@@ -80,14 +80,14 @@ export default function ServicesCTA() {
                   <Mail className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-xl font-bold mb-2">Email Us</div>
-                <div className="opacity-90">hello@twelvemonday.com</div>
+                <div className="opacity-90">info@12monday.net</div>
               </div>
               <div className="text-center">
                 <div className="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Phone className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-xl font-bold mb-2">Call Us</div>
-                <div className="opacity-90">+1 (555) 123-4567</div>
+                <div className="opacity-90">+92 313 2933803</div>
               </div>
               <div className="text-center">
                 <div className="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">

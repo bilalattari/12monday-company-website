@@ -610,11 +610,11 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-2xl font-bold mb-2">Email</div>
-              <div className="opacity-90">hello@twelvemonday.com</div>
+              <div className="opacity-90">info@12monday.net</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold mb-2">Phone</div>
-              <div className="opacity-90">+1 (555) 123-4567</div>
+              <div className="opacity-90">+92 313 2933803</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold mb-2">Location</div>

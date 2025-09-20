@@ -14,19 +14,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter (you'll need to configure this with your email service)
-    const transporter = nodemailer.createTransporter({
-      service: 'gmail', // or your email service
+    // Create transporter using your custom SMTP server
+    const transporter = nodemailer.createTransport({
+      host: 'mail.12monday.net',
+      port: 465,
+      secure: true, // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_USER, // your email
-        pass: process.env.EMAIL_PASS, // your email password or app password
+        user: process.env.EMAIL_USER, // info@12monday.net
+        pass: process.env.EMAIL_PASS, // your email account password
       },
     });
 
     // Email content
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: 'attari1235@gmail.com', // your email
+      to: 'info@12monday.net', // your email
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -104,7 +106,7 @@ export async function POST(request: NextRequest) {
           <hr style="margin: 30px 0; border: none; border-top: 1px solid #e9ecef;">
           <p style="color: #666; font-size: 12px; text-align: center;">
             Twelve Monday - Your AI-First Development Partner<br>
-            Email: attari1235@gmail.com | GitHub: github.com/bilalattari
+            Email: info@12monday.net | GitHub: github.com/bilalattari
           </p>
         </div>
       `,

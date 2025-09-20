@@ -134,7 +134,7 @@ export default function ServiceDetailFAQ({ service }: ServiceDetailFAQProps) {
                 Contact Us
               </a>
               <a
-                href="mailto:hello@twelvemonday.com"
+                href="mailto:info@12monday.net"
                 className="border-2 border-[#02654F] text-[#02654F] px-8 py-3 rounded-full font-semibold hover:bg-[#02654F] hover:text-white transition-all flex items-center justify-center"
               >
                 Send Email
