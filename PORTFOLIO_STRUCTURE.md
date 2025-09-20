@@ -212,3 +212,4 @@ interface PortfolioLink {
 ## Contact
 For questions about the portfolio structure or implementation, contact the development team at 12Monday Technologies.
 
+

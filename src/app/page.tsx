@@ -191,7 +191,6 @@ function App() {
             answer: "Simply click the 'Book a Call' button in the navigation bar or the 'Get a Free Consultation' button in the hero section. We'll schedule a time to discuss your project in detail."
         }
     ];
-
     const toggleFAQ = (index: number) => {
         setOpenFAQIndex(openFAQIndex === index ? null : index);
     };
