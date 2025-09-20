@@ -6,7 +6,6 @@ import ServiceDetailHero from '@/components/services/serviceDetail/ServiceDetail
 import ServiceDetailFeatures from '@/components/services/serviceDetail/ServiceDetailFeatures';
 import ServiceDetailProcess from '@/components/services/serviceDetail/ServiceDetailProcess';
 import ServiceDetailPortfolio from '@/components/services/serviceDetail/ServiceDetailPortfolio';
-import ServiceDetailPricing from '@/components/services/serviceDetail/ServiceDetailPricing';
 import ServiceDetailFAQ from '@/components/services/serviceDetail/ServiceDetailFAQ';
 import ServiceDetailCTA from '@/components/services/serviceDetail/ServiceDetailCTA';
 import { portfolioData } from '@/data/portfolioData';

@@ -12,7 +12,7 @@ export default function PortfolioCard({ project, variant = 'grid' }: PortfolioCa
     return (
       <Link href={`/portfolio/${project.slug}`} className="block cursor-pointer">
         <div className="group relative overflow-hidden rounded-3xl shadow-2xl hover-lift-2025 hover-glow-2025 transition-all duration-700">
-          <div className="relative h-96 overflow-hidden">
+          <div className="relative aspect-video overflow-hidden">
             <Image
               src={project.image}
               alt={project.name}
@@ -86,7 +86,7 @@ export default function PortfolioCard({ project, variant = 'grid' }: PortfolioCa
     return (
       <Link href={`/portfolio/${project.slug}`} className="block cursor-pointer">
         <div className="group relative overflow-hidden rounded-2xl shadow-xl hover-lift-2025 hover-glow-2025 transition-all duration-500">
-          <div className="relative h-48 overflow-hidden">
+          <div className="relative aspect-video overflow-hidden">
             <Image
               src={project.image}
               alt={project.name}
@@ -129,7 +129,7 @@ export default function PortfolioCard({ project, variant = 'grid' }: PortfolioCa
     <Link href={`/portfolio/${project.slug}`} className="block cursor-pointer">
       <div className="group card-2025 rounded-3xl shadow-2xl overflow-hidden hover-lift-2025 hover-glow-2025 transition-all duration-700 border border-white/10">
         {/* Project Image */}
-        <div className="relative h-56 overflow-hidden">
+        <div className="relative aspect-video overflow-hidden">
           <Image
             src={project.image}
             alt={project.name}

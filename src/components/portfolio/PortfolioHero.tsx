@@ -79,14 +79,14 @@ export default function PortfolioHero({
             <span className="text-sm font-medium text-gray-700">Our Work Portfolio</span>
           </div>
           
-          <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
             Featured
             <span className="block bg-gradient-to-r from-[#02654F] via-[#17C381] to-pink-600 bg-clip-text text-transparent">
               Projects
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-md md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
             Discover our portfolio of successful mobile apps, web applications, and AI-powered solutions 
             that have transformed ideas into reality for startups and businesses worldwide.
           </p>
