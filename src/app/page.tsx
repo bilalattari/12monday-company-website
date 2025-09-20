@@ -41,7 +41,7 @@ type FAQItemProps = {
 
 
 const FAQItem = ({ question, answer, isOpen, toggleFAQ }: FAQItemProps) => (
-    <div className="faq-item bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+    <div className="faq-item bg-white p-6 rounded-2xl shadow-xs border border-gray-100">
         <button onClick={toggleFAQ} className="faq-toggle w-full flex justify-between items-center text-left text-lg font-medium text-gray-900">
             {question}
             <i className={`fas fa-chevron-down text-gray-500 transform transition-transform ${isOpen ? 'rotate-180' : ''}`}></i>
@@ -231,22 +231,22 @@ function App() {
         {/* Floating Tech Icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-10 animate-float">
-            <div className="bg-white p-3 rounded-xl shadow-lg">
+            <div className="bg-white p-3 rounded-xl shadow-sm">
               <Code className="w-6 h-6 text-[#02654F]" />
             </div>
           </div>
           <div className="absolute top-40 right-20 animate-float delay-1000">
-            <div className="bg-white p-3 rounded-xl shadow-lg">
+            <div className="bg-white p-3 rounded-xl shadow-sm">
               <Brain className="w-6 h-6 text-[#17C381]" />
             </div>
           </div>
           <div className="absolute bottom-40 left-20 animate-float delay-500">
-            <div className="bg-white p-3 rounded-xl shadow-lg">
+            <div className="bg-white p-3 rounded-xl shadow-sm">
               <Smartphone className="w-6 h-6 text-green-600" />
             </div>
           </div>
           <div className="absolute bottom-20 right-10 animate-float delay-1500">
-            <div className="bg-white p-3 rounded-xl shadow-lg">
+            <div className="bg-white p-3 rounded-xl shadow-sm">
               <Database className="w-6 h-6 text-orange-600" />
             </div>
           </div>
@@ -271,7 +271,7 @@ function App() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <button className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center">
+              <button className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center">
                 Start Your Project
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
@@ -284,7 +284,7 @@ function App() {
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
               {stats.map((stat, index) => (
-                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-all">
+                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-sm transition-all">
                   <div className="flex items-center justify-center mb-2 text-[#02654F]">
                     {stat.icon}
                   </div>
@@ -312,16 +312,16 @@ function App() {
           </div>
 
           {/* Interactive Service Showcase */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16"> */}
             {/* Service Navigation */}
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               {services.map((service, index) => (
                 <div
                   key={service.id}
                   className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 ${
                     activeService === index
-                      ? 'bg-white shadow-xl border-l-4 border-[#02654F]'
-                      : 'bg-white/60 hover:bg-white hover:shadow-lg'
+                      ? 'bg-white shadow-sm border-l-4 border-[#02654F]'
+                      : 'bg-white/60 hover:bg-white'
                   }`}
                   onClick={() => setActiveService(index)}
                 >
@@ -336,10 +336,10 @@ function App() {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* Service Details */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl">
+            {/* <div className="bg-white rounded-3xl p-8 shadow-sm">
               <div className={`inline-flex p-4 rounded-2xl ${services[activeService].bgColor} ${services[activeService].textColor} mb-6`}>
                 {services[activeService].icon}
               </div>
@@ -364,19 +364,19 @@ function App() {
                 </div>
               </div>
 
-              <button className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all flex items-center">
+              <button className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-sm transition-all flex items-center">
                 Learn More
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
 
           {/* Service Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.slice(0, 6).map((service, index) => (
               <div
                 key={service.id}
-                className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-sm transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className={`inline-flex p-4 rounded-2xl ${service.bgColor} ${service.textColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
@@ -417,7 +417,7 @@ function App() {
               <Link
                 key={item.id}
                 href={`/portfolio/${item.slug}`}
-                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-sm transition-all duration-300"
               >
                 <div className="relative h-56 w-full overflow-hidden">
                   <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
@@ -443,7 +443,7 @@ function App() {
           </div>
 
           <div className="text-center mt-10">
-            <Link href="/portfolio" className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#02654F] to-[#17C381] text-white font-semibold shadow-md hover:shadow-lg">
+            <Link href="/portfolio" className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#02654F] to-[#17C381] text-white font-semibold shadow-xs hover:shadow-sm">
               View All Projects
               <svg className="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
             </Link>
@@ -467,7 +467,7 @@ function App() {
             {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="bg-gray-50 p-6 rounded-2xl text-center hover:bg-emerald-50 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-gray-50 p-6 rounded-2xl text-center hover:bg-emerald-50 hover:shadow-sm transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="font-semibold text-gray-900 mb-2">{tech.name}</div>
                 <div className="text-sm text-gray-600">{tech.category}</div>
@@ -493,7 +493,7 @@ function App() {
             {processSteps.map((step, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 relative"
+                className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 relative"
               >
                 <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white text-2xl font-bold w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
                   {step.step}
@@ -611,7 +611,7 @@ function App() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <button className="bg-white text-[#02654F] px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center">
+            <button className="bg-white text-[#02654F] px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center">
               Start Your Project
               <ArrowRight className="w-5 h-5 ml-2" />
             </button>
@@ -742,7 +742,7 @@ export default App;
 // };
 
 // const ServiceCard = ({ title, description, icon, color, tags }: ServiceCardProps) => (
-//     <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100 transform transition-transform hover:scale-105">
+//     <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 transform transition-transform hover:scale-105">
 //         <div className="flex items-center space-x-4 mb-4">
 //             <div className={`w-12 h-12 flex items-center justify-center bg-${color}-100 text-${color}-600 rounded-full`}>
 //                 <i className={`${icon} text-xl`}></i>
@@ -759,7 +759,7 @@ export default App;
 // );
 
 // const WhyUsCard = ({ title, description, icon, color }: WhyUsCardProps) => (
-//     <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
+//     <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
 //         <div className={`w-12 h-12 flex items-center justify-center bg-gray-100 text-${color}-500 rounded-full mb-4`}>
 //             <i className={`${icon} text-xl`}></i>
 //         </div>
@@ -769,7 +769,7 @@ export default App;
 // );
 
 // const FAQItem = ({ question, answer, isOpen, toggleFAQ }: FAQItemProps) => (
-//     <div className="faq-item bg-white p-6 rounded-2xl shadow-md border border-gray-100">
+//     <div className="faq-item bg-white p-6 rounded-2xl shadow-xs border border-gray-100">
 //         <button onClick={toggleFAQ} className="faq-toggle w-full flex justify-between items-center text-left text-lg font-medium text-gray-900">
 //             {question}
 //             <i className={`fas fa-chevron-down text-gray-500 transform transition-transform ${isOpen ? 'rotate-180' : ''}`}></i>
@@ -903,7 +903,7 @@ export default App;
 //                             intelligent agents that deliver real business value.
 //                         </p>
 //                         <div className="mt-8 flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-//                             <a href="#contact" className="px-8 py-3 text-base font-semibold text-white bg-teal-500 hover:bg-teal-600 rounded-full shadow-lg transition-transform transform hover:scale-105">Book a Strategy Call</a>
+//                             <a href="#contact" className="px-8 py-3 text-base font-semibold text-white bg-teal-500 hover:bg-teal-600 rounded-full shadow-sm transition-transform transform hover:scale-105">Book a Strategy Call</a>
 //                             <a href="#services" className="px-8 py-3 text-base font-semibold text-gray-700 bg-transparent border-2 border-gray-300 hover:bg-gray-200 rounded-full transition-transform transform hover:scale-105">Explore Services</a>
 //                         </div>
 //                         {/* Tech logos row */}
@@ -926,7 +926,7 @@ export default App;
 //                     </div>
 //                     {/* Three large tiles inspired by reference */}
 //                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//                         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all">
+//                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all">
 //                             <div className="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center mb-6">
 //                                 <i className="fas fa-robot"></i>
 //                             </div>  
@@ -939,7 +939,7 @@ export default App;
 //                             </div>
 //                             <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-teal-700 font-semibold">Learn More <i className="fas fa-arrow-right"></i></a>
 //                         </div>
-//                         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all">
+//                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all">
 //                             <div className="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-6">
 //                                 <i className="fas fa-code"></i>
 //                             </div>
@@ -952,7 +952,7 @@ export default App;
 //                             </div>
 //                             <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-teal-700 font-semibold">Learn More <i className="fas fa-arrow-right"></i></a>
 //                         </div>
-//                         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all">
+//                         <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-2xl transition-all">
 //                             <div className="w-12 h-12 rounded-xl bg-green-100 text-green-700 flex items-center justify-center mb-6">
 //                                 <i className="fas fa-triangle-exclamation"></i>
 //                             </div>
@@ -975,21 +975,21 @@ export default App;
 //                         <p className="mt-2 text-lg text-gray-500">Quality engineering, observable systems, and strong UX—every time.</p>
 //                     </div>
 //                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-//                         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
 //                             <div className="flex items-center space-x-3">
 //                                 <span className="w-10 h-10 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center"><i className="fas fa-shield-alt"></i></span>
 //                                 <h3 className="text-lg font-semibold text-gray-900">Security & Compliance</h3>
 //                             </div>
 //                             <p className="mt-3 text-gray-600">OWASP best practices, auth hardening, and privacy‑first data handling. SSO, RBAC, audit trails.</p>
 //                         </div>
-//                         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
 //                             <div className="flex items-center space-x-3">
 //                                 <span className="w-10 h-10 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center"><i className="fas fa-gauge-high"></i></span>
 //                                 <h3 className="text-lg font-semibold text-gray-900">Performance & Scale</h3>
 //                             </div>
 //                             <p className="mt-3 text-gray-600">Caching, queues, and edge delivery for fast, reliable experiences. CDN, Redis, and background jobs.</p>
 //                         </div>
-//                         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
 //                             <div className="flex items-center space-x-3">
 //                                 <span className="w-10 h-10 rounded-full bg-purple-100 text-[#17C381] flex items-center justify-center"><i className="fas fa-repeat"></i></span>
 //                                 <h3 className="text-lg font-semibold text-gray-900">CI/CD & Observability</h3>
@@ -1029,7 +1029,7 @@ export default App;
 //                         ))}
 //                     </div>
 //                     <div className="relative text-center mt-10">
-//                         <Link href="/portfolio" className="inline-flex items-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full font-semibold shadow-lg">View All Projects</Link>
+//                         <Link href="/portfolio" className="inline-flex items-center px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-full font-semibold shadow-sm">View All Projects</Link>
 //                     </div>
 //                 </section>
 
@@ -1071,22 +1071,22 @@ export default App;
 //                             </circle>
 //                         </svg>
 //                         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-//                             <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 transform md:-translate-y-3">
+//                             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform md:-translate-y-3">
 //                                 <span className="inline-flex w-10 h-10 items-center justify-center rounded-full bg-teal-100 text-teal-700 font-semibold">1</span>
 //                                 <h3 className="mt-3 font-semibold text-gray-900">Discover</h3>
 //                                 <p className="text-gray-600 mt-2">Clarify goals, users, and constraints. Align on success metrics.</p>
 //                             </div>
-//                             <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 transform md:translate-y-3">
+//                             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform md:translate-y-3">
 //                                 <span className="inline-flex w-10 h-10 items-center justify-center rounded-full bg-cyan-100 text-cyan-700 font-semibold">2</span>
 //                                 <h3 className="mt-3 font-semibold text-gray-900">Design</h3>
 //                                 <p className="text-gray-600 mt-2">UX flows, architecture, and milestones. We plan for scale.</p>
 //                             </div>
-//                             <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 transform md:-translate-y-3">
+//                             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform md:-translate-y-3">
 //                                 <span className="inline-flex w-10 h-10 items-center justify-center rounded-full bg-purple-100 text-purple-700 font-semibold">3</span>
 //                                 <h3 className="mt-3 font-semibold text-gray-900">Build</h3>
 //                                 <p className="text-gray-600 mt-2">Iterative development with weekly demos and QA.</p>
 //                             </div>
-//                             <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100 transform md:translate-y-3">
+//                             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 transform md:translate-y-3">
 //                                 <span className="inline-flex w-10 h-10 items-center justify-center rounded-full bg-teal-100 text-teal-700 font-semibold">4</span>
 //                                 <h3 className="mt-3 font-semibold text-gray-900">Launch & Support</h3>
 //                                 <p className="text-gray-600 mt-2">Deploy, monitor, and continuously improve with you.</p>
@@ -1102,15 +1102,15 @@ export default App;
 //                         <p className="mt-2 text-lg text-gray-500">Real outcomes, trusted partnerships.</p>
 //                     </div>
 //                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-//                         <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
 //                             <p className="text-gray-700">“Twelve Monday shipped a reliable MVP in weeks and scaled it without hiccups.”</p>
 //                             <div className="mt-4 text-sm text-gray-500">Founder, Fintech Startup</div>
 //                         </div>
-//                         <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
 //                             <p className="text-gray-700">“Their AI expertise turned our manual process into a fully automated workflow.”</p>
 //                             <div className="mt-4 text-sm text-gray-500">Operations Lead, SaaS Company</div>
 //                         </div>
-//                         <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
 //                             <p className="text-gray-700">“Clean code, clear communication, and a product our users love.”</p>
 //                             <div className="mt-4 text-sm text-gray-500">CTO, HealthTech</div>
 //                         </div>
@@ -1120,19 +1120,19 @@ export default App;
 //                 {/* Stats & Badges */}
 //                 <section className="py-12">
 //                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-//                         <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
 //                             <div className="text-3xl font-extrabold text-gray-900">30+</div>
 //                             <div className="text-gray-500">Projects Delivered</div>
 //                         </div>
-//                         <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
 //                             <div className="text-3xl font-extrabold text-gray-900">99.9%</div>
 //                             <div className="text-gray-500">Uptime Targets</div>
 //                         </div>
-//                         <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
 //                             <div className="text-3xl font-extrabold text-gray-900">10x</div>
 //                             <div className="text-gray-500">Performance Gains</div>
 //                         </div>
-//                         <div className="bg-white p-6 rounded-2xl shadow-xl border border-gray-100">
+//                         <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
 //                             <div className="text-3xl font-extrabold text-gray-900">24/7</div>
 //                             <div className="text-gray-500">Monitoring</div>
 //                         </div>
@@ -1159,7 +1159,7 @@ export default App;
                 // </section>
                 
 //                 {/* Contact/CTA Section */}
-//                 <section id="contact" className="relative overflow-hidden py-16 md:py-20 text-center rounded-3xl my-16 shadow-xl bg-gradient-to-br from-teal-700 to-cyan-700 text-white">
+//                 <section id="contact" className="relative overflow-hidden py-16 md:py-20 text-center rounded-3xl my-16 shadow-sm bg-gradient-to-br from-teal-700 to-cyan-700 text-white">
 //                     <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[100vw]">
 //                         <div aria-hidden className="absolute inset-0 opacity-30" style={{backgroundImage:"radial-gradient(circle at 30% 20%, rgba(255,255,255,0.25), transparent 35%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.25), transparent 35%)"}}></div>
 //                         <div aria-hidden className="blob absolute -top-12 -left-12 w-64 h-64 bg-white/20 rounded-full"></div>
@@ -1170,14 +1170,14 @@ export default App;
 //                         Stop losing users to limitations. Start building production‑grade applications investors and users love.
 //                     </p>
 //                     <div className="relative mt-8 flex flex-col sm:flex-row justify-center gap-4">
-//                         <a href="#" className="inline-block px-10 py-4 text-lg font-semibold text-teal-900 bg-white hover:bg-teal-50 rounded-full shadow-lg transition-transform transform hover:scale-105">Book a Strategy Call</a>
+//                         <a href="#" className="inline-block px-10 py-4 text-lg font-semibold text-teal-900 bg-white hover:bg-teal-50 rounded-full shadow-sm transition-transform transform hover:scale-105">Book a Strategy Call</a>
 //                         <a href="#services" className="inline-block px-10 py-4 text-lg font-semibold border-2 border-white/80 text-white hover:bg-white/10 rounded-full transition-colors">See How We Work</a>
 //                     </div>
 //                 </section>
 
 //                 {/* Contact Form Section */}
 //                 {/* <section className="py-16 md:py-20">
-//                     <div className="max-w-3xl mx-auto bg-white border border-gray-100 shadow-xl rounded-2xl p-8 md:p-10">
+//                     <div className="max-w-3xl mx-auto bg-white border border-gray-100 shadow-sm rounded-2xl p-8 md:p-10">
 //                         <h3 className="text-2xl font-bold text-gray-900 text-center">Tell Us About Your Project</h3>
 //                         <p className="text-gray-600 text-center mt-2">We’ll get back to you within 24 hours.</p>
 //                         <form className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1186,7 +1186,7 @@ export default App;
 //                             <input placeholder="Company" className="col-span-1 rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-500" />
 //                             <input placeholder="Budget (USD)" className="col-span-1 rounded-xl border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-teal-500" />
 //                             <textarea required placeholder="Project Brief" className="md:col-span-2 rounded-xl border border-gray-200 px-4 py-3 h-32 focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
-//                             <button type="submit" className="md:col-span-2 mt-2 inline-flex justify-center px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-xl font-semibold shadow-lg transition-transform transform hover:scale-[1.01]">Send Message</button>
+//                             <button type="submit" className="md:col-span-2 mt-2 inline-flex justify-center px-8 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-xl font-semibold shadow-sm transition-transform transform hover:scale-[1.01]">Send Message</button>
 //                         </form>
 //                     </div>
 //                 </section> */}
@@ -1262,7 +1262,7 @@ export default App;
 
 // //           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 // //             {/* Mobile App Development */}
-// //             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+// //             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-sm transition-shadow duration-300">
 // //               <div className="w-12 h-12 bg-[#1BC47D] rounded-lg flex items-center justify-center mb-6">
 // //                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 // //                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -1276,7 +1276,7 @@ export default App;
 // //             </div>
 
 // //             {/* Full-Stack Development */}
-// //             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+// //             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-sm transition-shadow duration-300">
 // //               <div className="w-12 h-12 bg-[#01624B] rounded-lg flex items-center justify-center mb-6">
 // //                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 // //                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
@@ -1290,7 +1290,7 @@ export default App;
 // //             </div>
 
 // //             {/* Startup Development */}
-// //             <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+// //             <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-sm transition-shadow duration-300">
 // //               <div className="w-12 h-12 bg-[#1BC47D] rounded-lg flex items-center justify-center mb-6">
 // //                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 // //                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -1335,7 +1335,7 @@ export default App;
 
 // //           {/* CTA Section */}
 // //           <div className="text-center">
-// //             <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+// //             <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12">
 // //               <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
 // //                 Ready to See More?
 // //               </h3>
@@ -1346,7 +1346,7 @@ export default App;
 // //               <div className="flex flex-col sm:flex-row gap-4 justify-center">
 // //                 <Link
 // //                   href="/portfolio"
-// //                   className="inline-flex items-center px-8 py-3 bg-[#1BC47D] text-white rounded-lg font-semibold hover:bg-[#01624B] transition-colors duration-200 shadow-lg"
+// //                   className="inline-flex items-center px-8 py-3 bg-[#1BC47D] text-white rounded-lg font-semibold hover:bg-[#01624B] transition-colors duration-200 shadow-sm"
 // //                 >
 // //                   View All Projects
 // //                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
