@@ -1,13 +1,13 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { portfolioData } from '@/data/portfolioData';
 import { 
   Code, 
   Database, 
   Smartphone, 
   Cloud, 
-  Bot, 
   BarChart3, 
   MessageCircle,
   Zap,
@@ -15,19 +15,14 @@ import {
   Globe,
   Rocket,
   Target,
-  CheckCircle,
   ArrowRight,
   Play,
-  Star,
   Award,
   Users,
   TrendingUp,
-  Layers,
   Sparkles,
   Brain,
-  Server,
-  Monitor,
-  Phone
+  Server
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -53,14 +48,6 @@ const FAQItem = ({ question, answer, isOpen, toggleFAQ }: FAQItemProps) => (
 );
 
 function App() {
-  const [activeService, setActiveService] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const services = [
     {
@@ -260,7 +247,7 @@ function App() {
             </div>
             
             <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Building Tomorrow's
+              Building Tomorrow&apos;s
               <span className="block bg-gradient-to-r from-[#02654F] via-[#17C381] to-pink-600 bg-clip-text text-transparent">
                 Digital Solutions
               </span>
@@ -420,7 +407,7 @@ function App() {
                 className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-sm transition-all duration-300"
               >
                 <div className="relative h-56 w-full overflow-hidden">
-                  <img src={item.image} alt={item.name} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
+                  <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent opacity-70"></div>
                   <div className="absolute bottom-3 left-3 right-3 flex flex-wrap gap-2">
                     {item.technologies.slice(0, 3).map((tech, idx) => (

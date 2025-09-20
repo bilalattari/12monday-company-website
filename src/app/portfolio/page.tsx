@@ -1,66 +1,106 @@
+import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import PortfolioCard from '@/components/PortfolioCard';
-import Link from 'next/link';
+import PortfolioHero from '@/components/portfolio/PortfolioHero';
+import PortfolioFilter from '@/components/portfolio/PortfolioFilter';
+import PortfolioGrid from '@/components/portfolio/PortfolioGrid';
+import PortfolioStats from '@/components/portfolio/PortfolioStats';
+import PortfolioCTA from '@/components/portfolio/PortfolioCTA';
 import { portfolioData } from '@/data/portfolioData';
+
+export const metadata: Metadata = {
+  title: 'Portfolio - Mobile Apps, Web Applications & AI Solutions | Twelve Monday',
+  description: 'Explore our portfolio of 14+ successful projects including mobile apps, web applications, and AI-powered solutions. See how we\'ve helped startups transform ideas into reality with React Native, MERN stack, and cutting-edge technologies.',
+  keywords: [
+    'portfolio',
+    'mobile app development',
+    'web application development',
+    'React Native apps',
+    'MERN stack development',
+    'AI solutions',
+    'startup development',
+    'iOS apps',
+    'Android apps',
+    'web applications',
+    'software development portfolio',
+    'app development company',
+    'custom software development',
+    'digital solutions',
+    'technology portfolio'
+  ],
+  openGraph: {
+    title: 'Portfolio - Mobile Apps, Web Applications & AI Solutions | Twelve Monday',
+    description: 'Explore our portfolio of 14+ successful projects including mobile apps, web applications, and AI-powered solutions.',
+    type: 'website',
+    url: 'https://twelvemonday.com/portfolio',
+    images: [
+      {
+        url: '/assets/portfolio/portfolio-13.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Twelve Monday Portfolio - Mobile Apps and Web Applications'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Portfolio - Mobile Apps, Web Applications & AI Solutions | Twelve Monday',
+    description: 'Explore our portfolio of 14+ successful projects including mobile apps, web applications, and AI-powered solutions.',
+    images: ['/assets/portfolio/portfolio-13.jpeg']
+  },
+  alternates: {
+    canonical: 'https://twelvemonday.com/portfolio'
+  }
+};
+
+// Get unique categories for filtering
+const categories = Array.from(new Set(portfolioData.map(item => item.category)));
+
+// Get unique platforms for filtering
+const platforms = Array.from(new Set(portfolioData.flatMap(item => item.platforms)));
+
+// Calculate stats
+const totalProjects = portfolioData.length;
+const liveProjects = portfolioData.filter(item => item.status === 'Live').length;
+const mobileApps = portfolioData.filter(item => item.platforms.includes('iOS') || item.platforms.includes('Android')).length;
+const webApps = portfolioData.filter(item => item.platforms.includes('Web')).length;
+
+const stats = {
+  totalProjects,
+  liveProjects,
+  mobileApps,
+  webApps,
+  categories: categories.length,
+  platforms: platforms.length
+};
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#1BC47D] to-[#01624B] text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Portfolio
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-100">
-              Explore our recent projects and see how we&apos;ve helped startups 
-              transform their ideas into successful applications.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PortfolioHero 
+        totalProjects={totalProjects}
+        liveProjects={liveProjects}
+        mobileApps={mobileApps}
+        webApps={webApps}
+      />
+
+      {/* Stats Section */}
+      <PortfolioStats stats={stats} />
+
+      {/* Filter Section */}
+      <PortfolioFilter 
+        categories={categories}
+        platforms={platforms}
+      />
 
       {/* Portfolio Grid */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioData.map((project) => (
-              <PortfolioCard key={project.id} project={project} variant="featured" />
-            ))}
-          </div>
-        </div>
-      </section>
+      <PortfolioGrid projects={portfolioData} />
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Let&apos;s discuss how we can help bring your innovative idea to life with our 
-            mobile app development expertise.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-[#1BC47D] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#01624B] transition-colors duration-200"
-            >
-              Start Your Project
-            </Link>
-            <Link
-              href="/"
-              className="border-2 border-[#1BC47D] text-[#01624B] px-8 py-3 rounded-lg font-semibold hover:bg-[#1BC47D] hover:text-white transition-colors duration-200"
-            >
-              Learn More About Us
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PortfolioCTA />
 
       <Footer />
     </div>

@@ -7,8 +7,6 @@ import {
   Database, 
   Smartphone, 
   Cloud, 
-  Bot, 
-  BarChart3, 
   MessageCircle,
   Zap,
   Shield,
@@ -18,19 +16,14 @@ import {
   CheckCircle,
   ArrowRight,
   Play,
-  Star,
   Award,
   Users,
   TrendingUp,
-  Layers,
   Sparkles,
   Brain,
   Server,
-  Monitor,
   Phone,
-  Palette,
-  Cpu,
-  Wrench
+  Palette
 } from 'lucide-react';
 
 export default function Services() {
@@ -273,7 +266,7 @@ export default function Services() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.map((service, _) => (
               <div
                 key={service.id}
                 className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-sm transition-all duration-300 transform hover:-translate-y-2"
@@ -345,7 +338,7 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
               <div
-                key={index}
+                key={step.step}
                 className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 relative"
               >
                 <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white text-2xl font-bold w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
@@ -441,7 +434,7 @@ export default function Services() {
             Ready to Build Something Amazing?
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-            Let's discuss your project and turn your vision into reality with our expert team
+            Let&apos;s discuss your project and turn your vision into reality with our expert team
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
