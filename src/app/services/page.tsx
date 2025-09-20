@@ -5,7 +5,6 @@ import ServicesHero from '@/components/services/ServicesHero';
 import ServicesGrid from '@/components/services/ServicesGrid';
 import ServicesProcess from '@/components/services/ServicesProcess';
 import ServicesTestimonials from '@/components/services/ServicesTestimonials';
-import ServicesPricing from '@/components/services/ServicesPricing';
 import ServicesFAQ from '@/components/services/ServicesFAQ';
 import ServicesCTA from '@/components/services/ServicesCTA';
 

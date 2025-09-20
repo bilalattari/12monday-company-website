@@ -18,6 +18,7 @@ export default function ServicesGrid() {
     {
       id: 1,
       title: "Mobile App Development",
+      slug: "mobile-app-development",
       description: "Native and cross-platform mobile applications for iOS and Android",
       icon: <Smartphone className="w-8 h-8" />,
       features: [
@@ -37,6 +38,7 @@ export default function ServicesGrid() {
     {
       id: 2,
       title: "Web Application Development",
+      slug: "web-application-development",
       description: "Modern, responsive web applications built with cutting-edge technologies",
       icon: <Code className="w-8 h-8" />,
       features: [
@@ -56,6 +58,7 @@ export default function ServicesGrid() {
     {
       id: 3,
       title: "AI & Machine Learning",
+      slug: "ai-machine-learning",
       description: "Intelligent systems powered by advanced AI algorithms",
       icon: <Brain className="w-8 h-8" />,
       features: [
@@ -75,6 +78,7 @@ export default function ServicesGrid() {
     {
       id: 4,
       title: "Backend Development",
+      slug: "backend-development",
       description: "Scalable server-side solutions and robust API architectures",
       icon: <Server className="w-8 h-8" />,
       features: [
@@ -94,6 +98,7 @@ export default function ServicesGrid() {
     {
       id: 5,
       title: "UI/UX Design",
+      slug: "ui-ux-design",
       description: "Modern, intuitive user interfaces and user experience design",
       icon: <Palette className="w-8 h-8" />,
       features: [
@@ -113,6 +118,7 @@ export default function ServicesGrid() {
     {
       id: 6,
       title: "Cloud & DevOps",
+      slug: "cloud-devops",
       description: "Scalable cloud infrastructure and deployment solutions",
       icon: <Cloud className="w-8 h-8" />,
       features: [
@@ -195,7 +201,7 @@ export default function ServicesGrid() {
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  href={`/services/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={`/services/${service.slug}`}
                   className="flex-1 bg-[#02654F] text-white px-6 py-3 text-sm rounded-xl font-semibold hover:bg-[#17C381] transition-all flex items-center justify-center"
                 >
                   Learn More

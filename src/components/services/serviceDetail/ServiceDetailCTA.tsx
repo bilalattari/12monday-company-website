@@ -14,14 +14,22 @@ import {
   TrendingUp
 } from 'lucide-react';
 
-export default function ServicesCTA() {
+interface ServiceDetailCTAProps {
+  service: {
+    id: string;
+    title: string;
+    features: string[];
+  };
+}
+
+export default function ServiceDetailCTA({ service }: ServiceDetailCTAProps) {
   const features = [
-    "Custom Mobile App Development",
-    "Modern Web Applications", 
-    "AI-Powered Solutions",
+    "Custom Development Solutions",
+    "Modern Technology Stack", 
+    "Expert Development Team",
     "24/7 Technical Support",
     "Scalable Architecture",
-    "Cross-Platform Expertise"
+    "Quality Assurance"
   ];
 
 
@@ -38,12 +46,12 @@ export default function ServicesCTA() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Ready to Build Your
-              <span className="block">Next Big Project?</span>
+              Ready to Start Your
+              <span className="block">{service.title} Project?</span>
             </h2>
             <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
-              Join the ranks of successful startups and businesses who trust us to bring their 
-              innovative ideas to life with cutting-edge technology and expert development.
+              Join the ranks of successful businesses who trust us to deliver exceptional {service.title} solutions 
+              that drive growth and innovation.
             </p>
 
             {/* Features Grid */}
@@ -109,7 +117,7 @@ export default function ServicesCTA() {
               Why Choose <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">Twelve Monday?</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We combine expertise, innovation, and dedication to deliver exceptional results that drive business growth
+              We combine expertise, innovation, and dedication to deliver exceptional {service.title} results that drive business growth
             </p>
           </div>
 
@@ -119,7 +127,7 @@ export default function ServicesCTA() {
                 <Users className="w-10 h-10 text-[#02654F]" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Expert Team</h3>
-              <p className="text-gray-600">Experienced professionals dedicated to your success with proven track records</p>
+              <p className="text-gray-600">Experienced professionals dedicated to your success with proven track records in {service.title}</p>
             </div>
 
             <div className="text-center p-8 bg-white rounded-3xl shadow-sm hover:shadow-sm transition-all">
@@ -127,7 +135,7 @@ export default function ServicesCTA() {
                 <Rocket className="w-10 h-10 text-blue-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Fast Delivery</h3>
-              <p className="text-gray-600">Optimized processes and agile methodologies for quick, quality delivery</p>
+              <p className="text-gray-600">Optimized processes and agile methodologies for quick, quality {service.title} delivery</p>
             </div>
 
             <div className="text-center p-8 bg-white rounded-3xl shadow-sm hover:shadow-sm transition-all">
@@ -135,7 +143,7 @@ export default function ServicesCTA() {
                 <Award className="w-10 h-10 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Quality Assured</h3>
-              <p className="text-gray-600">Rigorous testing and quality assurance processes ensure flawless results</p>
+              <p className="text-gray-600">Rigorous testing and quality assurance processes ensure flawless {service.title} results</p>
             </div>
 
             <div className="text-center p-8 bg-white rounded-3xl shadow-sm hover:shadow-sm transition-all">
@@ -159,7 +167,7 @@ export default function ServicesCTA() {
                 <CheckCircle className="w-10 h-10 text-pink-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Proven Results</h3>
-              <p className="text-gray-600">Track record of successful projects and satisfied clients across industries</p>
+              <p className="text-gray-600">Track record of successful {service.title} projects and satisfied clients across industries</p>
             </div>
           </div>
         </div>
