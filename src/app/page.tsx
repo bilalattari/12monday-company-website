@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { portfolioData } from '@/data/portfolioData';
-import { 
-  Code, 
-  Database, 
-  Smartphone, 
-  Cloud, 
-  BarChart3, 
+import {
+  Code,
+  Database,
+  Smartphone,
+  Cloud,
+  BarChart3,
   MessageCircle,
   Zap,
   Shield,
@@ -26,7 +26,12 @@ import {
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FAQ from '@/components/home/FAQ';
-
+import ServicesTestimonials from '@/components/services/ServicesTestimonials';
+import {
+  Phone,
+  Mail,
+  CheckCircle,
+} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: {
@@ -159,25 +164,42 @@ function App() {
   ];
 
   const stats = [
-    { number: "50+", label: "Projects Completed", icon: <Rocket className="w-6 h-6" /> },
-    { number: "25+", label: "Happy Clients", icon: <Users className="w-6 h-6" /> },
+    { number: "102+", label: "Projects Completed", icon: <Rocket className="w-6 h-6" /> },
+    { number: "102+", label: "Happy Clients", icon: <Users className="w-6 h-6" /> },
     { number: "99%", label: "Success Rate", icon: <Award className="w-6 h-6" /> },
     { number: "24/7", label: "Support", icon: <Shield className="w-6 h-6" /> }
   ];
 
   const technologies = [
-    { name: "React", category: "Frontend" },
-    { name: "Node.js", category: "Backend" },
-    { name: "Python", category: "Backend" },
-    { name: "TypeScript", category: "Language" },
-    { name: "AWS", category: "Cloud" },
-    { name: "Docker", category: "DevOps" },
-    { name: "MongoDB", category: "Database" },
-    { name: "PostgreSQL", category: "Database" },
-    { name: "React Native", category: "Mobile" },
-    { name: "TensorFlow", category: "AI/ML" },
-    { name: "Next.js", category: "Framework" },
-    { name: "GraphQL", category: "API" }
+    { name: "JavaScript", key: "js", category: "Language", icon: "/assets/tech/js.svg" },
+    { name: "TypeScript", key: "ts", category: "Language", icon: "/assets/tech/ts.svg" },
+    { name: "Python", key: "python", category: "Language", icon: "/assets/tech/python.svg" },
+    { name: "React", key: "react", category: "Frontend", icon: "/assets/tech/react.svg" },
+    { name: "Next.js", key: "nextjs", category: "Framework", icon: "/assets/tech/nextjs.svg" },
+    { name: "Node.js", key: "nodejs", category: "Backend", icon: "/assets/tech/nodejs.svg" },
+    { name: "NestJS", key: "nest", category: "Backend", icon: "/assets/tech/nest.png" },
+    { name: "Django", key: "django", category: "Backend", icon: "/assets/tech/django.svg" },
+    { name: "GraphQL", key: "graphql", category: "API", icon: "/assets/tech/graphql.svg" },
+    { name: "Flutter", key: "flutter", category: "Mobile", icon: "/assets/tech/flutter.svg" },
+    { name: "React Native", key: "react-native", category: "Mobile", icon: "/assets/tech/react-native.svg" },
+    { name: "Firebase", key: "firebase", category: "Backend", icon: "/assets/tech/firebase.svg" },
+    { name: "Supabase", key: "supabase", category: "Backend", icon: "/assets/tech/supabase.svg" },
+    { name: "AWS", key: "aws", category: "Cloud", icon: "/assets/tech/aws.svg" },
+    { name: "GCP", key: "gcp", category: "Cloud", icon: "/assets/tech/gcp.svg" },
+    { name: "Docker", key: "docker", category: "DevOps", icon: "/assets/tech/docker.svg" },
+    { name: "MongoDB", key: "mongodb", category: "Database", icon: "/assets/tech/mongodb.svg" },
+    { name: "PostgreSQL", key: "postgresql", category: "Database", icon: "/assets/tech/postgresql.svg" },
+    { name: "NumPy", key: "numpy", category: "AI/ML", icon: "/assets/tech/numpy.svg" },
+    { name: "Pandas", key: "pandas", category: "AI/ML", icon: "/assets/tech/pandas.svg" },
+  ];
+
+  const features = [
+    "Custom Mobile App Development",
+    "Modern Web Applications",
+    "AI-Powered Solutions",
+    "24/7 Technical Support",
+    "Scalable Architecture",
+    "Cross-Platform Expertise"
   ];
 
   const processSteps = [
@@ -188,7 +210,7 @@ function App() {
       duration: "1-2 weeks"
     },
     {
-      step: "02", 
+      step: "02",
       title: "Design & Architecture",
       description: "Our team creates detailed wireframes, UI/UX designs, and technical architecture for your project.",
       duration: "2-3 weeks"
@@ -207,24 +229,24 @@ function App() {
     }
   ];
 
-    const faqData = [
-        {
-            question: "How long does a typical project take?",
-            answer: "Project timelines vary based on complexity and scope. A standard web application might take 3-6 months, while a more complex AI platform could take longer. We'll provide a detailed timeline after our initial consultation."
-        },
-        {
-            question: "What is your process for developing a new application?",
-            answer: "Our process begins with a discovery phase to understand your vision, followed by planning, design, development, testing, and deployment. We maintain open communication and provide regular updates throughout the entire process."
-        },
-        {
-            question: "Do you offer ongoing technical support after launch?",
-            answer: "Yes, we offer flexible support and maintenance packages to ensure your application remains secure, up-to-date, and performs at its best."
-        },
-        {
-            question: "How do we get started?",
-            answer: "Simply click the 'Book a Call' button in the navigation bar or the 'Get a Free Consultation' button in the hero section. We'll schedule a time to discuss your project in detail."
-        }
-    ];
+  const faqData = [
+    {
+      question: "How long does a typical project take?",
+      answer: "Project timelines vary based on complexity and scope. A standard web application might take 3-6 months, while a more complex AI platform could take longer. We'll provide a detailed timeline after our initial consultation."
+    },
+    {
+      question: "What is your process for developing a new application?",
+      answer: "Our process begins with a discovery phase to understand your vision, followed by planning, design, development, testing, and deployment. We maintain open communication and provide regular updates throughout the entire process."
+    },
+    {
+      question: "Do you offer ongoing technical support after launch?",
+      answer: "Yes, we offer flexible support and maintenance packages to ensure your application remains secure, up-to-date, and performs at its best."
+    },
+    {
+      question: "How do we get started?",
+      answer: "Simply click the 'Book a Call' button in the navigation bar or the 'Get a Free Consultation' button in the hero section. We'll schedule a time to discuss your project in detail."
+    }
+  ];
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* JSON-LD Schema */}
@@ -245,7 +267,7 @@ function App() {
               '@type': 'ContactPoint',
               contactType: 'customer support',
               email: 'info@12monday.net',
-              availableLanguage: ['English'],
+              availableLanguage: ['English', 'Urdu', 'Arabic']
             }],
           }),
         }}
@@ -268,7 +290,7 @@ function App() {
         }}
       />
       {/* Navigation */}
-    <Header />
+      <Header />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -280,7 +302,7 @@ function App() {
             <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-400/20 to-emerald-400/20 rounded-full blur-3xl animate-pulse delay-500"></div>
           </div>
-          
+
           {/* Grid Pattern */}
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         </div>
@@ -315,18 +337,18 @@ function App() {
               <Sparkles className="w-4 h-4 text-[#02654F] mr-2" />
               <span className="text-sm font-medium text-gray-700">Your AI-First Development Partner</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Building Tomorrow&apos;s
               <span className="block bg-gradient-to-r from-[#02654F] via-[#17C381] to-pink-600 bg-clip-text text-transparent">
                 Digital Solutions
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
               We craft exceptional web applications, mobile apps, and AI-powered solutions that drive business growth and user engagement.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <button className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center">
                 Start Your Project
@@ -368,65 +390,6 @@ function App() {
             </p>
           </div>
 
-          {/* Interactive Service Showcase */}
-          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16"> */}
-            {/* Service Navigation */}
-            {/* <div className="space-y-4">
-              {services.map((service, index) => (
-                <div
-                  key={service.id}
-                  className={`p-6 rounded-2xl cursor-pointer transition-all duration-300 ${
-                    activeService === index
-                      ? 'bg-white shadow-sm border-l-4 border-[#02654F]'
-                      : 'bg-white/60 hover:bg-white'
-                  }`}
-                  onClick={() => setActiveService(index)}
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className={`p-3 rounded-xl ${service.bgColor} ${service.textColor}`}>
-                      {service.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                      <p className="text-gray-600">{service.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div> */}
-
-            {/* Service Details */}
-            {/* <div className="bg-white rounded-3xl p-8 shadow-sm">
-              <div className={`inline-flex p-4 rounded-2xl ${services[activeService].bgColor} ${services[activeService].textColor} mb-6`}>
-                {services[activeService].icon}
-              </div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                {services[activeService].title}
-              </h3>
-              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-                {services[activeService].description}
-              </p>
-              
-              <div className="mb-8">
-                <h4 className="font-semibold text-gray-900 mb-4">Technologies We Use:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {services[activeService].technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <button className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white px-6 py-3 rounded-xl font-semibold hover:shadow-sm transition-all flex items-center">
-                Learn More
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
-            </div> */}
-          {/* </div> */}
 
           {/* Service Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -456,8 +419,8 @@ function App() {
         </div>
       </section>
 
-            {/* Portfolio Section */}
-            <section id="portfolio" className="relative py-20 bg-white">
+      {/* Portfolio Section */}
+      <section id="portfolio" className="relative py-20 bg-white">
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[100vw] pointer-events-none">
           <div className="absolute -top-24 left-0 w-80 h-80 bg-gradient-to-tr from-[#b1f0e2] to-transparent rounded-full blur-3xl opacity-60"></div>
           <div className="absolute -bottom-24 right-0 w-96 h-96 bg-gradient-to-bl from-[#86efd8] to-transparent rounded-full blur-3xl opacity-60"></div>
@@ -492,7 +455,7 @@ function App() {
                   <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
                   <div className="mt-4 flex items-center text-[#02654F] font-medium">
                     View case study
-                    <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                    <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5l7 7-7 7" /></svg>
                   </div>
                 </div>
               </Link>
@@ -502,7 +465,7 @@ function App() {
           <div className="text-center mt-10">
             <Link href="/portfolio" className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#02654F] to-[#17C381] text-white font-semibold shadow-xs hover:shadow-sm">
               View All Projects
-              <svg className="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+              <svg className="ml-2 h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5l7 7-7 7" /></svg>
             </Link>
           </div>
         </div>
@@ -521,12 +484,12 @@ function App() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {technologies.map((tech, index) => (
+            {technologies.map((tech) => (
               <div
-                key={index}
+                key={tech.key}
                 className="bg-gray-50 p-6 rounded-2xl text-center hover:bg-emerald-50 hover:shadow-sm transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="font-semibold text-gray-900 mb-2">{tech.name}</div>
+                <div className="font-semibold text-gray-900 mb-1">{tech.name}</div>
                 <div className="text-sm text-gray-600">{tech.category}</div>
               </div>
             ))}
@@ -558,7 +521,7 @@ function App() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{step.title}</h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
                 <div className="text-sm text-[#02654F] font-medium">{step.duration}</div>
-                
+
                 {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-12 -right-4 w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
                     <ArrowRight className="w-4 h-4 text-[#02654F]" />
@@ -569,6 +532,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <ServicesTestimonials />
 
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
@@ -634,59 +599,91 @@ function App() {
         </div>
       </section>
 
-      <section id="faq" className="py-16 md:py-20">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
-                        <p className="mt-2 text-lg text-gray-500">Everything you need to know about our process and services.</p>
-                    </div>
-                    <FAQ items={faqData} />
-                </section>
-
-      {/* CTA Section */}
-      {/* <section id="contact" className="py-20 bg-gradient-to-br from-[#02654F] via-[#17C381] to-pink-600 text-white relative overflow-hidden">
+      
+      <section className="py-20 bg-[#02654F] text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-48 -translate-y-48"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-48 translate-y-48"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full"></div>
         </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Something Amazing?
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-            Let's discuss your project and turn your vision into reality with our expert team
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <button className="bg-white text-[#02654F] px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center">
-              Start Your Project
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#02654F] transition-all flex items-center justify-center">
-              <Phone className="w-5 h-5 mr-2" />
-              Schedule a Call
-            </button>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="text-2xl font-bold mb-2">Email</div>
-              <div className="opacity-90">info@12monday.net</div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+              Ready to Build Your
+              <span className="block">Next Big Project?</span>
+            </h2>
+            <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
+              Join the ranks of successful startups and businesses who trust us to bring their
+              innovative ideas to life with cutting-edge technology and expert development.
+            </p>
+
+            {/* Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                  <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
+                  <span className="text-white font-medium">{feature}</span>
+                </div>
+              ))}
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold mb-2">Phone</div>
-              <div className="opacity-90">+92 313 2933803</div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Link
+                href="/contact"
+                className="bg-white text-[#02654F] px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center"
+              >
+                Start Your Project
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link
+                href="/portfolio"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#02654F] transition-all flex items-center justify-center"
+              >
+                <Rocket className="w-5 h-5 mr-2" />
+                View Our Work
+              </Link>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold mb-2">Location</div>
-              <div className="opacity-90">Global Remote Team</div>
+
+            {/* Contact Information */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-xl font-bold mb-2">Email Us</div>
+                <div className="opacity-90">info@12monday.net</div>
+              </div>
+              <div className="text-center">
+                <div className="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-xl font-bold mb-2">Call Us</div>
+                <div className="opacity-90">+92 313 2933803</div>
+              </div>
+              <div className="text-center">
+                <div className="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <MessageCircle className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-xl font-bold mb-2">Live Chat</div>
+                <div className="opacity-90">Available 24/7</div>
+              </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
+
+      <section id="faq" className="py-16 md:py-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
+          <p className="mt-2 text-lg text-gray-500">Everything you need to know about our process and services.</p>
+        </div>
+        <FAQ items={faqData} />
+      </section>
+
 
       {/* Footer */}
-            <Footer />
+      <Footer />
 
     </div>
   );

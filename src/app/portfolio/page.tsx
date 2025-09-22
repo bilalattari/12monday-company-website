@@ -60,10 +60,13 @@ const categories = Array.from(new Set(portfolioData.map(item => item.category)))
 const platforms = Array.from(new Set(portfolioData.flatMap(item => item.platforms)));
 
 // Calculate stats
-const totalProjects = portfolioData.length;
-const liveProjects = portfolioData.filter(item => item.status === 'Live').length;
-const mobileApps = portfolioData.filter(item => item.platforms.includes('iOS') || item.platforms.includes('Android')).length;
-const webApps = portfolioData.filter(item => item.platforms.includes('Web')).length;
+const totalProjects = 102;
+// const liveProjects = portfolioData.filter(item => item.status === 'Live').length;
+const liveProjects = 90;
+// const mobileApps = portfolioData.filter(item => item.platforms.includes('iOS') || item.platforms.includes('Android')).length;
+const mobileApps = 41;
+// const webApps = portfolioData.filter(item => item.platforms.includes('Web')).length;
+const webApps = 24;
 
 const stats = {
   totalProjects,

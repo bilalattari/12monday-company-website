@@ -15,20 +15,20 @@ export default function PortfolioCTA() {
   const testimonials = [
     {
       quote: "Twelve Monday delivered an exceptional mobile app that exceeded our expectations. Their attention to detail and technical expertise is unmatched.",
-      author: "Sarah Johnson",
-      role: "CEO, TechStart Inc.",
+      author: "Khizer Ahmed Siddiqui",
+      role: "Founder Of Kaacib",
       rating: 5
     },
     {
-      quote: "The web application they built for us has been running flawlessly for over a year. Highly recommend their services!",
-      author: "Michael Chen",
-      role: "CTO, DataFlow Solutions",
+      quote: "Great communication, patience, professional and fast response is the experience I received from seller. I recommend this seller to anyone looking for a competent developer. Great experience. Thank you!",
+      author: "Preina United States",
+      role: "CEO, Preina",
       rating: 5
     },
     {
-      quote: "Professional, reliable, and innovative. They transformed our idea into a successful product that our users love.",
-      author: "Emily Rodriguez",
-      role: "Founder, EduTech Platform",
+      quote: "Excellent service ! Easy to deal with. Definitely recommend to anyone who needs a mock up app exactly match to the design !",
+      author: "One Dash New Zealand",
+      role: "CEO Of DashStore",
       rating: 5
     }
   ];

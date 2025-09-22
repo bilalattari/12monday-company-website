@@ -83,8 +83,8 @@ export default function ServicesProcess() {
 
   const stats = [
     { number: "100%", label: "On-Time Delivery", icon: <Clock className="w-6 h-6" /> },
-    { number: "50+", label: "Projects Completed", icon: <Award className="w-6 h-6" /> },
-    { number: "25+", label: "Happy Clients", icon: <Users className="w-6 h-6" /> },
+    { number: "102+", label: "Projects Completed", icon: <Award className="w-6 h-6" /> },
+    { number: "102+", label: "Happy Clients", icon: <Users className="w-6 h-6" /> },
     { number: "99%", label: "Success Rate", icon: <Target className="w-6 h-6" /> }
   ];
 

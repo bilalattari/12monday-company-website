@@ -7,12 +7,21 @@ import {
   ArrowRight,
   CheckCircle
 } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function ServicesTestimonials() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const testimonials = [
+    {
+      quote: "Twelve Monday delivered an exceptional mobile app that exceeded our expectations. Their attention to detail and technical expertise is unmatched.",
+      author: "Khizer Ahmed Siddiqui",
+      role: "Founder Of Kaacib",
+      rating: 5,
+      project: "Web And Mobile App Development For Kaacib",
+      duration: "3 months",
+    },
     {
       id: 1,
       quote: "Twelve Monday delivered an exceptional mobile app that exceeded our expectations. Their attention to detail and technical expertise is unmatched. The app has been running flawlessly for over a year with zero downtime.",
@@ -56,6 +65,18 @@ export default function ServicesTestimonials() {
       project: "Healthcare Management System",
       duration: "10 months",
       image: "/assets/portfolio/portfolio-12.jpg"
+    },
+    {
+      quote: "Great communication, patience, professional and fast response is the experience I received from seller. I recommend this seller to anyone looking for a competent developer. Great experience. Thank you!",
+      author: "Preina United States",
+      role: "CEO, Preina",
+      rating: 5
+    },
+    {
+      quote: "Excellent service ! Easy to deal with. Definitely recommend to anyone who needs a mock up app exactly match to the design !",
+      author: "One Dash New Zealand",
+      role: "CEO Of DashStore",
+      rating: 5
     }
   ];
 
@@ -78,6 +99,15 @@ export default function ServicesTestimonials() {
     "Scalable Architecture"
   ];
 
+
+  useEffect(() => {
+    if (isPaused) return;
+    const id = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [isPaused, testimonials.length]);
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,7 +121,11 @@ export default function ServicesTestimonials() {
         </div>
 
         {/* Featured Testimonial */}
-        <div className="bg-gradient-to-br from-[#02654F] to-[#17C381] rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden">
+        <div
+          className="bg-gradient-to-br from-[#02654F] to-[#17C381] rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
           
