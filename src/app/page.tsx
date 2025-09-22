@@ -1,5 +1,4 @@
-"use client"
-import React, { useState } from 'react';
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { portfolioData } from '@/data/portfolioData';
@@ -26,26 +25,62 @@ import {
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import FAQ from '@/components/home/FAQ';
 
-type FAQItemProps = {
-    question: string;
-    answer: string;
-    isOpen: boolean;
-    toggleFAQ: () => void;
+export const metadata: Metadata = {
+  title: {
+    default: "Twelve Monday | AI-First Web, Mobile & SaaS Development Company",
+    template: "%s | Twelve Monday"
+  },
+  description:
+    "We build high-performance web apps, mobile apps, and AI-powered solutions. Expert in React, Next.js, React Native, Node.js, and cloud-native architectures.",
+  keywords: [
+    "software development",
+    "web development",
+    "mobile app development",
+    "React Native",
+    "Next.js",
+    "MERN stack",
+    "AI development",
+    "machine learning",
+    "SaaS",
+    "startup MVP",
+    "UI/UX design",
+    "cloud devops",
+    "Pakistan software company",
+    "Twelve Monday",
+    "boundless technologies",
+    "cluster valley",
+    "saylani",
+    "saylani tech limited",
+    "system limited",
+  ],
+  openGraph: {
+    title: "Twelve Monday | AI-First Web, Mobile & SaaS Development Company",
+    description:
+      "We build high-performance web apps, mobile apps, and AI-powered solutions. Expert in React, Next.js, React Native, Node.js, and cloud-native architectures.",
+    type: 'website',
+    url: 'https://www.12monday.net/',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Twelve Monday - AI-First Development Company',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Twelve Monday | AI-First Web, Mobile & SaaS Development Company",
+    description:
+      "We build high-performance web apps, mobile apps, and AI-powered solutions. Expert in React, Next.js, React Native, Node.js, and cloud-native architectures.",
+    images: ['/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://www.12monday.net/',
+  },
 };
-
-
-const FAQItem = ({ question, answer, isOpen, toggleFAQ }: FAQItemProps) => (
-    <div className="faq-item bg-white p-6 rounded-2xl shadow-xs border border-gray-100">
-        <button onClick={toggleFAQ} className="faq-toggle w-full flex justify-between items-center text-left text-lg font-medium text-gray-900">
-            {question}
-            <i className={`fas fa-chevron-down text-gray-500 transform transition-transform ${isOpen ? 'rotate-180' : ''}`}></i>
-        </button>
-        <div className={`faq-content overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
-            <p className="pt-4 text-gray-600">{answer}</p>
-        </div>
-    </div>
-);
 
 function App() {
 
@@ -171,8 +206,6 @@ function App() {
     }
   ];
 
-      const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
-
     const faqData = [
         {
             question: "How long does a typical project take?",
@@ -191,11 +224,48 @@ function App() {
             answer: "Simply click the 'Book a Call' button in the navigation bar or the 'Get a Free Consultation' button in the hero section. We'll schedule a time to discuss your project in detail."
         }
     ];
-    const toggleFAQ = (index: number) => {
-        setOpenFAQIndex(openFAQIndex === index ? null : index);
-    };
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Twelve Monday',
+            url: 'https://twelvemonday.com',
+            logo: 'https://twelvemonday.com/assets/portfolio/portfolio-13.jpeg',
+            sameAs: [
+              'https://github.com/bilalattari',
+            ],
+            contactPoint: [{
+              '@type': 'ContactPoint',
+              contactType: 'customer support',
+              email: 'info@12monday.net',
+              availableLanguage: ['English'],
+            }],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Twelve Monday',
+            url: 'https://twelvemonday.com',
+            potentialAction: {
+              '@type': 'SearchAction',
+              target: 'https://twelvemonday.com/?q={search_term_string}',
+              'query-input': 'required name=search_term_string',
+            },
+          }),
+        }}
+      />
       {/* Navigation */}
     <Header />
 
@@ -568,17 +638,7 @@ function App() {
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
                         <p className="mt-2 text-lg text-gray-500">Everything you need to know about our process and services.</p>
                     </div>
-                    <div className="max-w-3xl mx-auto space-y-4">
-                        {faqData.map((item, index) => (
-                            <FAQItem
-                                key={index}
-                                question={item.question}
-                                answer={item.answer}
-                                isOpen={openFAQIndex === index}
-                                toggleFAQ={() => toggleFAQ(index)}
-                            />
-                        ))}
-                    </div>
+                    <FAQ items={faqData} />
                 </section>
 
       {/* CTA Section */}
@@ -627,52 +687,6 @@ function App() {
       {/* Footer */}
             <Footer />
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        
-        .animate-fadeInUp {
-          animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .delay-1000 {
-          animation-delay: 1s;
-        }
-        
-        .delay-500 {
-          animation-delay: 0.5s;
-        }
-        
-        .delay-1500 {
-          animation-delay: 1.5s;
-        }
-
-        .bg-grid-pattern {
-          background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
-          background-size: 50px 50px;
-        }
-      `}</style>
     </div>
   );
 }

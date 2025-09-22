@@ -23,30 +23,30 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "12Monday Technologies - Mobile App Development",
-    template: "%s | 12Monday Technologies"
+    default: "Twelve Monday - AI-First Web, Mobile & SaaS Development",
+    template: "%s | Twelve Monday"
   },
-  description: "We build startups from scratch. Specializing in mobile app development, React Native, Flutter, and full-stack solutions.",
-  keywords: "mobile app development, React Native, Flutter, startup development, MERN stack, mobile applications, iOS, Android, web development",
-  authors: [{ name: "12Monday Technologies", url: "https://12mondaytechnologies.com" }],
-  creator: "12Monday Technologies",
-  publisher: "12Monday Technologies",
+  description: "We build high-performance web apps, mobile apps, and AI-powered solutions using React, Next.js, React Native, Node.js and cloud-native architectures.",
+  keywords: "twelve monday, 12monday, software development, web development, mobile app development, React Native, Next.js, MERN stack, AI development, machine learning, SaaS, startup MVP, UI/UX design, cloud devops, boundless technologies, cluster valley, saylani, saylani tech limited, system limited",
+  authors: [{ name: "Twelve Monday", url: "https://www.12monday.net" }],
+  creator: "Twelve Monday",
+  publisher: "Twelve Monday",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://12mondaytechnologies.com'),
+  metadataBase: new URL('https://www.12monday.net'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://12mondaytechnologies.com',
-    title: '12Monday Technologies - Mobile App Development',
-    description: 'We build startups from scratch. Specializing in mobile app development, React Native, Flutter, and full-stack solutions.',
-    siteName: '12Monday Technologies',
+    url: 'https://www.12monday.net',
+    title: 'Twelve Monday - AI-First Web, Mobile & SaaS Development',
+    description: 'We build high-performance web apps, mobile apps, and AI-powered solutions using React, Next.js, React Native, Node.js and cloud-native architectures.',
+    siteName: 'Twelve Monday',
     images: [
       {
         url: '/logo.png',
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '12Monday Technologies - Mobile App Development',
-    description: 'We build startups from scratch. Specializing in mobile app development, React Native, Flutter, and full-stack solutions.',
+    title: 'Twelve Monday - AI-First Web, Mobile & SaaS Development',
+    description: 'We build high-performance web apps, mobile apps, and AI-powered solutions using React, Next.js, React Native, Node.js and cloud-native architectures.',
     images: ['/logo.png'],
   },
   robots: {
