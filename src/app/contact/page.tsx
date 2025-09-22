@@ -7,13 +7,10 @@ import {
   Mail, 
   Github, 
   MessageCircle, 
-  Phone, 
-  MapPin, 
   Clock,
   Send,
   CheckCircle,
   ArrowRight,
-  Star,
   Code,
   Smartphone,
   Brain,
@@ -108,7 +105,7 @@ export default function Contact() {
           <div className="animate-fadeInUp">
             <div className="inline-flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 mb-8">
               <MessageCircle className="w-4 h-4 text-[#02654F] mr-2" />
-              <span className="text-sm font-medium text-gray-700">Let's Start Your Project</span>
+              <span className="text-sm font-medium text-gray-700">Let&apos;s Start Your Project</span>
             </div>
             
             <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
@@ -356,7 +353,7 @@ export default function Contact() {
                     <div className="flex items-center">
                       <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
                       <p className="text-green-800 font-medium">
-                        Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                        Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                       </p>
                     </div>
                   </div>

@@ -79,17 +79,17 @@ export async function POST(request: NextRequest) {
           </h2>
           
           <div style="background: linear-gradient(135deg, #02654F, #17C381); color: white; padding: 30px; border-radius: 12px; text-align: center; margin: 20px 0;">
-            <h3 style="margin: 0 0 10px 0;">We've received your message</h3>
+            <h3 style="margin: 0 0 10px 0;">We&apos;ve received your message</h3>
             <p style="margin: 0; opacity: 0.9;">Our team will review your project requirements and get back to you within 24 hours.</p>
           </div>
           
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #333; margin-top: 0;">What happens next?</h3>
             <ul style="color: #666; line-height: 1.8;">
-              <li>We'll review your project requirements</li>
+              <li>We&apos;ll review your project requirements</li>
               <li>Our team will prepare a detailed proposal</li>
-              <li>We'll schedule a consultation call to discuss your project</li>
-              <li>You'll receive a comprehensive project timeline and quote</li>
+              <li>We&apos;ll schedule a consultation call to discuss your project</li>
+              <li>You&apos;ll receive a comprehensive project timeline and quote</li>
             </ul>
           </div>
           
