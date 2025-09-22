@@ -95,10 +95,10 @@ export async function POST(request: NextRequest) {
           
           <div style="text-align: center; margin: 30px 0;">
             <p style="color: #666;">In the meantime, feel free to explore our work:</p>
-            <a href="https://twelvemonday.com/portfolio" style="display: inline-block; background: linear-gradient(135deg, #02654F, #17C381); color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; margin: 0 10px;">
+            <a href="https://www.12monday.net/portfolio" style="display: inline-block; background: linear-gradient(135deg, #02654F, #17C381); color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; margin: 0 10px;">
               View Our Portfolio
             </a>
-            <a href="https://twelvemonday.com/services" style="display: inline-block; background: transparent; color: #02654F; padding: 12px 24px; text-decoration: none; border: 2px solid #02654F; border-radius: 8px; margin: 0 10px;">
+            <a href="https://www.12monday.net/services" style="display: inline-block; background: transparent; color: #02654F; padding: 12px 24px; text-decoration: none; border: 2px solid #02654F; border-radius: 8px; margin: 0 10px;">
               Our Services
             </a>
           </div>

@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PortfolioDetailPageProps): Pr
       title: `${project.name} - Professional Development Portfolio | Twelve Monday`,
       description: project.longDescription,
       type: 'website',
-      url: `https://twelvemonday.com/portfolio/${params.slug}`,
+      url: `https://www.12monday.net/portfolio/${params.slug}`,
       images: [
         {
           url: project.image,
@@ -79,7 +79,7 @@ export async function generateMetadata({ params }: PortfolioDetailPageProps): Pr
       images: [project.image]
     },
     alternates: {
-      canonical: `https://twelvemonday.com/portfolio/${params.slug}`
+      canonical: `https://www.12monday.net/portfolio/${params.slug}`
     }
   };
 }
@@ -100,12 +100,12 @@ export default function PortfolioDetailPage({ params }: PortfolioDetailPageProps
     "creator": {
       "@type": "Organization",
       "name": "Twelve Monday",
-      "url": "https://twelvemonday.com"
+      "url": "https://www.12monday.net"
     },
     "dateCreated": project.launchDate,
     "genre": project.category,
     "keywords": project.technologies.join(", "),
-    "url": `https://twelvemonday.com/portfolio/${params.slug}`,
+    "url": `https://www.12monday.net/portfolio/${params.slug}`,
     "image": project.image,
     "offers": {
       "@type": "Offer",

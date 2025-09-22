@@ -27,6 +27,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import FAQ from '@/components/home/FAQ';
 
+
 export const metadata: Metadata = {
   title: {
     default: "Twelve Monday | AI-First Web, Mobile & SaaS Development Company",
@@ -235,8 +236,8 @@ function App() {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'Twelve Monday',
-            url: 'https://twelvemonday.com',
-            logo: 'https://twelvemonday.com/assets/portfolio/portfolio-13.jpeg',
+            url: 'https://www.12monday.net',
+            logo: 'https://www.12monday.net/assets/portfolio/portfolio-13.jpeg',
             sameAs: [
               'https://github.com/bilalattari',
             ],
@@ -257,10 +258,10 @@ function App() {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'Twelve Monday',
-            url: 'https://twelvemonday.com',
+            url: 'https://www.12monday.net',
             potentialAction: {
               '@type': 'SearchAction',
-              target: 'https://twelvemonday.com/?q={search_term_string}',
+              target: 'https://www.12monday.net/?q={search_term_string}',
               'query-input': 'required name=search_term_string',
             },
           }),

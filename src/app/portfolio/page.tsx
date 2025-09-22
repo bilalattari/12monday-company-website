@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: 'Portfolio - Mobile Apps, Web Applications & AI Solutions | Twelve Monday',
     description: 'Explore our portfolio of 14+ successful projects including mobile apps, web applications, and AI-powered solutions.',
     type: 'website',
-    url: 'https://twelvemonday.com/portfolio',
+    url: 'https://www.12monday.net/portfolio',
     images: [
       {
         url: '/assets/portfolio/portfolio-13.jpeg',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     images: ['/assets/portfolio/portfolio-13.jpeg']
   },
   alternates: {
-    canonical: 'https://twelvemonday.com/portfolio'
+    canonical: 'https://www.12monday.net/portfolio'
   }
 };
 

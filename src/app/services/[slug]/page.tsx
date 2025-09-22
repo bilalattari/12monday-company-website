@@ -483,7 +483,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: `${service.title} - Professional Development Services | Twelve Monday`,
       description: service.longDescription,
       type: 'website',
-      url: `https://twelvemonday.com/services/${params.slug}`,
+      url: `https://www.12monday.net/services/${params.slug}`,
       images: [
         {
           url: '/assets/portfolio/portfolio-13.jpeg',
@@ -500,7 +500,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       images: ['/assets/portfolio/portfolio-13.jpeg']
     },
     alternates: {
-      canonical: `https://twelvemonday.com/services/${params.slug}`
+      canonical: `https://www.12monday.net/services/${params.slug}`
     }
   };
 }
@@ -521,8 +521,8 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
     "provider": {
       "@type": "Organization",
       "name": "Twelve Monday",
-      "url": "https://twelvemonday.com",
-      "logo": "https://twelvemonday.com/logo.png"
+      "url": "https://www.12monday.net",
+      "logo": "https://www.12monday.net/logo.png"
     },
     "serviceType": service.title,
     "areaServed": "Worldwide",

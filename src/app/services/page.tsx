@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: 'Professional Development Services - Mobile Apps, Web Applications & AI Solutions | Twelve Monday',
     description: 'Transform your ideas into reality with our comprehensive development services. Expert mobile app development, web applications, AI solutions, and custom software development.',
     type: 'website',
-    url: 'https://twelvemonday.com/services',
+    url: 'https://www.12monday.net/services',
     images: [
       {
         url: '/assets/portfolio/portfolio-13.jpeg',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     images: ['/assets/portfolio/portfolio-13.jpeg']
   },
   alternates: {
-    canonical: 'https://twelvemonday.com/services'
+    canonical: 'https://www.12monday.net/services'
   }
 };
 
