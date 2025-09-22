@@ -598,7 +598,6 @@ function App() {
           </div>
         </div>
       </section>
-
       
       <section className="py-20 bg-[#02654F] text-white relative overflow-hidden">
         <div className="absolute inset-0">
