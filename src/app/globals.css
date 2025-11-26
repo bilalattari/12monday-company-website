@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0E0A0F00;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
   --primary-green: #18C77E;
   --dark-green: #04644A;
   --accent-blue: #3B82F6;
@@ -33,11 +33,25 @@
   --font-display: var(--font-space-grotesk);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Custom Card Gradient Border */
+.card-gradient-border {
+  position: relative;
+  background: #000000;
+  /* Match background */
+  border-radius: 1.5rem;
+  /* rounded-3xl */
+  z-index: 1;
+}
+
+.card-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  /* Border width */
+  border-radius: 1.6rem;
+  /* Slightly larger than parent */
+  background: linear-gradient(135deg, #000000, #04644A);
+  z-index: -1;
 }
 
 body {

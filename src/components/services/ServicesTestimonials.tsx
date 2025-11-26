@@ -1,9 +1,9 @@
 'use client';
 
-import { 
-  Star, 
-  Quote, 
-  ArrowLeft, 
+import {
+  Star,
+  Quote,
+  ArrowLeft,
   ArrowRight,
   CheckCircle
 } from 'lucide-react';
@@ -109,46 +109,46 @@ export default function ServicesTestimonials() {
   }, [isPaused, testimonials.length]);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6">
             What Our <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">Clients Say</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Don&apos;t just take our word for it. Here&apos;s what our clients have to say about working with us.
           </p>
         </div>
 
         {/* Featured Testimonial */}
         <div
-          className="bg-gradient-to-br from-[#02654F] to-[#17C381] rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
+          className="card-gradient-border rounded-3xl p-8 md:p-12 text-white mb-16 relative overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32"></div>
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
-          
+
           <div className="relative z-10">
             <div className="flex items-center mb-6">
               {[...Array(current.rating)].map((_, i) => (
                 <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
               ))}
             </div>
-            
+
             <Quote className="w-12 h-12 text-white/20 mb-6" />
-            
+
             <blockquote className="text-xl md:text-2xl mb-8 italic leading-relaxed">
               &ldquo;{current.quote}&rdquo;
             </blockquote>
-            
+
             <div className="flex flex-col md:flex-row md:items-center justify-between">
               <div className="mb-4 md:mb-0">
                 <div className="font-semibold text-xl">{current.author}</div>
                 <div className="text-white/80">{current.role}</div>
                 <div className="text-sm text-white/60">{current.project} • {current.duration}</div>
               </div>
-              
+
               <div className="flex space-x-2">
                 <button
                   onClick={prevTestimonial}
@@ -172,21 +172,21 @@ export default function ServicesTestimonials() {
           {testimonials.slice(0, 3).map((testimonial, _) => (
             <div
               key={testimonial.id}
-              className="bg-gray-50 p-8 rounded-3xl hover:shadow-sm transition-all duration-300"
+              className="card-gradient-border p-8 shadow-sm hover:shadow-sm transition-all duration-300"
             >
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-              
-              <blockquote className="text-gray-700 mb-6 italic">
+
+              <blockquote className="text-gray-300 mb-6 italic">
                 &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
-              
-              <div className="border-t border-gray-200 pt-4">
-                <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                <div className="text-sm text-gray-600">{testimonial.role}</div>
+
+              <div className="border-t border-gray-700 pt-4">
+                <div className="font-semibold text-white">{testimonial.author}</div>
+                <div className="text-sm text-gray-400">{testimonial.role}</div>
                 <div className="text-xs text-gray-500 mt-1">{testimonial.project}</div>
               </div>
             </div>
@@ -194,23 +194,23 @@ export default function ServicesTestimonials() {
         </div>
 
         {/* Achievements Section */}
-        <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-8 md:p-12">
+        <div className="card-gradient-border p-8 md:p-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Why Clients Choose Us
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               We deliver exceptional results through our proven expertise and commitment to excellence
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {achievements.map((achievement, index) => (
               <div key={index} className="flex items-center space-x-3">
                 <div className="flex-shrink-0">
                   <CheckCircle className="w-6 h-6 text-[#02654F]" />
                 </div>
-                <span className="text-gray-700 font-medium">{achievement}</span>
+                <span className="text-gray-300 font-medium">{achievement}</span>
               </div>
             ))}
           </div>

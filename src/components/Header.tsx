@@ -98,7 +98,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="bg-white text-[var(--foreground)] px-6 py-3 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm"
+              className="bg-white text-[var(--background)] px-6 py-3 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm"
             >
               Get Started
             </Link>
