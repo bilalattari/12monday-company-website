@@ -3,10 +3,10 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { 
-  Mail, 
-  Github, 
-  MessageCircle, 
+import {
+  Mail,
+  Github,
+  MessageCircle,
   Clock,
   Send,
   CheckCircle,
@@ -61,7 +61,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
@@ -72,7 +72,7 @@ export default function Contact() {
             <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-400/20 to-emerald-400/20 rounded-full blur-3xl animate-pulse delay-500"></div>
           </div>
-          
+
           {/* Grid Pattern */}
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         </div>
@@ -107,19 +107,19 @@ export default function Contact() {
               <MessageCircle className="w-4 h-4 text-[#02654F] mr-2" />
               <span className="text-sm font-medium text-gray-700">Let&apos;s Start Your Project</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
               Let&apos;s Build Your
               <span className="block bg-gradient-to-r from-[#02654F] via-[#17C381] to-pink-600 bg-clip-text text-transparent">
                 Dream Project
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Ready to turn your innovative idea into a successful application? 
+              Ready to turn your innovative idea into a successful application?
               Get in touch and let&apos;s discuss how we can bring your vision to life.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contact-form"
@@ -157,7 +157,7 @@ export default function Contact() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
-                
+
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4 p-4 bg-gray-50 rounded-2xl">
                     <div className="w-12 h-12 bg-gradient-to-r from-[#02654F] to-[#17C381] rounded-xl flex items-center justify-center flex-shrink-0">
@@ -176,9 +176,9 @@ export default function Contact() {
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">GitHub</h4>
                       <p className="text-gray-600">
-                        <a 
-                          href="https://github.com/bilalattari" 
-                          target="_blank" 
+                        <a
+                          href="https://github.com/bilalattari"
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="text-[#02654F] hover:text-[#17C381] transition-colors duration-200"
                         >

@@ -16,9 +16,9 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <header className="bg-black shadow-lg sticky top-0 z-50 border-b border-gray-700">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 p-1">
+        <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -34,11 +34,10 @@ export default function Header() {
           <nav className="hidden md:flex space-x-8">
             <Link
               href="/"
-              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
-                isActive('/') 
-                  ? 'text-[#1BC47D] font-bold' 
-                  : 'text-gray-700 hover:text-[#1BC47D]'
-              }`}
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/')
+                ? 'text-[#1BC47D] font-bold'
+                : 'text-white hover:text-[#1BC47D]'
+                }`}
             >
               Home
               {isActive('/') && (
@@ -47,11 +46,10 @@ export default function Header() {
             </Link>
             <Link
               href="/services"
-              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
-                isActive('/services') 
-                  ? 'text-[#1BC47D] font-bold' 
-                  : 'text-gray-700 hover:text-[#1BC47D]'
-              }`}
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/services')
+                ? 'text-[#1BC47D] font-bold'
+                : 'text-white hover:text-[#1BC47D]'
+                }`}
             >
               Services
               {isActive('/services') && (
@@ -60,11 +58,10 @@ export default function Header() {
             </Link>
             <Link
               href="/portfolio"
-              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
-                isActive('/portfolio') 
-                  ? 'text-[#1BC47D] font-bold' 
-                  : 'text-gray-700 hover:text-[#1BC47D]'
-              }`}
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/portfolio')
+                ? 'text-[#1BC47D] font-bold'
+                : 'text-white hover:text-[#1BC47D]'
+                }`}
             >
               Portfolio
               {isActive('/portfolio') && (
@@ -73,11 +70,10 @@ export default function Header() {
             </Link>
             <Link
               href="/about"
-              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
-                isActive('/about') 
-                  ? 'text-[#1BC47D] font-bold' 
-                  : 'text-gray-700 hover:text-[#1BC47D]'
-              }`}
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/about')
+                ? 'text-[#1BC47D] font-bold'
+                : 'text-white hover:text-[#1BC47D]'
+                }`}
             >
               About
               {isActive('/about') && (
@@ -86,11 +82,10 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${
-                isActive('/contact') 
-                  ? 'text-[#1BC47D] font-bold' 
-                  : 'text-gray-700 hover:text-[#1BC47D]'
-              }`}
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/contact')
+                ? 'text-[#1BC47D] font-bold'
+                : 'text-white hover:text-[#1BC47D]'
+                }`}
             >
               Contact
               {isActive('/contact') && (
@@ -103,7 +98,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-[#1BC47D] to-[#01624B] text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm"
+              className="bg-white text-[var(--foreground)] px-6 py-3 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm"
             >
               Get Started
             </Link>
@@ -145,55 +140,50 @@ export default function Header() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
               <Link
                 href="/"
-                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${
-                  isActive('/') 
-                    ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg' 
-                    : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
-                }`}
+                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive('/')
+                  ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg'
+                  : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 href="/services"
-                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${
-                  isActive('/services') 
-                    ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg' 
-                    : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
-                }`}
+                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive('/services')
+                  ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg'
+                  : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Services
               </Link>
               <Link
                 href="/portfolio"
-                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${
-                  isActive('/portfolio') 
-                    ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg' 
-                    : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
-                }`}
+                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive('/portfolio')
+                  ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg'
+                  : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Portfolio
               </Link>
               <Link
                 href="/about"
-                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${
-                  isActive('/about') 
-                    ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg' 
-                    : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
-                }`}
+                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive('/about')
+                  ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg'
+                  : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
               <Link
                 href="/contact"
-                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${
-                  isActive('/contact') 
-                    ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg' 
-                    : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
-                }`}
+                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive('/contact')
+                  ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg'
+                  : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
+                  }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

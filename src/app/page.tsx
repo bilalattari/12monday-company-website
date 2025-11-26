@@ -21,7 +21,9 @@ import {
   TrendingUp,
   Sparkles,
   Brain,
-  Server
+  Server,
+  Star,
+  WandSparkles
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -293,75 +295,70 @@ function App() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className=" relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-          <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 bg-black">
+          <div className="absolute inset-0 bg-black">
             {/* Floating Elements */}
-            <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-400/20 to-emerald-400/20 rounded-full blur-3xl animate-pulse delay-500"></div>
+            <div className="absolute top-20 left-20 w-72 h-72 bg-black rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-black rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-black rounded-full blur-3xl animate-pulse delay-500"></div>
           </div>
 
           {/* Grid Pattern */}
           <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         </div>
-
         {/* Floating Tech Icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 animate-float">
-            <div className="bg-white p-3 rounded-xl shadow-sm">
-              <Code className="w-6 h-6 text-[#02654F]" />
+          <div className="absolute top-20 left-110 animate-float">
+            <div className="p-3 rounded-xl shadow-sm">
+              <Star className="w-5 h-5 text-white" fill='white' />
             </div>
           </div>
-          <div className="absolute top-40 right-20 animate-float delay-1000">
-            <div className="bg-white p-3 rounded-xl shadow-sm">
-              <Brain className="w-6 h-6 text-[#17C381]" />
+          <div className="absolute top-15 right-110 animate-float delay-1000">
+            <div className="p-3 rounded-xl shadow-sm">
+              <Star className="w-3 h-3 text-white" fill='white' />
             </div>
           </div>
-          <div className="absolute bottom-40 left-20 animate-float delay-500">
-            <div className="bg-white p-3 rounded-xl shadow-sm">
-              <Smartphone className="w-6 h-6 text-green-600" />
+          <div className="absolute bottom-50 left-50 animate-float delay-500">
+            <div className="p-3 rounded-xl shadow-sm">
+              <Star className="w-3 h-3 text-white" fill='white' />
             </div>
           </div>
-          <div className="absolute bottom-20 right-10 animate-float delay-1500">
-            <div className="bg-white p-3 rounded-xl shadow-sm">
-              <Database className="w-6 h-6 text-orange-600" />
+          <div className="absolute bottom-50 right-40 animate-float delay-1500">
+            <div className="p-3 rounded-xl shadow-sm">
+              <Star className="w-5 h-5 text-white" fill='white' />
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">
           <div className="animate-fadeInUp">
-            <div className="inline-flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 mb-8">
-              <Sparkles className="w-4 h-4 text-[#02654F] mr-2" />
-              <span className="text-sm font-medium text-gray-700">Your AI-First Development Partner</span>
-            </div>
+            <span className="text-lg font-medium text-white">Your AI-First Development Partner</span>
 
-            <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Building Tomorrow&apos;s
-              <span className="block bg-gradient-to-r from-[#02654F] via-[#17C381] to-pink-600 bg-clip-text text-transparent">
-                Digital Solutions
+            <h1 className="text-4xl md:text-3xl font-bold text-white mb-6 leading-tight">
+              Turn Your Idea Into a Live MVP in
+              <span className="block bg-[#02654F] from-[#02654F] bg-clip-text text-[#17C381]">
+                Just 15 Days
               </span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              We craft exceptional web applications, mobile apps, and AI-powered solutions that drive business growth and user engagement.
+            <p className="text-lg md:text-md text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed">
+              We turn early-stage ideas into real products using a rapid, structured workflow. Get a polished MVP that’s ready to test, pitch, or scale — all within just 15 days.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <button className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <button className="bg-transparent cursor-pointer text-white px-4 py-2 border-2 border-white rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center">
                 Start Your Project
-                <ArrowRight className="w-5 h-5 ml-2" />
+                <WandSparkles className="w-5 h-5 ml-2" />
               </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:border-[#02654F] hover:text-[#02654F] transition-all flex items-center justify-center">
-                <Play className="w-5 h-5 mr-2" />
-                View Our Work
+              <button className="border-2 border-white bg-white cursor-pointer text-black px-4 rounded-full font-semibold hover:border-[#02654F] hover:text-[#02654F] transition-all flex items-center justify-center">
+                Get a Free 15-Minute Consultation
               </button>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
+            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
               {stats.map((stat, index) => (
                 <div key={index} className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-sm transition-all">
                   <div className="flex items-center justify-center mb-2 text-[#02654F]">
@@ -371,13 +368,24 @@ function App() {
                   <div className="text-sm text-gray-600">{stat.label}</div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
+
+        {/* Projectile Semicircle Glow */}
+        {/* <div className="absolute bottom-0 left-1/2 -translate-x-1/2 
+    w-[500px] h-[300px] 
+    bg-emerald-500 border-2 border-emerald-300
+    blur-[80px] rounded-t-full pointer-events-none">
+        </div> */}
+
+        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 
+  w-[700px] h-[370px] 
+  bg-emerald-400 
+  blur-[15px] rounded-t-full pointer-events-none 
+  backdrop-blur-10px] shadow-lg shadow-emerald-400/50 animate-floatUp">
+        </div>
       </section>
-
-
-
       {/* Services Section */}
       <section id="services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -598,7 +606,7 @@ function App() {
           </div>
         </div>
       </section>
-      
+
       <section className="py-20 bg-[#02654F] text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-48 -translate-y-48"></div>
