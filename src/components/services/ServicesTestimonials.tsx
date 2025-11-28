@@ -15,6 +15,7 @@ export default function ServicesTestimonials() {
 
   const testimonials = [
     {
+      id: 1,
       quote: "Twelve Monday delivered an exceptional mobile app that exceeded our expectations. Their attention to detail and technical expertise is unmatched.",
       author: "Khizer Ahmed Siddiqui",
       role: "Founder Of Kaacib",
@@ -23,7 +24,7 @@ export default function ServicesTestimonials() {
       duration: "3 months",
     },
     {
-      id: 1,
+      id: 2,
       quote: "Twelve Monday delivered an exceptional mobile app that exceeded our expectations. Their attention to detail and technical expertise is unmatched. The app has been running flawlessly for over a year with zero downtime.",
       author: "Sarah Johnson",
       role: "CEO, TechStart Inc.",
@@ -34,7 +35,7 @@ export default function ServicesTestimonials() {
       image: "/assets/portfolio/portfolio-13.jpeg"
     },
     {
-      id: 2,
+      id: 3,
       quote: "The web application they built for us has been running flawlessly for over a year. Highly recommend their services! The team was professional, responsive, and delivered exactly what we needed.",
       author: "Michael Chen",
       role: "CTO, DataFlow Solutions",
@@ -45,7 +46,7 @@ export default function ServicesTestimonials() {
       image: "/assets/portfolio/portfolio-11.jpg"
     },
     {
-      id: 3,
+      id: 4,
       quote: "Professional, reliable, and innovative. They transformed our idea into a successful product that our users love. The AI integration they implemented has significantly improved our user engagement.",
       author: "Emily Rodriguez",
       role: "Founder, EduTech Platform",
@@ -56,7 +57,7 @@ export default function ServicesTestimonials() {
       image: "/assets/portfolio/portfolio-8.jpeg"
     },
     {
-      id: 4,
+      id: 5,
       quote: "Outstanding work! They helped us scale from MVP to a full-featured platform serving thousands of users. Their technical expertise and business understanding made all the difference.",
       author: "David Kim",
       role: "Product Manager, HealthTech",
@@ -67,12 +68,14 @@ export default function ServicesTestimonials() {
       image: "/assets/portfolio/portfolio-12.jpg"
     },
     {
+      id: 6,
       quote: "Great communication, patience, professional and fast response is the experience I received from seller. I recommend this seller to anyone looking for a competent developer. Great experience. Thank you!",
       author: "Preina United States",
       role: "CEO, Preina",
       rating: 5
     },
     {
+      id: 7,
       quote: "Excellent service ! Easy to deal with. Definitely recommend to anyone who needs a mock up app exactly match to the design !",
       author: "One Dash New Zealand",
       role: "CEO Of DashStore",
@@ -166,7 +169,6 @@ export default function ServicesTestimonials() {
             </div>
           </div>
         </div>
-
         {/* Testimonial Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {testimonials.slice(0, 3).map((testimonial, _) => (

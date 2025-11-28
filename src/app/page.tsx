@@ -293,9 +293,8 @@ function App() {
       />
       {/* Navigation */}
       <Header />
-
       {/* Hero Section */}
-      <section className=" relative  min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 bg-black">
           <div className="absolute inset-0 bg-black">
@@ -304,32 +303,34 @@ function App() {
             <div className="absolute bottom-20 right-20 w-96 h-96 bg-black rounded-full blur-3xl animate-pulse delay-1000"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-black rounded-full blur-3xl animate-pulse delay-500"></div>
           </div>
-
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
         </div>
+
         {/* Floating Tech Icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 left-110 animate-float">
             <div className="p-3 rounded-xl shadow-sm">
-              <Star className="w-5 h-5 text-white" fill='white' />
+              <Star className="w-5 h-5 text-white" fill="white" />
             </div>
           </div>
           <div className="absolute top-15 right-110 animate-float delay-1000">
             <div className="p-3 rounded-xl shadow-sm">
-              <Star className="w-3 h-3 text-white" fill='white' />
+              <Star className="w-3 h-3 text-white" fill="white" />
             </div>
           </div>
           <div className="absolute bottom-50 left-50 animate-float delay-500">
             <div className="p-3 rounded-xl shadow-sm">
-              <Star className="w-3 h-3 text-white" fill='white' />
+              <Star className="w-3 h-3 text-white" fill="white" />
             </div>
           </div>
           <div className="absolute bottom-50 right-40 animate-float delay-1500">
             <div className="p-3 rounded-xl shadow-sm">
-              <Star className="w-5 h-5 text-white" fill='white' />
+              <Star className="w-5 h-5 text-white" fill="white" />
             </div>
           </div>
+        </div>
+        {/* Large '12 Monday' Title */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+          <h1 className="text-[200px] font-extrabold text-green-300 transform rotate-25">12 Monday</h1>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">
@@ -356,36 +357,10 @@ function App() {
                 Get a Free 15-Minute Consultation
               </button>
             </div>
-
-            {/* Stats */}
-            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-              {stats.map((stat, index) => (
-                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-sm transition-all">
-                  <div className="flex items-center justify-center mb-2 text-[#02654F]">
-                    {stat.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900">{stat.number}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </div>
-              ))}
-            </div> */}
           </div>
         </div>
-
-        {/* Projectile Semicircle Glow */}
-        {/* <div className="absolute bottom-0 left-1/2 -translate-x-1/2 
-    w-[500px] h-[300px] 
-    bg-emerald-500 border-2 border-emerald-300
-    blur-[80px] rounded-t-full pointer-events-none">
-        </div> */}
-
-        <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 
-  w-[700px] h-[370px] 
-  bg-emerald-400 
-  blur-[15px] rounded-t-full pointer-events-none 
-  backdrop-blur-10px] shadow-lg shadow-emerald-400/50 animate-floatUp">
-        </div>
       </section>
+
       {/* Services Section */}
       <section id="services" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -400,7 +375,7 @@ function App() {
 
 
           {/* Service Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(0, 6).map((service, _) => (
               <div
                 key={service.id}
@@ -412,10 +387,10 @@ function App() {
                 <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
                 <p className="text-gray-400 mb-6">{service.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {service.technologies.slice(0, 2).map((tech, techIndex) => (
+                  {service.technologies.slice(0, 4).map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-white/10 text-gray-300 px-3 py-1 rounded-full text-sm"
+                      className="bg-white/10 text-gray-300 px-3 py-1 rounded-full text-xs"
                     >
                       {tech}
                     </span>
@@ -427,7 +402,7 @@ function App() {
         </div>
       </section>
 
-      {/* Portfolio Section */}
+      {/* Our Work Section */}
       <section id="portfolio" className="relative py-20 bg-background">
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[100vw] pointer-events-none">
           <div className="absolute -top-24 left-0 w-80 h-80 bg-gradient-to-tr from-[#b1f0e2] to-transparent rounded-full blur-3xl opacity-60"></div>
@@ -556,7 +531,7 @@ function App() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-8 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
               <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Zap className="w-10 h-10 text-[#02654F]" />
               </div>
@@ -564,7 +539,7 @@ function App() {
               <p className="text-gray-400">Optimized performance and quick delivery times</p>
             </div>
 
-            <div className="text-center p-8 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
               <div className=" w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-10 h-10 text-green-600" />
               </div>
@@ -572,7 +547,7 @@ function App() {
               <p className="text-gray-400">Enterprise-grade security and reliability</p>
             </div>
 
-            <div className="text-center p-8 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
               <div className=" w-15 h-15 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Globe className="w-10 h-9 text-[#17C381]" />
               </div>
@@ -580,7 +555,7 @@ function App() {
               <p className="text-gray-400">Built to scale worldwide with millions of users</p>
             </div>
 
-            <div className="text-center p-8 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
               <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Target className="w-10 h-10 text-orange-600" />
               </div>
@@ -588,7 +563,7 @@ function App() {
               <p className="text-gray-400">Focused on achieving your business objectives</p>
             </div>
 
-            <div className="text-center p-8 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
               <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Users className="w-10 h-10 text-teal-600" />
               </div>
@@ -596,7 +571,7 @@ function App() {
               <p className="text-gray-400">Experienced professionals dedicated to your success</p>
             </div>
 
-            <div className="text-center p-8 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
               <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="w-10 h-10 text-pink-600" />
               </div>
@@ -606,14 +581,13 @@ function App() {
           </div>
         </div>
       </section>
-
+      {/* Ready to build */}
       <section className="py-20 bg-background text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-48 -translate-y-48"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-48 translate-y-48"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full"></div>
         </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className=" p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
