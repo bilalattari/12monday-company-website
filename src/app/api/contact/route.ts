@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, company, projectType, budget, message } = body;
+    const { name, email, company, projectType, budget, message, phone, subject } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -40,6 +40,8 @@ export async function POST(request: NextRequest) {
             <h3 style="color: #333; margin-top: 0;">Contact Information</h3>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
+            ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+            ${subject ? `<p><strong>Subject:</strong> ${subject}</p>` : ''}
             ${company ? `<p><strong>Company:</strong> ${company}</p>` : ''}
             ${projectType ? `<p><strong>Project Type:</strong> ${projectType}</p>` : ''}
             ${budget ? `<p><strong>Budget Range:</strong> ${budget}</p>` : ''}

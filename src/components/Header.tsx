@@ -16,8 +16,8 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="bg-black shadow-lg sticky top-0 z-50 border-b border-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 p-1">
+    <header className="bg-black shadow-lg sticky top-0 z-50 border-b border-gray-700 w-full">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 p-1 fixed w-full">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
@@ -45,6 +45,18 @@ export default function Header() {
               )}
             </Link>
             <Link
+              href="/about"
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/about')
+                ? 'text-[#1BC47D] font-bold'
+                : 'text-white hover:text-[#1BC47D]'
+                }`}
+            >
+              About
+              {isActive('/about') && (
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#1BC47D] to-[#01624B] rounded-full"></div>
+              )}
+            </Link>
+            <Link
               href="/services"
               className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/services')
                 ? 'text-[#1BC47D] font-bold'
@@ -56,6 +68,7 @@ export default function Header() {
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#1BC47D] to-[#01624B] rounded-full"></div>
               )}
             </Link>
+
             <Link
               href="/portfolio"
               className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/portfolio')
@@ -68,18 +81,20 @@ export default function Header() {
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#1BC47D] to-[#01624B] rounded-full"></div>
               )}
             </Link>
+
             <Link
-              href="/about"
-              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/about')
+              href="/case-study"
+              className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/case-study')
                 ? 'text-[#1BC47D] font-bold'
                 : 'text-white hover:text-[#1BC47D]'
                 }`}
             >
-              About
-              {isActive('/about') && (
+              Case Study
+              {isActive('/case-study') && (
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-[#1BC47D] to-[#01624B] rounded-full"></div>
               )}
             </Link>
+
             <Link
               href="/contact"
               className={`relative px-3 py-2 text-sm font-heading font-medium transition-all duration-300 ${isActive('/contact')
@@ -167,6 +182,16 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Portfolio
+              </Link>
+              <Link
+                href="/case-study"
+                className={`block px-3 py-2 text-sm font-medium transition-all duration-300 ${isActive('/case-study')
+                  ? 'text-[#1BC47D] font-bold bg-[#1BC47D]/10 rounded-lg'
+                  : 'text-gray-700 hover:text-[#1BC47D] hover:bg-gray-50 rounded-lg'
+                  }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Case Study
               </Link>
               <Link
                 href="/about"
