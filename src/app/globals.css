@@ -831,3 +831,7 @@ body {
 .animate-floatUp {
   animation: floatUp 3s ease-in-out infinite;
 }
+
+button{
+  cursor: pointer !important;
+}

@@ -34,6 +34,12 @@ import {
   Mail,
   CheckCircle,
 } from 'lucide-react';
+import StatsSection from '@/components/home/StatsSection';
+import ClientResults from '@/components/home/ClientResult';
+import BuildProductCTA from '@/components/home/BuildProductCTA';
+import HeroSection from '@/components/home/Hero';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
+import MarketingObjectives from '@/components/portfolio/MarketingObjectives';
 
 export const metadata: Metadata = {
   title: {
@@ -293,76 +299,25 @@ function App() {
       />
       {/* Navigation */}
       <Header />
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 bg-black">
-          <div className="absolute inset-0 bg-black">
-            {/* Floating Elements */}
-            <div className="absolute top-20 left-20 w-72 h-72 bg-black rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-black rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-black rounded-full blur-3xl animate-pulse delay-500"></div>
-          </div>
-        </div>
 
-        {/* Floating Tech Icons */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-110 animate-float">
-            <div className="p-3 rounded-xl shadow-sm">
-              <Star className="w-5 h-5 text-white" fill="white" />
-            </div>
-          </div>
-          <div className="absolute top-15 right-110 animate-float delay-1000">
-            <div className="p-3 rounded-xl shadow-sm">
-              <Star className="w-3 h-3 text-white" fill="white" />
-            </div>
-          </div>
-          <div className="absolute bottom-50 left-50 animate-float delay-500">
-            <div className="p-3 rounded-xl shadow-sm">
-              <Star className="w-3 h-3 text-white" fill="white" />
-            </div>
-          </div>
-          <div className="absolute bottom-50 right-40 animate-float delay-1500">
-            <div className="p-3 rounded-xl shadow-sm">
-              <Star className="w-5 h-5 text-white" fill="white" />
-            </div>
-          </div>
-        </div>
-        {/* Large '12 Monday' Title */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-          <h1 className="text-[200px] font-extrabold text-green-300 transform rotate-25">12 Monday</h1>
-        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 text-center">
-          <div className="animate-fadeInUp">
-            <span className="text-lg font-medium text-white">Your AI-First Development Partner</span>
+      <HeroSection />
 
-            <h1 className="text-4xl md:text-3xl font-bold text-white mb-6 leading-tight">
-              Turn Your Idea Into a Live MVP in
-              <span className="block bg-[#02654F] from-[#02654F] bg-clip-text text-[#17C381]">
-                Just 15 Days
-              </span>
-            </h1>
 
-            <p className="text-lg md:text-md text-gray-500 mb-8 max-w-3xl mx-auto leading-relaxed">
-              We turn early-stage ideas into real products using a rapid, structured workflow. Get a polished MVP that’s ready to test, pitch, or scale — all within just 15 days.
-            </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <button className="bg-transparent cursor-pointer text-white px-4 py-2 border-2 border-white rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center">
-                Start Your Project
-                <WandSparkles className="w-5 h-5 ml-2" />
-              </button>
-              <button className="border-2 border-white bg-white cursor-pointer text-black px-4 rounded-full font-semibold hover:border-[#02654F] hover:text-[#02654F] transition-all flex items-center justify-center">
-                Get a Free 15-Minute Consultation
-              </button>
-            </div>
-          </div>
-        </div>
+      <section>
+        <StatsSection />
       </section>
 
+
+      <WhyChooseUs />
+
+
+
       {/* Services Section */}
-      <section id="services" className="py-20 bg-background">
+      <section id="services" className="bg-background mt-6" style={{
+        marginTop: "6rem"
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -379,23 +334,13 @@ function App() {
             {services.slice(0, 6).map((service, _) => (
               <div
                 key={service.id}
-                className="group card-gradient-border border-green-500 border-1 py-4 px-6 shadow-sm hover:shadow-sm transition-all duration-300 transform hover:-translate-y-2"
+                className="group card-gradient-border py-4 px-6 shadow-sm hover:shadow-sm transition-all duration-300 transform hover:-translate-y-2"
               >
                 <div className={`inline-flex p-2 rounded-2xl ${service.bgColor} ${service.textColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
-                <p className="text-gray-400 mb-6">{service.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {service.technologies.slice(0, 4).map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="bg-white/10 text-gray-300 px-3 py-1 rounded-full text-xs"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <p className="text-white mb-6">{service.description}</p>
               </div>
             ))}
           </div>
@@ -403,7 +348,8 @@ function App() {
       </section>
 
       {/* Our Work Section */}
-      <section id="portfolio" className="relative py-20 bg-background">
+            <MarketingObjectives />
+      {/* <section id="portfolio" className="relative py-20 bg-background">
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[100vw] pointer-events-none">
           <div className="absolute -top-24 left-0 w-80 h-80 bg-gradient-to-tr from-[#b1f0e2] to-transparent rounded-full blur-3xl opacity-60"></div>
           <div className="absolute -bottom-24 right-0 w-96 h-96 bg-gradient-to-bl from-[#86efd8] to-transparent rounded-full blur-3xl opacity-60"></div>
@@ -452,10 +398,10 @@ function App() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Technology Stack */}
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-6">
@@ -478,48 +424,12 @@ function App() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Process Section */}
-      <section id="process" className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Our <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">Process</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              A proven methodology that delivers exceptional results
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div
-                key={index}
-                className="card-gradient-border p-8 shadow-sm hover:shadow-2xl transition-all duration-300 relative"
-              >
-                <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white text-2xl font-bold w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-4">{step.title}</h3>
-                <p className="text-gray-400 mb-4 leading-relaxed">{step.description}</p>
-                <div className="text-sm text-[#02654F] font-medium">{step.duration}</div>
-
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 -right-4 w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-[#02654F]" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <ServicesTestimonials />
+      {/* <ServicesTestimonials /> */}
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-6">
@@ -580,9 +490,9 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* Ready to build */}
-      <section className="py-20 bg-background text-white relative overflow-hidden">
+      {/* <section className="py-20 bg-background text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-black">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-48 -translate-y-48"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-48 translate-y-48"></div>
@@ -599,7 +509,6 @@ function App() {
               innovative ideas to life with cutting-edge technology and expert development.
             </p>
 
-            {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center space-x-3 bg-gradient-to-br from-[#02654F] to-black backdrop-blur-sm rounded-xl p-4">
@@ -626,7 +535,6 @@ function App() {
               </Link>
             </div>
 
-            {/* Contact Information */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -652,15 +560,11 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section id="faq" className="py-16 md:py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Frequently Asked Questions</h2>
-          <p className="mt-2 text-lg text-gray-400">Everything you need to know about our process and services.</p>
-        </div>
-        <FAQ items={faqData} />
-      </section>
+      <ClientResults />
+
+      <BuildProductCTA />
 
 
       {/* Footer */}

@@ -31,65 +31,75 @@ export default function MarketingObjectives() {
 
   return (
     <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Container with Green Glow */}
-        <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-green-500/20 shadow-[0_0_30px_rgba(34,197,94,0.1)]">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
-            Real-world examples of how we have helped companies achieve their marketing objectives.
-          </h2>
+      <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeFilter === filter
-                    ? 'bg-[#17C381] text-white'
-                    : 'bg-gray-800 text-white hover:bg-gray-700'
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
+        <div className="relative bg-gray-900/50 backdrop-blur-sm rounded-3xl p-8 md:p-12 border border-green-500/20">
 
-          {/* Project Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {filteredProjects.map((project, index) => (
-              <Link
-                key={project.id}
-                href={`/portfolio/${project.slug}`}
-                className="group relative bg-gradient-to-br from-gray-800 to-black rounded-2xl p-6 border border-green-500/20 hover:border-green-500/50 transition-all duration-300 overflow-hidden"
-              >
-                {/* Project Image/Logo */}
-                <div className="relative w-full aspect-[9/16] mb-4 rounded-xl overflow-hidden bg-gray-900">
-                  <Image
-                    src={project.image}
-                    alt={project.name}
-                    width={300}
-                    height={500}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+          {/* 🌟 FRONT GLOW (Inside the box, not behind it) */}
+          <div className="
+      absolute inset-0
+      -z-0
+      rounded-3xl 
+      blur-[120px]
+      opacity-80
+      bg-[radial-gradient(circle_at_center,_#04644A_0%,_rgba(0,0,0,0)_70%)]
+      pointer-events-none
+  "></div>
 
-                {/* Project Initial/Logo Overlay */}
-                <div className="absolute top-4 right-4 w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center border border-green-500/30">
-                  <span className="text-white font-bold text-xl">
-                    {project.name.charAt(0).toUpperCase()}
-                  </span>
-                </div>
+          {/* Make content above glow */}
+          <div className="relative z-10">
 
-                {/* Project Name */}
-                <h3 className="text-white font-semibold text-lg">
-                  {project.name}
-                </h3>
-              </Link>
-            ))}
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
+              Real-world examples of how we have helped companies achieve their marketing objectives.
+            </h2>
+
+            {/* Filters */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {filters.map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${activeFilter === filter
+                      ? 'bg-[#17C381] text-white'
+                      : 'bg-gray-800 text-white hover:bg-gray-700'
+                    }`}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+
+            {/* Project Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {filteredProjects.map((project, index) => (
+                <Link
+                  key={project.id}
+                  href={`/portfolio/${project.slug}`}
+                  className="group relative bg-gradient-to-br from-gray-800 to-black rounded-2xl p-6 border border-green-500/20 hover:border-green-500/50 transition-all duration-300 overflow-hidden"
+                >
+
+                  {/* Image */}
+                  <div className="relative w-full aspect-square mb-4 rounded-xl overflow-hidden bg-gray-900">
+                    <Image
+                      src={project.image}
+                      alt={project.name}
+                      width={600}
+                      height={600}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+
+                  <h3 className="text-white font-semibold text-lg">
+                    {project.name}
+                  </h3>
+
+                </Link>
+              ))}
+            </div>
+
           </div>
         </div>
+
       </div>
     </section>
   );

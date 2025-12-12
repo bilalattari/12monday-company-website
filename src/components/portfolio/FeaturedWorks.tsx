@@ -15,20 +15,19 @@ export default function FeaturedWorks() {
 
   return (
     <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <h2 className="text-5xl md:text-6xl font-bold text-white mb-16">
           FEATURED WORKS
         </h2>
 
         {/* Featured Projects */}
-        <div className="space-y-24">
+        <div className="space-y-12 mx-auto flex flex-col justify-center items-center">
           {featuredProjects.map((project, index) => (
             <div
               key={project?.id}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                index % 2 === 1 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                }`}
             >
               {/* Project Info */}
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
@@ -68,28 +67,35 @@ export default function FeaturedWorks() {
               </div>
 
               {/* Mobile Mockup */}
-              <div className={`relative ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              {/* Mobile Mockup / Image Block */}
+              <div className={`relative ${index % 2 === 1 ? "lg:order-1" : ""}`}>
                 <div className="relative w-full max-w-sm mx-auto">
-                  {/* Background with pattern */}
-                  <div 
-                    className={`rounded-3xl p-8 ${
-                      index === 0 ? 'bg-gradient-to-br from-green-600/30 to-green-800/20' :
-                      index === 1 ? 'bg-gradient-to-br from-teal-600/30 to-teal-800/20' :
-                      'bg-gradient-to-br from-teal-600/30 to-teal-800/20'
-                    }`}
+
+                  {/* Background Card */}
+                  <div
+                    className={`
+        rounded-3xl p-6
+        shadow-[0px_10px_40px_rgba(0,0,0,0.35)]
+        bg-gradient-to-br
+        ${index === 0 ? "from-green-500/15 to-green-900/10" :
+                        index === 1 ? "from-teal-500/15 to-teal-900/10" :
+                          "from-blue-500/15 to-blue-900/10"}
+        backdrop-blur-xl
+        border border-white/10
+      `}
                   >
-                    {/* Phone Mockup */}
-                    <div className="relative bg-black rounded-[2.5rem] p-2 shadow-2xl">
-                      <div className="bg-white rounded-[2rem] overflow-hidden aspect-[9/19.5]">
-                        <Image
-                          src={project?.image || '/assets/portfolio/portfolio-13.jpeg'}
-                          alt={project?.name || 'Project'}
-                          width={400}
-                          height={800}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+
+                    {/* 1:1 Image */}
+                    <div className="aspect-square w-full rounded-2xl overflow-hidden">
+                      <Image
+                        src={project?.image || "/assets/portfolio/placeholder-square.jpg"}
+                        alt={project?.name}
+                        width={800}
+                        height={800}
+                        className="object-cover w-full h-full"
+                      />
                     </div>
+
                   </div>
                 </div>
               </div>

@@ -34,8 +34,8 @@ export default function AboutHero() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
           {stats.map((stat, index) => (
             <div key={index} className="relative">
-              <div className="bg-gray-800 rounded-2xl p-6 text-center border border-green-500/20">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+              <div className="rounded-2xl p-6 text-center border border-green-500/20">
+                <div className="text-3xl md:text-4xl font-semibold text-[#99e39e] mb-2">
                   {stat.number}
                 </div>
                 <div className="text-sm md:text-base text-gray-400">

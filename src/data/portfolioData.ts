@@ -126,7 +126,7 @@ export const portfolioData: PortfolioItem[] = [
     image: "/assets/portfolio/portfolio-8.jpeg",
     description: "Learning and educational platform with interactive modules and engaging content.",
     longDescription: "Lift Learn is an innovative educational platform designed to make learning engaging and effective. The app provides interactive learning modules, progress tracking, and personalized content delivery. Built specifically for iOS, it offers students and professionals a comprehensive learning experience with modern UI/UX design.",
-    category: "Education",
+    category: "Fitness",
     technologies: ["React Native", "iOS", "Swift", "Core Data", "AVFoundation"],
     features: [
       "Interactive learning modules",
@@ -145,7 +145,7 @@ export const portfolioData: PortfolioItem[] = [
       }
     ],
     status: "Live",
-    platforms: ["iOS"],
+    platforms: ["iOS" , "Android"],
     launchDate: "2024",
     teamSize: "2-3 developers",
     challenges: [
@@ -632,7 +632,7 @@ export const portfolioData: PortfolioItem[] = [
       }
     ],
     status: "Live",
-    platforms: ["Android"],
+    platforms: ["Android" , "IOS"],
     launchDate: "2023",
     teamSize: "2-3 developers",
     challenges: [

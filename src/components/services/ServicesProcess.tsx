@@ -1,6 +1,5 @@
-'use client';
-
-export default function ServicesProcess() {
+// --- New Service Process Component ---
+const ServicesProcess  = () => {
   const processSteps = [
     {
       step: "01",
@@ -24,75 +23,93 @@ export default function ServicesProcess() {
     }
   ];
 
+  // Custom style for the glow effect on the process nodes
+  const nodeGlowStyle = { 
+    boxShadow: '0 0 15px rgba(23, 195, 129, 0.8), 0 0 5px rgba(255, 255, 255, 0.4)' 
+  };
+
   return (
-    <section className="py-20 bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Our Process
-          </h2>
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            A proven methodology that delivers exceptional results through structured development phases
-          </p>
+    <section className="relative bg-black py-20 md:py-32 font-inter overflow-hidden border-t border-emerald-900/40">
+        {/* Subtle Background Glow */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+            <div 
+                className="w-[60rem] h-[60rem] bg-emerald-500/10 rounded-full blur-[100px] opacity-10"
+            ></div>
         </div>
 
-        {/* Process Timeline with Wavy Line - Hill Effect */}
-        <div className="relative min-h-[500px] lg:min-h-[600px]">
-          {/* Wavy Green Line - Desktop Only - Following Hill Pattern */}
-          <div className="hidden lg:block absolute inset-0 pointer-events-none">
-            <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none" className="overflow-visible">
-              <path
-                d="M 0 550 Q 300 500, 600 400 Q 900 300, 1200 250"
-                stroke="#17C381"
-                strokeWidth="4"
-                fill="none"
-                strokeLinecap="round"
-                vectorEffect="non-scaling-stroke"
-              />
-            </svg>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+                {/* Heading with the signature gradient color */}
+                <h2 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 mb-6">
+                    Our Process
+                </h2>
+                <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+                    A proven methodology that delivers exceptional results through structured development phases
+                </p>
+            </div>
 
-          {/* Process Steps - Hill Layout */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            {processSteps.map((step, index) => {
-              // Calculate vertical position for hill effect (bottom to top)
-              // Step 1 (index 0) at bottom, Step 4 (index 3) at top
-              const verticalOffsets = [
-                'lg:mt-[280px]',  // Step 1 - bottom (280px from top)
-                'lg:mt-[180px]',  // Step 2 - higher (180px from top)
-                'lg:mt-[180px]',  // Step 3 - higher (100px from top)
-                'lg:mt-0'         // Step 4 - top (0px from top)
-              ];
-              const offset = verticalOffsets[index];
+            {/* Process Timeline with Wavy Line - Hill Effect */}
+            <div className="relative min-h-[500px] lg:min-h-[600px] mt-12">
+                
+                {/* Wavy Green Line - Desktop Only - Following Hill Pattern */}
+                {/* <div className="hidden lg:block absolute inset-0 pointer-events-none">
+                    <svg width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none" className="overflow-visible">
+                        <path
+                            d="M 0 550 Q 300 500, 600 400 Q 900 300, 1200 250"
+                            stroke="#17C381"
+                            strokeWidth="4"
+                            fill="none"
+                            strokeLinecap="round"
+                            vectorEffect="non-scaling-stroke"
+                        />
+                    </svg>
+                </div> */}
 
-              return (
-                <div
-                  key={index}
-                  className={`relative text-center ${offset} transition-all duration-500`}
-                >
-                  {/* Large Grey Number Behind */}
-                  <div className="absolute -z-10 top-0 left-1/2 transform -translate-x-1/2 text-gray-800 text-7xl md:text-9xl font-bold opacity-20 select-none">
-                    {step.step}
-                  </div>
+                {/* Process Steps - Hill Layout */}
+                <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-6">
+                    {processSteps.map((step, index) => {
+                        // Calculate vertical position for hill effect (bottom to top)
+                        const verticalOffsets = [
+                            'lg:mt-[280px]',   // Step 1 - bottom
+                            'lg:mt-[180px]',   // Step 2 - higher
+                            'lg:mt-[180px]',   // Step 3 - higher
+                            'lg:mt-0'          // Step 4 - top
+                        ];
+                        const offset = verticalOffsets[index];
 
-                  {/* Green Circle Node */}
-                  <div className="relative z-10 flex justify-center mb-6 mt-4">
-                    <div className="w-16 h-16 bg-[#17C381] rounded-full flex items-center justify-center border-4 border-black shadow-lg">
-                      <span className="text-white font-bold text-lg">{step.step}</span>
-                    </div>
-                  </div>
-                  
-                  {/* Step Content */}
-                  <div className="relative z-10">
-                    <h3 className="text-xl font-semibold text-white mb-4">{step.title}</h3>
-                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">{step.description}</p>
-                  </div>
+                        return (
+                            <div
+                                key={index}
+                                className={`relative text-center ${offset} transition-all duration-500`}
+                            >
+                                {/* Large Grey Number Behind */}
+                                <div className="absolute -z-10 top-0 left-1/2 transform -translate-x-1/2 text-gray-800 text-7xl md:text-9xl font-bold opacity-20 select-none">
+                                    {step.step}
+                                </div>
+
+                                {/* Green Circle Node with Glow */}
+                                <div className="relative z-10 flex justify-center mb-6 mt-4">
+                                    <div 
+                                        className="w-16 h-16 bg-[#17C381] rounded-full flex items-center justify-center border-4 border-black shadow-lg"
+                                        style={nodeGlowStyle}
+                                    >
+                                        <span className="text-black font-extrabold text-lg">{step.step}</span>
+                                    </div>
+                                </div>
+                                
+                                {/* Step Content */}
+                                <div className="relative z-10">
+                                    <h3 className="text-xl font-semibold text-white mb-4">{step.title}</h3>
+                                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">{step.description}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
-              );
-            })}
-          </div>
+            </div>
         </div>
-      </div>
     </section>
   );
 }
+
+export default ServicesProcess 

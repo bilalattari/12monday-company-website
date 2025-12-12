@@ -7,8 +7,9 @@ export default function AboutCTA() {
     <section className="relative py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Build What's Next
+          <h2 className="text-6xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight 
+               bg-gradient-to-b from-white to-[#111111] bg-clip-text text-transparent">
+            Build <br /> What's Next
           </h2>
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed mb-8">
             From startups to enterprises, we engineer experiences, systems, and solutions that scale with your vision.

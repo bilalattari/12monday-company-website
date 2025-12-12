@@ -26,6 +26,8 @@ export default function About() {
       <AboutTools />
 
       <AboutValues />
+
+      
       <AboutCTA />
 
       <Footer />
