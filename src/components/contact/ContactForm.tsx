@@ -80,15 +80,15 @@ export default function ContactForm() {
             <div className="space-y-6 mb-8">
               <div className="flex items-start gap-4">
                 <Phone className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>+1 232 3456 789</span>
+                <span>+92 313 2933803</span>
               </div>
               <div className="flex items-start gap-4">
                 <Mail className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>email123@gmail.com</span>
+                <span>info@12monday.net</span>
               </div>
               <div className="flex items-start gap-4">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>123 Dartmouth Street, Boston, Massachusetts 02116, United States.</span>
+                <span>Dashityar Pride Apartment - Karachi Office 11</span>
               </div>
             </div>
 

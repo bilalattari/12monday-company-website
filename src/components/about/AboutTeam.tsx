@@ -9,7 +9,7 @@ export default function AboutTeam() {
       id: 1,
       name: "Bilal Attari",
       role: "Founder & CEO",
-      image: "/Bilal-Attari.jpg",
+      image: "/bilal_raza.webp",
       fallback: "BA"
     },
     {
@@ -19,20 +19,20 @@ export default function AboutTeam() {
       image: "/muhammad-ahmed.jpg",
       fallback: "MA"
     },
-    {
-      id: 3,
-      name: "Bilal Attari",
-      role: "Founder & CEO",
-      image: "/Bilal-Attari.jpg",
-      fallback: "BA"
-    },
-    {
-      id: 4 ,
-      name: "Muhammad Ahmed",
-      role: "Full Stack Developer",
-      image: "/muhammad-ahmed.jpg",
-      fallback: "MA"
-    },
+    // {
+    //   id: 3,
+    //   name: "Bilal Attari",
+    //   role: "Founder & CEO",
+    //   image: "/bilal_raza.webp",
+    //   fallback: "BA"
+    // },
+    // {
+    //   id: 4 ,
+    //   name: "Muhammad Ahmed",
+    //   role: "Full Stack Developer",
+    //   image: "/muhammad-ahmed.jpg",
+    //   fallback: "MA"
+    // },
   ];
 
   return (
