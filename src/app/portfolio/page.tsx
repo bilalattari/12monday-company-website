@@ -2,11 +2,9 @@ import { Metadata } from 'next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PortfolioHero from '@/components/portfolio/PortfolioHero';
-import PortfolioFilter from '@/components/portfolio/PortfolioFilter';
-import PortfolioGrid from '@/components/portfolio/PortfolioGrid';
-import PortfolioStats from '@/components/portfolio/PortfolioStats';
+import FeaturedWorks from '@/components/portfolio/FeaturedWorks';
+import MarketingObjectives from '@/components/portfolio/MarketingObjectives';
 import PortfolioCTA from '@/components/portfolio/PortfolioCTA';
-import { portfolioData } from '@/data/portfolioData';
 
 export const metadata: Metadata = {
   title: 'Portfolio - Mobile Apps, Web Applications & AI Solutions | Twelve Monday',
@@ -53,54 +51,19 @@ export const metadata: Metadata = {
   }
 };
 
-// Get unique categories for filtering
-const categories = Array.from(new Set(portfolioData.map(item => item.category)));
-
-// Get unique platforms for filtering
-const platforms = Array.from(new Set(portfolioData.flatMap(item => item.platforms)));
-
-// Calculate stats
-const totalProjects = 102;
-// const liveProjects = portfolioData.filter(item => item.status === 'Live').length;
-const liveProjects = 90;
-// const mobileApps = portfolioData.filter(item => item.platforms.includes('iOS') || item.platforms.includes('Android')).length;
-const mobileApps = 41;
-// const webApps = portfolioData.filter(item => item.platforms.includes('Web')).length;
-const webApps = 24;
-
-const stats = {
-  totalProjects,
-  liveProjects,
-  mobileApps,
-  webApps,
-  categories: categories.length,
-  platforms: platforms.length
-};
-
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-black overflow-x-hidden">
       <Header />
       
       {/* Hero Section */}
-      <PortfolioHero 
-        totalProjects={totalProjects}
-        liveProjects={liveProjects}
-        mobileApps={mobileApps}
-        webApps={webApps}
-      />
+      <PortfolioHero />
 
-      {/* Stats Section */}
-      <PortfolioStats stats={stats} />
+      {/* Featured Works Section */}
+      <FeaturedWorks />
 
-      {/* Filter Section */}
-      <PortfolioFilter 
-        categories={categories}
-        platforms={platforms}
-      />
-
-      {/* Portfolio Grid */}
-      <PortfolioGrid projects={portfolioData} />
+      {/* Marketing Objectives Section */}
+      <MarketingObjectives />
 
       {/* CTA Section */}
       <PortfolioCTA />

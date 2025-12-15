@@ -21,7 +21,9 @@ import {
   TrendingUp,
   Sparkles,
   Brain,
-  Server
+  Server,
+  Star,
+  WandSparkles
 } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -32,6 +34,12 @@ import {
   Mail,
   CheckCircle,
 } from 'lucide-react';
+import StatsSection from '@/components/home/StatsSection';
+import ClientResults from '@/components/home/ClientResult';
+import BuildProductCTA from '@/components/home/BuildProductCTA';
+import HeroSection from '@/components/home/Hero';
+import WhyChooseUs from '@/components/home/WhyChooseUs';
+import MarketingObjectives from '@/components/portfolio/MarketingObjectives';
 
 export const metadata: Metadata = {
   title: {
@@ -248,7 +256,7 @@ function App() {
     }
   ];
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
@@ -292,135 +300,56 @@ function App() {
       {/* Navigation */}
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-          <div className="absolute inset-0">
-            {/* Floating Elements */}
-            <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-400/20 to-emerald-400/20 rounded-full blur-3xl animate-pulse delay-500"></div>
-          </div>
 
-          {/* Grid Pattern */}
-          <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        </div>
+      <HeroSection />
 
-        {/* Floating Tech Icons */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 animate-float">
-            <div className="bg-white p-3 rounded-xl shadow-sm">
-              <Code className="w-6 h-6 text-[#02654F]" />
-            </div>
-          </div>
-          <div className="absolute top-40 right-20 animate-float delay-1000">
-            <div className="bg-white p-3 rounded-xl shadow-sm">
-              <Brain className="w-6 h-6 text-[#17C381]" />
-            </div>
-          </div>
-          <div className="absolute bottom-40 left-20 animate-float delay-500">
-            <div className="bg-white p-3 rounded-xl shadow-sm">
-              <Smartphone className="w-6 h-6 text-green-600" />
-            </div>
-          </div>
-          <div className="absolute bottom-20 right-10 animate-float delay-1500">
-            <div className="bg-white p-3 rounded-xl shadow-sm">
-              <Database className="w-6 h-6 text-orange-600" />
-            </div>
-          </div>
-        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fadeInUp">
-            <div className="inline-flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 mb-8">
-              <Sparkles className="w-4 h-4 text-[#02654F] mr-2" />
-              <span className="text-sm font-medium text-gray-700">Your AI-First Development Partner</span>
-            </div>
 
-            <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Building Tomorrow&apos;s
-              <span className="block bg-gradient-to-r from-[#02654F] via-[#17C381] to-pink-600 bg-clip-text text-transparent">
-                Digital Solutions
-              </span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-              We craft exceptional web applications, mobile apps, and AI-powered solutions that drive business growth and user engagement.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <button className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center">
-                Start Your Project
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:border-[#02654F] hover:text-[#02654F] transition-all flex items-center justify-center">
-                <Play className="w-5 h-5 mr-2" />
-                View Our Work
-              </button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-              {stats.map((stat, index) => (
-                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 hover:shadow-sm transition-all">
-                  <div className="flex items-center justify-center mb-2 text-[#02654F]">
-                    {stat.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-gray-900">{stat.number}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      <section>
+        <StatsSection />
       </section>
+
+
+      <WhyChooseUs />
 
 
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="bg-background mt-6" style={{
+        marginTop: "6rem"
+      }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Our <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">Services</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-white max-w-3xl mx-auto">
               We provide comprehensive digital solutions to transform your ideas into successful products
             </p>
           </div>
 
 
           {/* Service Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(0, 6).map((service, _) => (
               <div
                 key={service.id}
-                className="group bg-white p-8 rounded-3xl shadow-sm hover:shadow-sm transition-all duration-300 transform hover:-translate-y-2"
+                className="group card-gradient-border py-4 px-6 shadow-sm hover:shadow-sm transition-all duration-300 transform hover:-translate-y-2"
               >
-                <div className={`inline-flex p-4 rounded-2xl ${service.bgColor} ${service.textColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`inline-flex p-2 rounded-2xl ${service.bgColor} ${service.textColor} mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {service.technologies.slice(0, 2).map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+                <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
+                <p className="text-white mb-6">{service.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio" className="relative py-20 bg-white">
+      {/* Our Work Section */}
+            <MarketingObjectives />
+      {/* <section id="portfolio" className="relative py-20 bg-background">
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[100vw] pointer-events-none">
           <div className="absolute -top-24 left-0 w-80 h-80 bg-gradient-to-tr from-[#b1f0e2] to-transparent rounded-full blur-3xl opacity-60"></div>
           <div className="absolute -bottom-24 right-0 w-96 h-96 bg-gradient-to-bl from-[#86efd8] to-transparent rounded-full blur-3xl opacity-60"></div>
@@ -428,8 +357,8 @@ function App() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-3">Our Work</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">A selection of products we’ve designed, engineered, and shipped.</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">Our Work</h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">A selection of products we’ve designed, engineered, and shipped.</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -437,7 +366,7 @@ function App() {
               <Link
                 key={item.id}
                 href={`/portfolio/${item.slug}`}
-                className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm hover:shadow-sm transition-all duration-300"
+                className="group relative overflow-hidden card-gradient-border shadow-sm hover:shadow-sm transition-all duration-300"
               >
                 <div className="relative h-56 w-full overflow-hidden">
                   <Image src={item.image} alt={item.name} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
@@ -451,8 +380,8 @@ function App() {
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-[#02654F] transition-colors">{item.name}</h3>
-                  <p className="text-sm text-gray-600 line-clamp-2">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-white mb-1 group-hover:text-[#02654F] transition-colors">{item.name}</h3>
+                  <p className="text-sm text-gray-400 line-clamp-2">{item.description}</p>
                   <div className="mt-4 flex items-center text-[#02654F] font-medium">
                     View case study
                     <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="M12 5l7 7-7 7" /></svg>
@@ -469,16 +398,16 @@ function App() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Technology Stack */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Technology <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">Stack</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               We use cutting-edge technologies to build scalable and robust solutions
             </p>
           </div>
@@ -487,127 +416,90 @@ function App() {
             {technologies.map((tech) => (
               <div
                 key={tech.key}
-                className="bg-gray-50 p-6 rounded-2xl text-center hover:bg-emerald-50 hover:shadow-sm transition-all duration-300 transform hover:-translate-y-1"
+                className="bg-white/5 p-6 rounded-2xl text-center hover:bg-white/10 hover:shadow-sm transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="font-semibold text-gray-900 mb-1">{tech.name}</div>
-                <div className="text-sm text-gray-600">{tech.category}</div>
+                <div className="font-semibold text-white mb-1">{tech.name}</div>
+                <div className="text-sm text-gray-400">{tech.category}</div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Process Section */}
-      <section id="process" className="py-20 bg-[#b1f0e2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Our <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">Process</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A proven methodology that delivers exceptional results
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 relative"
-              >
-                <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] text-white text-2xl font-bold w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{step.title}</h3>
-                <p className="text-gray-600 mb-4 leading-relaxed">{step.description}</p>
-                <div className="text-sm text-[#02654F] font-medium">{step.duration}</div>
-
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-12 -right-4 w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-[#02654F]" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <ServicesTestimonials />
+      {/* <ServicesTestimonials /> */}
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl font-bold text-white mb-6">
               Why Choose <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">Us?</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               We combine expertise, innovation, and dedication to deliver exceptional results
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-8">
-              <div className="bg-emerald-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Zap className="w-10 h-10 text-[#02654F]" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Lightning Fast</h3>
-              <p className="text-gray-600">Optimized performance and quick delivery times</p>
+              <h3 className="text-xl font-semibold text-white mb-4">Lightning Fast</h3>
+              <p className="text-gray-400">Optimized performance and quick delivery times</p>
             </div>
 
-            <div className="text-center p-8">
-              <div className="bg-green-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+              <div className=" w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-10 h-10 text-green-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Secure & Reliable</h3>
-              <p className="text-gray-600">Enterprise-grade security and reliability</p>
+              <h3 className="text-xl font-semibold text-white mb-4">Secure & Reliable</h3>
+              <p className="text-gray-400">Enterprise-grade security and reliability</p>
             </div>
 
-            <div className="text-center p-8">
-              <div className="bg-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Globe className="w-10 h-10 text-[#17C381]" />
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+              <div className=" w-15 h-15 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Globe className="w-10 h-9 text-[#17C381]" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Global Scale</h3>
-              <p className="text-gray-600">Built to scale worldwide with millions of users</p>
+              <h3 className="text-xl font-semibold text-white mb-4">Global Scale</h3>
+              <p className="text-gray-400">Built to scale worldwide with millions of users</p>
             </div>
 
-            <div className="text-center p-8">
-              <div className="bg-orange-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Target className="w-10 h-10 text-orange-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Goal-Oriented</h3>
-              <p className="text-gray-600">Focused on achieving your business objectives</p>
+              <h3 className="text-xl font-semibold text-white mb-4">Goal-Oriented</h3>
+              <p className="text-gray-400">Focused on achieving your business objectives</p>
             </div>
 
-            <div className="text-center p-8">
-              <div className="bg-teal-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Users className="w-10 h-10 text-teal-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Expert Team</h3>
-              <p className="text-gray-600">Experienced professionals dedicated to your success</p>
+              <h3 className="text-xl font-semibold text-white mb-4">Expert Team</h3>
+              <p className="text-gray-400">Experienced professionals dedicated to your success</p>
             </div>
 
-            <div className="text-center p-8">
-              <div className="bg-pink-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="text-center p-4 bg-gradient-to-br from-[#02654F] to-black rounded-2xl">
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="w-10 h-10 text-pink-600" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Growth Focused</h3>
-              <p className="text-gray-600">Solutions designed to grow with your business</p>
+              <h3 className="text-xl font-semibold text-white mb-4">Growth Focused</h3>
+              <p className="text-gray-400">Solutions designed to grow with your business</p>
             </div>
           </div>
         </div>
-      </section>
-      
-      <section className="py-20 bg-[#02654F] text-white relative overflow-hidden">
-        <div className="absolute inset-0">
+      </section> */}
+      {/* Ready to build */}
+      {/* <section className="py-20 bg-background text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-black">
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-48 -translate-y-48"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-48 translate-y-48"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full"></div>
         </div>
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
+          <div className=" p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
               Ready to Build Your
               <span className="block">Next Big Project?</span>
@@ -617,10 +509,9 @@ function App() {
               innovative ideas to life with cutting-edge technology and expert development.
             </p>
 
-            {/* Features Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm rounded-xl p-4">
+                <div key={index} className="flex items-center space-x-3 bg-gradient-to-br from-[#02654F] to-black backdrop-blur-sm rounded-xl p-4">
                   <CheckCircle className="w-5 h-5 text-white flex-shrink-0" />
                   <span className="text-white font-medium">{feature}</span>
                 </div>
@@ -630,7 +521,7 @@ function App() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link
                 href="/contact"
-                className="bg-white text-[#02654F] px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center"
+                className="bg-white text-black px-8 py-4 rounded-full font-semibold hover:shadow-sm transition-all transform hover:scale-105 flex items-center justify-center"
               >
                 Start Your Project
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -644,7 +535,6 @@ function App() {
               </Link>
             </div>
 
-            {/* Contact Information */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               <div className="text-center">
                 <div className="bg-white/10 backdrop-blur-sm w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -670,15 +560,11 @@ function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section id="faq" className="py-16 md:py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
-          <p className="mt-2 text-lg text-gray-500">Everything you need to know about our process and services.</p>
-        </div>
-        <FAQ items={faqData} />
-      </section>
+      <ClientResults />
+
+      <BuildProductCTA />
 
 
       {/* Footer */}

@@ -3,10 +3,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServicesGrid from '@/components/services/ServicesGrid';
+import ServicesIdeasCTA from '@/components/services/ServicesIdeasCTA';
 import ServicesProcess from '@/components/services/ServicesProcess';
-import ServicesTestimonials from '@/components/services/ServicesTestimonials';
-import ServicesFAQ from '@/components/services/ServicesFAQ';
-import ServicesCTA from '@/components/services/ServicesCTA';
 
 export const metadata: Metadata = {
   title: 'Professional Development Services - Mobile Apps, Web Applications & AI Solutions | Twelve Monday',
@@ -68,44 +66,22 @@ export const metadata: Metadata = {
   }
 };
 
-// Service statistics
-const serviceStats = {
-  totalServices: 6,
-  totalProjects: 50,
-  clientSatisfaction: 100,
-  yearsExperience: 5
-};
-
 export default function Services() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-black overflow-x-hidden">
       <Header />
       
       {/* Hero Section */}
-      <ServicesHero 
-        totalServices={serviceStats.totalServices}
-        totalProjects={serviceStats.totalProjects}
-        clientSatisfaction={serviceStats.clientSatisfaction}
-        yearsExperience={serviceStats.yearsExperience}
-      />
+      <ServicesHero />
 
-      {/* Services Grid */}
+      {/* Services Grid - What we Offer */}
       <ServicesGrid />
+
+      {/* Ideas CTA Section */}
+      <ServicesIdeasCTA />
 
       {/* Process Section */}
       <ServicesProcess />
-
-      {/* Testimonials Section */}
-      <ServicesTestimonials />
-
-      {/* Pricing Section */}
-      {/* <ServicesPricing /> */}
-
-      {/* FAQ Section */}
-      <ServicesFAQ />
-
-      {/* CTA Section */}
-      <ServicesCTA />
 
       <Footer />
     </div>
