@@ -91,7 +91,7 @@ const HeroSection = () => {
         {/* NOTE: Since this environment cannot load local files, we use the specified path '/vector.png'
             and comment it for clarity. */}
         <img 
-          src="/vector.png" 
+          src="/Vector.png" 
           alt="Vector Background Overlay" 
           className="absolute bottom-0 left-0 w-full h-auto opacity-70 z-0 object-cover"
         />
