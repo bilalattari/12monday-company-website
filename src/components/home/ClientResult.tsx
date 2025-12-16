@@ -6,28 +6,28 @@ export default function ClientResults() {
       text: "NexaAI has revolutionized our operations—in just weeks, we slashed manual workload by 60% and gained clarity into performance metrics we never had before.",
       name: "Sarah Johnson",
       role: "COO, TechFlow Innovations",
-      avatar: "/avatars/avatar1.png",
+      avatar: "/AV1.webp",
     },
     {
       title: "Unmatched Insight from NexaAI’s Analytics Dashboard",
       text: "With NexaAI, we moved from gut-feels to data-driven decisions. The realtime insights uncovered new growth channels, and our campaign ROI improved by 45% in the first month.",
       name: "David Lee",
       role: "Head of Marketing, BrightWave Media",
-      avatar: "/avatars/avatar2.png",
+      avatar: "/AV2.avif",
     },
     {
       title: "Seamless Integration, Instant Results",
       text: "Integrating NexaAI into our legacy systems was effortless. Within days we automated critical workflows, reduced errors, and freed our team to focus on strategic initiatives.",
       name: "Priya Kumar",
       role: "VP of Operations, Meridian Financial",
-      avatar: "/avatars/avatar3.png",
+      avatar: "/AV3.jpg",
     },
     {
       title: "Scalable AI That Grows with Us",
       text: "As a fast-growing startup, we needed an AI platform that could scale. NexaAI’s modular system expanded alongside our business—delivering enterprise-grade features.",
       name: "Carlos Ramirez",
       role: "CEO, NovaSolutions",
-      avatar: "/avatars/avatar4.png",
+      avatar: "/AV5.jpg",
     },
   ];
 
