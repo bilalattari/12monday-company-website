@@ -9,7 +9,6 @@ import ServiceDetailPortfolio from '@/components/services/serviceDetail/ServiceD
 import ServiceDetailFAQ from '@/components/services/serviceDetail/ServiceDetailFAQ';
 import ServiceDetailCTA from '@/components/services/serviceDetail/ServiceDetailCTA';
 import { portfolioData } from '@/data/portfolioData';
-import React from 'react';
 
 // Service data
 const servicesData = {
@@ -451,9 +450,7 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each service
-export async function generateMetadata(props: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  // Unwrap the params promise
-  const params = await props.params;
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const service = servicesData[params.slug as keyof typeof servicesData];
   
   if (!service) {
@@ -508,9 +505,7 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   };
 }
 
-export default async function ServiceDetailPage(props: { params: Promise<{ slug: string }> }) {
-  // Unwrap the params promise
-  const params = await props.params;
+export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
   const service = servicesData[params.slug as keyof typeof servicesData];
 
   if (!service) {
@@ -555,16 +550,16 @@ export default async function ServiceDetailPage(props: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
       />
-      <div className="min-h-screen bg-black overflow-x-hidden">
+      <div className="min-h-screen bg-white overflow-x-hidden">
         <Header />
         
         <ServiceDetailHero service={service} />
         <ServiceDetailFeatures service={service} />
         <ServiceDetailProcess service={service} />
-        {/* <ServiceDetailPortfolio service={service} /> */}
+        <ServiceDetailPortfolio service={service} />
         {/* <ServiceDetailPricing service={service} /> */}
         <ServiceDetailFAQ service={service} />
-        {/* <ServiceDetailCTA service={service} /> */}
+        <ServiceDetailCTA service={service} />
 
         <Footer />
       </div>

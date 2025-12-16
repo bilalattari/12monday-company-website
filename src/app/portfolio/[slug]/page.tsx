@@ -18,11 +18,12 @@ import {
   Zap
 } from 'lucide-react';
 import InterestedSection from '@/components/portfolio/IntrestedSecton';
+import React from 'react';
 
 interface PortfolioDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams() {
@@ -31,7 +32,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PortfolioDetailPageProps): Promise<Metadata> {
+export async function generateMetadata(props: PortfolioDetailPageProps): Promise<Metadata> {
+  // Unwrap the params promise
+  const params = await props.params;
   const project = portfolioData.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -85,7 +88,9 @@ export async function generateMetadata({ params }: PortfolioDetailPageProps): Pr
   };
 }
 
-export default function PortfolioDetailPage({ params }: PortfolioDetailPageProps) {
+export default async function PortfolioDetailPage(props: PortfolioDetailPageProps) {
+  // Unwrap the params promise
+  const params = await props.params;
   const project = portfolioData.find((p) => p.slug === params.slug);
 
   if (!project) {
@@ -220,16 +225,11 @@ export default function PortfolioDetailPage({ params }: PortfolioDetailPageProps
 
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
             {/* Project Overview Card */}
             <div className="bg-gradient-to-br from-[#02654F] to-[#17C381] text-white rounded-3xl p-12 shadow-xl">
               <h2 className="text-3xl font-bold mb-6">Project Overview</h2>
-
               <p className="text-lg leading-relaxed max-w-4xl">
-                Seerat ki Dunya is a comprehensive educational application designed to help
-                users learn about the life, teachings, and noble character of Prophet Muhammad (PBUH).
-                The app features interactive Seerah courses, maps of major events, Shama'il (traits and habits),
-                daily Sunnah tasks, and Durood reminders, making it a valuable resource for Islamic education.
+                {project.longDescription}
               </p>
             </div>
           </div>
@@ -326,7 +326,7 @@ export default function PortfolioDetailPage({ params }: PortfolioDetailPageProps
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {portfolioData
                 // .filter((p) => p.id !== project.id && p.category === project.category)
-                .slice(0, 3)
+                .slice(1, 3)
                 .map((relatedProject) => (
                   <PortfolioCard key={relatedProject.id} project={relatedProject} variant="grid" />
                 ))}

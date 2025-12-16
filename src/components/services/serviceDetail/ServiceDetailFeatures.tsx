@@ -52,13 +52,13 @@ export default function ServiceDetailFeatures({ service }: ServiceDetailFeatures
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6">
             What You Get with Our <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">{service.title}</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Comprehensive features and capabilities designed to deliver exceptional results for your project
           </p>
         </div>
@@ -66,18 +66,18 @@ export default function ServiceDetailFeatures({ service }: ServiceDetailFeatures
         {/* Feature Categories */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {featureCategories.map((category, index) => (
-            <div key={index} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-sm transition-all duration-300">
+            <div key={index} className="bg-gradient-to-r from-[#02654F] to-[#17C381] rounded-3xl p-8 shadow-sm hover:shadow-sm transition-all duration-300">
               <div className={`inline-flex p-4 rounded-2xl ${category.bgColor} ${category.textColor} mb-6`}>
                 {category.icon}
               </div>
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">{category.title}</h3>
+              <h3 className="text-xl font-semibold text-gray-300 mb-6">{category.title}</h3>
               
               <ul className="space-y-4">
                 {category.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start">
-                    <CheckCircle className="w-5 h-5 text-[#02654F] mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{feature}</span>
+                    <CheckCircle className="w-5 h-5 text-white mr-3 flex-shrink-0 mt-0.5" />
+                    <span className="text-white">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -86,7 +86,7 @@ export default function ServiceDetailFeatures({ service }: ServiceDetailFeatures
         </div>
 
         {/* Technologies Section */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm">
+        <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] rounded-3xl p-8 md:p-12 shadow-sm">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
               Technologies & Tools
@@ -111,32 +111,32 @@ export default function ServiceDetailFeatures({ service }: ServiceDetailFeatures
             <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Award className="w-8 h-8 text-white" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Proven Expertise</h4>
-            <p className="text-gray-600 text-sm">Years of experience delivering successful projects</p>
+            <h4 className="text-lg font-semibold text-gray-300 mb-2">Proven Expertise</h4>
+            <p className="text-gray-400 text-sm">Years of experience delivering successful projects</p>
           </div>
 
           <div className="text-center">
             <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Zap className="w-8 h-8 text-white" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Fast Delivery</h4>
-            <p className="text-gray-600 text-sm">Efficient processes for quick project completion</p>
+            <h4 className="text-lg font-semibold text-gray-300 mb-2">Fast Delivery</h4>
+            <p className="text-gray-400 text-sm">Efficient processes for quick project completion</p>
           </div>
 
           <div className="text-center">
             <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Shield className="w-8 h-8 text-white" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Quality Assured</h4>
-            <p className="text-gray-600 text-sm">Rigorous testing and quality control processes</p>
+            <h4 className="text-lg font-semibold text-gray-300 mb-2">Quality Assured</h4>
+            <p className="text-gray-400 text-sm">Rigorous testing and quality control processes</p>
           </div>
 
           <div className="text-center">
             <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Target className="w-8 h-8 text-white" />
             </div>
-            <h4 className="text-lg font-semibold text-gray-900 mb-2">Custom Solutions</h4>
-            <p className="text-gray-600 text-sm">Tailored to your specific business needs</p>
+            <h4 className="text-lg font-semibold text-gray-300 mb-2">Custom Solutions</h4>
+            <p className="text-gray-400 text-sm">Tailored to your specific business needs</p>
           </div>
         </div>
       </div>

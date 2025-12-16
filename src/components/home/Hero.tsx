@@ -2,6 +2,15 @@
 import React from 'react';
 import { ArrowRight, Star, WandSparkles } from 'lucide-react';
 
+interface FloatingStarProps {
+  top?: string;
+  right?: string;
+  bottom?: string;
+  left?: string;
+  size: number;
+  delay: number;
+}
+
 // The main component, HeroSection, which renders the professionally designed banner.
 const HeroSection = () => {
 
@@ -46,7 +55,7 @@ const HeroSection = () => {
 
 
   // Helper component for the floating stars/icons
-  const FloatingStar = ({ top, right, bottom, left, size, delay }) => (
+  const FloatingStar = ({ top, right, bottom, left, size, delay }: FloatingStarProps) => (
     <div 
       className={`absolute animate-float-slow opacity-80`}
       style={{ top, right, bottom, left, animationDelay: `${delay}ms` }}
@@ -113,7 +122,7 @@ const HeroSection = () => {
 
           {/* Description Paragraph */}
           <p className="text-md sm:text-lg text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
-            We turn early-stage ideas into real products using a rapid, structured workflow. Get a polished MVP that’s ready to test, pitch, or scale — all within just 15 days.
+            We turn early-stage ideas into real products using a rapid, structured workflow. Get a polished MVP that's ready to test, pitch, or scale — all within just 15 days.
           </p>
 
           {/* Dual Call to Action Buttons */}

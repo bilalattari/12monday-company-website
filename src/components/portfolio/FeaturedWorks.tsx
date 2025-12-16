@@ -89,7 +89,7 @@ export default function FeaturedWorks() {
                     <div className="aspect-square w-full rounded-2xl overflow-hidden">
                       <Image
                         src={project?.image || "/assets/portfolio/placeholder-square.jpg"}
-                        alt={project?.name}
+                        alt={project?.name || "Project image"}
                         width={800}
                         height={800}
                         className="object-cover w-full h-full"
@@ -106,4 +106,3 @@ export default function FeaturedWorks() {
     </section>
   );
 }
-

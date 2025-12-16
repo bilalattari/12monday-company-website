@@ -14,10 +14,31 @@ export default function AboutTeam() {
     },
     {
       id: 2,
+      name: "Muhammad Hussain",
+      role: "Founder & CEO",
+      image: "/hussain.jpg",
+      fallback: "MH"
+    },
+    {
+      id: 3,
       name: "Muhammad Ahmed",
       role: "Full Stack Developer",
       image: "/muhammad-ahmed.jpg",
       fallback: "MA"
+    },
+    {
+      id: 4,
+      name: "Muhammad Ibrahim",
+      role: "Project Manager",
+      image: "/ibrahim-khan.jpg",
+      fallback: "IB"
+    },
+    {
+      id: 4,
+      name: "Samar Raza",
+      role: "Full Stack Developer",
+      image: "/samar-raza.jpg",
+      fallback: "SR"
     },
     // {
     //   id: 3,
@@ -110,14 +131,14 @@ export default function AboutTeam() {
                     </p>
 
                     {/* Social Icons */}
-                    <div className="flex gap-3 justify-center">
+                    {/* <div className="flex gap-3 justify-center">
                       <button className="text-gray-400 hover:text-green-500/20 transition-colors  cursor-pointer">
                         <Linkedin className="w-5 h-5" />
                       </button>
                       <button className="text-gray-400 hover:text-green-500/20 transition-colors  cursor-pointer">
                         <Mail className="w-5 h-5" />
                       </button>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

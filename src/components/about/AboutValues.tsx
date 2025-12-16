@@ -2,7 +2,14 @@
 import React from "react";
 import { Star, Lightbulb, Handshake, CheckCircle } from "lucide-react";
 
-const ValueCard = ({ icon: Icon, title, description, tall }) => {
+interface ValueCardProps {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  description: string;
+  tall?: boolean;
+}
+
+const ValueCard = ({ icon: Icon, title, description, tall }: ValueCardProps) => {
   return (
     <div
       className={`

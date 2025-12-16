@@ -43,21 +43,9 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-white to-teal-50">
-        <div className="absolute inset-0">
-          {/* Floating Elements */}
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-cyan-400/20 to-emerald-400/20 rounded-full blur-3xl animate-pulse delay-500"></div>
-        </div>
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      </div>
 
       {/* Floating Tech Icons */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 animate-float">
           <div className="bg-white p-3 rounded-xl shadow-sm">
             <IconComponent className="w-6 h-6 text-[#02654F]" />
@@ -78,7 +66,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             <Server className="w-6 h-6 text-orange-600" />
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -89,14 +77,14 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
               <span className="text-sm font-medium text-gray-700">{service.title} Services</span>
             </div>
             
-            <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-2xl md:text-4xl font-bold text-gray-200 mb-6 leading-tight">
               Professional
               <span className="block bg-gradient-to-r from-[#02654F] via-[#17C381] to-pink-600 bg-clip-text text-transparent">
                 {service.title}
               </span>
             </h1>
             
-            <p className="text-md text-gray-600 mb-8 leading-relaxed">
+            <p className="text-md text-white mb-8 leading-relaxed">
               {service.longDescription}
             </p>
 
@@ -104,8 +92,8 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
               {service.features.slice(0, 6).map((feature, index) => (
                 <div key={index} className="flex items-center space-x-2">
-                  <CheckCircle className="w-5 h-5 text-[#02654F] flex-shrink-0" />
-                  <span className="text-gray-700 font-medium">{feature}</span>
+                  <CheckCircle className="w-5 h-5 text-[#13b57a] flex-shrink-0" />
+                  <span className="text-gray-100 font-medium">{feature}</span>
                 </div>
               ))}
             </div>
@@ -120,7 +108,7 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
               </Link>
               <Link
                 href="#pricing"
-                className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold hover:border-[#02654F] hover:text-[#02654F] transition-all flex items-center justify-center"
+                className=" text-[#13b57a] border px-8 py-4 rounded-full font-semibold hover:border-[#13b57a] hover:text-[#13b57a] transition-all flex items-center justify-center"
               >
                 View Pricing
               </Link>
@@ -129,34 +117,34 @@ export default function ServiceDetailHero({ service }: ServiceDetailHeroProps) {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#02654F] mb-2">50+</div>
-                <div className="text-sm text-gray-600">Projects Delivered</div>
+                <div className="text-3xl font-bold text-[#13b57a] mb-2">93+</div>
+                <div className="text-sm text-gray-300">Projects Delivered</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#17C381] mb-2">100%</div>
-                <div className="text-sm text-gray-600">Client Satisfaction</div>
+                <div className="text-sm text-gray-300">Client Satisfaction</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-pink-600 mb-2">24/7</div>
-                <div className="text-sm text-gray-600">Support Available</div>
+                <div className="text-sm text-gray-300">Support Available</div>
               </div>
             </div>
           </div>
 
           {/* Right Column - Visual */}
           <div className="relative">
-            <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+            <div className=" rounded-3xl p-8 shadow-sm border border-gray-100">
               <div className="text-center mb-8">
                 <div className="bg-gradient-to-r from-[#02654F] to-[#17C381] w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <IconComponent className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
+                <h3 className="text-2xl font-bold text-gray-100 mb-4">{service.title}</h3>
+                <p className="text-[#13b57a]">{service.description}</p>
               </div>
 
               {/* Technologies */}
               <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Technologies We Use</h4>
+                <h4 className="text-lg font-semibold text-white mb-4">Technologies We Use</h4>
                 <div className="flex flex-wrap gap-2">
                   {service.technologies.slice(0, 8).map((tech, index) => (
                     <span 

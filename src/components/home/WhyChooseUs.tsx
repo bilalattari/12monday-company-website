@@ -2,6 +2,13 @@
 import React from 'react';
 import { ArrowRight, Star, WandSparkles, Zap, Shield, Users } from 'lucide-react';
 
+interface FeatureItemProps {
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  colorClass: string;
+  shadowClass: string;
+}
+
 // The main component, WhyChooseUs, which renders the professionally designed banner.
 const WhyChooseUs = () => {
 
@@ -41,7 +48,7 @@ const WhyChooseUs = () => {
  
   
   // Helper component for the feature list items
-  const FeatureItem = ({ icon: Icon, title, colorClass, shadowClass }) => (
+  const FeatureItem = ({ icon: Icon, title, colorClass, shadowClass }: FeatureItemProps) => (
     <div className="pt-2 flex items-start gap-4 hover:bg-white/5 transition-colors p-3 rounded-lg">
       <div 
         className={`p-3 rounded-xl ${colorClass} flex-shrink-0`}

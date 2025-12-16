@@ -33,13 +33,13 @@ export default function ServiceDetailPortfolio({ service }: ServiceDetailPortfol
   }
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-bold text-gray-300 mb-6">
             Related <span className="bg-gradient-to-r from-[#02654F] to-[#17C381] bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Explore some of our recent {service.title} projects and see how we&apos;ve helped clients achieve their goals
           </p>
         </div>
