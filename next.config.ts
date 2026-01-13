@@ -30,7 +30,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
