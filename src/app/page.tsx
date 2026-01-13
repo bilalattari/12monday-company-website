@@ -21,36 +21,36 @@ import {
 import { AnimatePresence } from 'framer-motion';
 
 const TopBar = () => (
-  <div className="bg-[#04644A] text-white hidden md:block">
-    <div className="container mx-auto flex justify-between items-center relative overflow-hidden h-[50px]">
-      <div className="flex items-center space-x-8 text-[14px] font-medium py-2">
+  <div className="bg-[#04644A] text-white hidden md:block border-b border-white/10">
+    <div className="container mx-auto p-0 md:p-2 md:p-10 flex justify-between items-center relative h-[50px] !py-0">
+      <div className="flex items-center space-x-8 text-[14px] font-medium h-full">
         <div className="flex items-center space-x-2.5 hover:text-[#18C77E] transition-colors cursor-pointer">
-          <Phone size={16} fill="currentColor" strokeWidth={0} />
+          <Phone size={14} fill="currentColor" strokeWidth={0} />
           <a href='tel:03132933803'>03132933803</a>
         </div>
         <div className="flex items-center space-x-2.5 hover:text-[#18C77E] transition-colors cursor-pointer">
-          <Mail size={16} fill="currentColor" strokeWidth={0} />
+          <Mail size={14} fill="currentColor" strokeWidth={0} />
           <a href='mailto:twelvemonday12@gmail.com'>twelvemonday12@gmail.com</a>
         </div>
         <div className="flex items-center space-x-2.5 hover:text-[#18C77E] transition-colors cursor-pointer">
-          <MapPin size={16} fill="currentColor" strokeWidth={0} />
-          <span>Dashityar Pride Apartment - Karachi Office 11</span>
+          <MapPin size={14} fill="currentColor" strokeWidth={0} />
+          <span>Karachi, Pakistan</span>
         </div>
       </div>
 
       <div className="flex items-center h-full">
-        <div className="bg-white h-full px-14 flex items-center space-x-6 ml-auto relative" style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}>
+        <div className="bg-white h-full px-10 lg:px-14 flex items-center space-x-6 relative" style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}>
           <Link href="https://www.linkedin.com/company/twelve-monday-technologies/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
-            <Linkedin size={20} fill="currentColor" strokeWidth={0} />
+            <Linkedin size={18} fill="currentColor" strokeWidth={0} />
           </Link>
           <Link href="#" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
-            <Instagram size={20} />
+            <Instagram size={18} />
           </Link>
           <Link href="https://www.facebook.com/people/Twelve-Monday-Technologies/61585959862216/" target="_blank" rel="noopener noreferrer" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
-            <Facebook size={20} fill="currentColor" strokeWidth={0} />
+            <Facebook size={18} fill="currentColor" strokeWidth={0} />
           </Link>
           <Link href="https://github.com/twelveMonday" target="_blank" rel="noopener noreferrer" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
-            <Github size={20} fill="currentColor" strokeWidth={0} />
+            <Github size={18} fill="currentColor" strokeWidth={0} />
           </Link>
         </div>
       </div>
@@ -62,35 +62,36 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white sticky top-0 z-50 py-4">
-      <div className="container mx-auto px-4 md:px-0">
-        <div className="flex justify-between items-center h-20">
-          <Link href="#" className="flex items-center transform hover:scale-105 transition-transform">
-            <Image src="/logo.png" alt="12Monday" width={160} height={46} className="object-contain w-32 md:w-40" />
+    <nav className="bg-white sticky top-0 z-50 border-b border-gray-50">
+      <div className="container mx-auto !py-0">
+        <div className="flex justify-between items-center h-20 md:h-24">
+          <Link href="/" className="flex items-center transform hover:scale-105 transition-transform shrink-0">
+            <Image src="/logo.png" alt="12Monday" width={160} height={46} className="object-contain w-32 md:w-44" />
           </Link>
-          <div className="hidden md:flex items-center space-x-14">
+
+          <div className="hidden md:flex items-center space-x-10 lg:space-x-14">
             {['About', 'Services', 'Portfolio', 'Case Study'].map((item) => (
-              <Link key={item} href="#" className="text-[16px] font-semibold text-[#444444] hover:text-[#04644A] transition-colors relative group">
+              <Link key={item} href="#" className="text-[15px] lg:text-[16px] font-bold text-[#444444] hover:text-[#04644A] transition-colors relative group">
                 {item}
-                <span className="absolute -bottom-1.5 left-0 w-0 h-0.5 bg-[#04644A] transition-all group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#04644A] transition-all group-hover:w-full"></span>
               </Link>
             ))}
           </div>
-          <div className="hidden md:flex">
-            <Link href="#" className="bg-[#04644A] text-white px-8 py-3.5 rounded-full flex items-center space-x-3 group transition-all hover:bg-[#03523d]">
-              <span className="text-[16px] font-bold">Get Started</span>
+
+          <div className="hidden md:flex items-center space-x-6">
+            <Link href="#" className="bg-[#04644A] text-white px-7 lg:px-9 py-3.5 rounded-full flex items-center space-x-3 group transition-all hover:bg-[#03523d]">
+              <span className="text-[15px] lg:text-[16px] font-bold">Get Started</span>
               <div className="bg-white rounded-full p-1.5 text-[#04644A] transition-transform group-hover:rotate-45">
                 <ArrowUpRight size={16} />
               </div>
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-[#444444] p-2"
+            className="md:hidden text-[#444444] p-2 hover:bg-gray-50 rounded-lg transition-colors"
           >
-            {isOpen ? <X size={32} /> : <Menu size={32} />}
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
@@ -134,8 +135,8 @@ const Navbar = () => {
 };
 
 const Hero = () => (
-  <section className="pt-10 container mx-auto md:pt-12 pb-20 md:pb-32 overflow-hidden bg-white">
-    <div className="px-4 md:px-0">
+  <section className="pt-10 md:pt-6 pb-20 md:pb-32 overflow-hidden bg-white">
+    <div className="container mx-auto p-8">
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 text-left z-10">
           <motion.div
@@ -203,7 +204,7 @@ const Hero = () => (
               src="/hero.png"
               alt="Hero Illustration"
               fill
-              className="object-contain lg:object-center"
+              className="object-contain lg:object-right"
               priority
             />
           </motion.div>
@@ -244,7 +245,7 @@ const Marquee = () => (
 
 const Stats = () => (
   <section className="bg-[#F8F8F8] py-16 md:py-32">
-    <div className="container mx-auto px-4 md:px-0">
+    <div className="container mx-auto">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row items-center justify-between gap-12 md:gap-16">
         {[
           { v: '102+', l: 'Completed Projects' },
@@ -283,15 +284,15 @@ const Testimonials = () => {
       name: "Bilal Raza",
       role: "Seerat Ki Dunya",
       content: "The team at 12Monday understands the balance between speed and quality. Seerat Ki Dunya has grown significantly thanks to their strategic tech implementation and design expertise.",
-      title: "Strategic Tech Partnership",
-      avatar: "https://i.pravatar.cc/150?u=bilal"
+      title: "",
+      avatar: "https://www.bilalattari.com/_next/image?url=%2Fbilal_raza.jpg&w=384&q=75"
     },
     {
       name: "Zeeshan-ul-Hassan Usmani",
       role: "Author, Guftugu App",
       content: "As a data scientist, I appreciate the structured workflow 12Monday brings to the table. They don't just build apps; they build intelligent solutions that solve real problems.",
       title: "Intelligent Engineering Solutions",
-      avatar: "https://i.pravatar.cc/150?u=zeeshan"
+      avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6Sh8c7KMIReJw5sfZk4DRKzwqP--NSIHq9cXsOWTtZU0ESrDn9RALy4KzBCwS3DW763d9aNRhtxXD0myaWdZ8ajdLpgtGVf90gJN34XDSlw&s=10"
     },
     {
       name: "Nabil",
@@ -314,7 +315,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-20 md:py-40 bg-white">
-      <div className="container mx-auto px-4 md:px-0">
+      <div className="container mx-auto p-0 md:p-2 md:p-10">
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-16 mb-16 md:mb-32">
           <h2 className="text-3xl md:text-[54px] font-bold text-[#111111] leading-tight max-w-2xl">
             Trusted by Founders, Teams, and Growing Businesses
@@ -382,14 +383,14 @@ const Testimonials = () => {
 
 const TrustSection = () => (
   <section className="py-20 md:py-40 bg-white overflow-hidden">
-    <div className="container mx-auto px-4 md:px-0">
+    <div className="container mx-auto p-2 md:p-9">
       <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-16 mb-16 md:mb-28">
         <h2 className="text-3xl md:text-[54px] font-bold text-[#111111] leading-tight max-w-2xl">Why businesses trust us to build their products</h2>
         <p className="text-lg md:text-[22px] text-[#666666] max-w-lg leading-relaxed font-medium">
           We combine speed, clarity, and modern engineering to deliver MVPs that are ready to scale.
         </p>
       </div>
-      <div className="bg-[#FFFFFF] rounded-[40px] md:rounded-[70px] p-8 md:p-24 shadow-[0_50px_120px_rgba(0,0,0,0.04)] border border-gray-100 relative group">
+      <div className="bg-[#FFFFFF] rounded-[40px] md:rounded-[70px] p-8 md:p-16 lg:p-24 shadow-[0_50px_120px_rgba(0,0,0,0.04)] border border-gray-100 relative group">
         <div className="absolute inset-0 bg-gradient-to-br from-transparent to-[#04644A]/[0.01] rounded-[40px] md:rounded-[70px]"></div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 md:gap-24 items-center relative z-10">
           <div className="space-y-6 md:space-y-10">
@@ -428,7 +429,7 @@ const TrustSection = () => (
 
 const ServicesOverview = () => (
   <section className="py-20 md:py-40 bg-[#FCFCFC]">
-    <div className="container mx-auto px-4 md:px-0">
+    <div className="container mx-auto p-2 md:p-9">
       <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-16 mb-16 md:mb-28">
         <h2 className="text-3xl md:text-[54px] font-bold text-[#111111] leading-tight max-w-3xl">Turning Ideas into Intelligent, Scalable Digital Products</h2>
         <p className="text-lg md:text-[22px] text-[#666666] max-w-lg leading-relaxed font-medium">
@@ -472,26 +473,26 @@ const ServicesOverview = () => (
 
 const PortfolioGrid = () => (
   <section className="py-20 md:py-40 bg-white">
-    <div className="container mx-auto px-4 md:px-0">
+    <div className="container mx-auto p-0 md:p-2 md:p-10">
       <div className="text-center mb-16 md:mb-32">
         <h2 className="text-3xl md:text-[54px] font-bold text-[#111111] mb-4 md:mb-8">Real-world examples</h2>
         <p className="text-lg md:text-[24px] text-[#666666] font-medium lg:max-w-3xl mx-auto">of how we have helped companies achieve their marketing objectives.</p>
       </div>
-      <div className="columns-1 sm:columns-2 lg:columns-4 gap-4 md:gap-8 space-y-4 md:space-y-8">
+      <div className="columns-1 sm:columns-2 lg:columns-4 [column-gap:0px]">
         {[14, 1, 7, 11, 5, 12, 15, 8, 9, 2, 4, 6].map((i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden group border border-gray-50 break-inside-avoid shadow-sm hover:shadow-2xl transition-all duration-700 cursor-pointer"
+            className="relative overflow-hidden group border border-gray-50 break-inside-avoid shadow-sm hover:shadow-2xl transition-all duration-700 cursor-pointer"
           >
             <Image src={`/assets/portfolio/portfolio-${i}.${[11, 12].includes(i) ? 'jpg' : 'jpeg'}`} alt={`Project ${i}`} width={600} height={600} className="w-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4 md:p-8 text-center backdrop-blur-[2px]">
-              <div className="bg-white rounded-full px-6 md:px-8 py-2.5 md:py-3.5 flex items-center space-x-2 md:space-x-3 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">
+            <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity flex flex-col items-center justify-center p-4 md:p-8 text-center backdrop-blur-[2px]">
+              {/* <div className="bg-white rounded-full px-6 md:px-8 py-2.5 md:py-3.5 flex items-center space-x-2 md:space-x-3 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-500 shadow-xl">
                 <span className="text-[#111111] font-bold text-sm md:text-base uppercase tracking-widest">View Project</span>
                 <ArrowUpRight size={20} />
-              </div>
+              </div> */}
             </div>
           </motion.div>
         ))}
@@ -502,7 +503,7 @@ const PortfolioGrid = () => (
 
 const FinalCTA = () => (
   <section className="py-20 md:py-40 bg-[#F8F8F8]">
-    <div className="container mx-auto px-4 md:px-0">
+    <div className="container mx-auto p-3 md:p-10">
       <div className="flex flex-col lg:flex-row justify-between items-start gap-12 md:gap-24">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-[58px] font-bold text-[#111111] leading-[1.1] mb-8 md:mb-14">
@@ -535,7 +536,7 @@ const FinalCTA = () => (
 
 const Footer = () => (
   <footer className="bg-white border-t border-gray-100 pt-16 md:pt-32 pb-12 md:pb-16">
-    <div className="container mx-auto px-4 md:px-0">
+    <div className="container mx-auto p-0 md:p-2 md:p-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-24 mb-16 md:mb-24">
         <div className="col-span-1">
           <Image src="/logo.png" alt="12Monday" width={180} height={52} className="mb-8 md:mb-12 transform hover:scale-105 transition-transform cursor-pointer w-40 md:w-auto" />

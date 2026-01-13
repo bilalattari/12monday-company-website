@@ -5,12 +5,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['@next/font'],
   },
-  
-    // Image optimization settings
-images: {
-formats: ['image/webp', 'image/avif'],
-deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+
+  // Image optimization settings
+  images: {
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
         protocol: 'https',
@@ -20,14 +20,22 @@ imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
         protocol: 'https',
         hostname: 'slelguoygbfzlpylpxfs.supabase.co',
       },
+      {
+        protocol: 'https',
+        hostname: 'www.bilalattari.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com',
+      },
     ],
-},
-  
+  },
+
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  
+
   // Headers for better security and performance
   async headers() {
     return [
@@ -50,7 +58,7 @@ imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
       },
     ];
   },
-  
+
   // Redirects for better SEO
   async redirects() {
     return [
