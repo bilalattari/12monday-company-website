@@ -77,7 +77,7 @@ const Navbar = () => {
             ))}
           </div>
           <div className="hidden md:flex">
-            <Link href="#" className="bg-[#04644A] text-white px-8 py-3.5 rounded-full flex items-center space-x-3 group transition-all hover:bg-[#03523d] hover:shadow-xl hover:shadow-[#04644A]/20">
+            <Link href="#" className="bg-[#04644A] text-white px-8 py-3.5 rounded-full flex items-center space-x-3 group transition-all hover:bg-[#03523d]">
               <span className="text-[16px] font-bold">Get Started</span>
               <div className="bg-white rounded-full p-1.5 text-[#04644A] transition-transform group-hover:rotate-45">
                 <ArrowUpRight size={16} />
@@ -134,14 +134,14 @@ const Navbar = () => {
 };
 
 const Hero = () => (
-  <section className="pt-10 container mx-auto  md:pt-24 pb-20 md:pb-32 overflow-hidden bg-white">
+  <section className="pt-10 container mx-auto md:pt-12 pb-20 md:pb-32 overflow-hidden bg-white">
     <div className="px-4 md:px-0">
-      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 xl:gap-24">
+      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         <div className="flex-1 text-left z-10">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
             className="flex items-center space-x-3 mb-6 md:mb-8"
           >
             <div className="relative w-6 h-6 md:w-7 md:h-7">
@@ -152,23 +152,19 @@ const Hero = () => (
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-7xl lg:text-[64px] font-bold text-[#111111] leading-[1.1] mb-8 md:mb-10"
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-[72px] font-bold text-[#111111] leading-[1.1] mb-8 md:mb-10"
           >
-            Turn Your Idea
-            Into a
-            Live Product in <br />
-            <span className="text-black">Just</span> <br />
-            <span className="text-black">15 Days</span>
+            Turn Your Idea<br />
+            Into a Live Product<br />
+            in <span className="text-[#04644A]">Just 15 Days</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
             className="text-base md:text-[19px] text-[#666666] leading-relaxed max-w-xl mb-10 md:mb-12 font-medium"
           >
             We turn early-stage ideas into real products using a rapid, structured workflow.
@@ -177,9 +173,8 @@ const Hero = () => (
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 sm:gap-5"
           >
             <Link href="#" className="bg-[#04644A] text-white px-8 md:px-9 py-4 rounded-full flex items-center justify-center sm:justify-start space-x-3.5 group hover:bg-[#03523d] transition-all shadow-xl shadow-[#04644A]/10">
@@ -197,18 +192,18 @@ const Hero = () => (
           </motion.div>
         </div>
 
-        <div className="flex-1 relative w-full aspect-square lg:aspect-auto lg:min-h-[600px] xl:min-h-[800px]">
+        <div className="flex-1 relative w-full h-[400px] sm:h-[500px] lg:h-[650px] xl:h-[750px]">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, scale: 0.9, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
             className="relative w-full h-full"
           >
             <Image
               src="/hero.png"
               alt="Hero Illustration"
               fill
-              className="object-contain"
+              className="object-contain lg:object-center"
               priority
             />
           </motion.div>
