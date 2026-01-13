@@ -24,7 +24,7 @@ export default function Header() {
           <div className="flex items-center space-x-6 py-2 px-4 text-[13px] font-medium">
             <div className="flex items-center space-x-2">
               <Phone size={14} fill="white" className="text-dark-green" />
-              <span>456456464654</span>
+              <span>03132933803</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail size={14} fill="white" className="text-dark-green" />

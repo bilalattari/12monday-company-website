@@ -19,15 +19,15 @@ import {
 
 const TopBar = () => (
   <div className="bg-[#04644A] text-white hidden md:block">
-    <div className="main-container flex justify-between items-center relative overflow-hidden h-[50px]">
+    <div className="container mx-auto flex justify-between items-center relative overflow-hidden h-[50px]">
       <div className="flex items-center space-x-8 text-[14px] font-medium py-2">
         <div className="flex items-center space-x-2.5 hover:text-[#18C77E] transition-colors cursor-pointer">
           <Phone size={16} fill="currentColor" strokeWidth={0} />
-          <span>456456464654</span>
+          <a href='tel:03132933803'>03132933803</a>
         </div>
         <div className="flex items-center space-x-2.5 hover:text-[#18C77E] transition-colors cursor-pointer">
           <Mail size={16} fill="currentColor" strokeWidth={0} />
-          <span>12monday@gmail.com</span>
+          <a href='mailto:twelvemonday12@gmail.com'>twelvemonday12@gmail.com</a>
         </div>
         <div className="flex items-center space-x-2.5 hover:text-[#18C77E] transition-colors cursor-pointer">
           <MapPin size={16} fill="currentColor" strokeWidth={0} />
@@ -37,16 +37,16 @@ const TopBar = () => (
 
       <div className="flex items-center h-full">
         <div className="bg-white h-full px-14 flex items-center space-x-6 ml-auto relative" style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}>
-          <Link href="#" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
+          <Link href="https://www.linkedin.com/company/twelve-monday-technologies/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
             <Linkedin size={20} fill="currentColor" strokeWidth={0} />
           </Link>
           <Link href="#" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
             <Instagram size={20} />
           </Link>
-          <Link href="#" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
+          <Link href="https://www.facebook.com/people/Twelve-Monday-Technologies/61585959862216/" target="_blank" rel="noopener noreferrer" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
             <Facebook size={20} fill="currentColor" strokeWidth={0} />
           </Link>
-          <Link href="#" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
+          <Link href="https://github.com/twelveMonday" target="_blank" rel="noopener noreferrer" className="text-[#04644A] hover:text-[#18C77E] transition-all hover:scale-110">
             <Github size={20} fill="currentColor" strokeWidth={0} />
           </Link>
         </div>
@@ -57,20 +57,20 @@ const TopBar = () => (
 
 const Navbar = () => (
   <nav className="bg-white sticky top-0 z-50 py-4">
-    <div className="main-container">
+    <div className="container mx-auto">
       <div className="flex justify-between items-center h-20">
-        <Link href="/" className="flex items-center transform hover:scale-105 transition-transform">
+        <Link href="#" className="flex items-center transform hover:scale-105 transition-transform">
           <Image src="/logo.png" alt="12Monday" width={160} height={46} className="object-contain" />
         </Link>
         <div className="hidden md:flex items-center space-x-14">
           {['About', 'Services', 'Portfolio', 'Case Study'].map((item) => (
-            <Link key={item} href={`/${item.toLowerCase().replace(' ', '-')}`} className="text-[16px] font-semibold text-[#444444] hover:text-[#04644A] transition-colors relative group">
+            <Link key={item} href="#" className="text-[16px] font-semibold text-[#444444] hover:text-[#04644A] transition-colors relative group">
               {item}
               <span className="absolute -bottom-1.5 left-0 w-0 h-0.5 bg-[#04644A] transition-all group-hover:w-full"></span>
             </Link>
           ))}
         </div>
-        <Link href="/contact" className="bg-[#04644A] text-white px-8 py-3.5 rounded-full flex items-center space-x-3 group transition-all hover:bg-[#03523d] hover:shadow-xl hover:shadow-[#04644A]/20">
+        <Link href="#" className="bg-[#04644A] text-white px-8 py-3.5 rounded-full flex items-center space-x-3 group transition-all hover:bg-[#03523d] hover:shadow-xl hover:shadow-[#04644A]/20">
           <span className="text-[16px] font-bold">Get Started</span>
           <div className="bg-white rounded-full p-1.5 text-[#04644A] transition-transform group-hover:rotate-45">
             <ArrowUpRight size={16} />
@@ -83,7 +83,7 @@ const Navbar = () => (
 
 const Hero = () => (
   <section className="pt-24 pb-32 overflow-hidden bg-white">
-    <div className="main-container">
+    <div className="container mx-auto">
       <div className="flex flex-col lg:flex-row items-center gap-16 xl:gap-24">
         <div className="flex-1 text-left z-10">
           <motion.div
@@ -130,13 +130,13 @@ const Hero = () => (
             transition={{ delay: 0.3 }}
             className="flex flex-wrap gap-5"
           >
-            <Link href="/contact" className="bg-[#04644A] text-white px-9 py-4.5 rounded-full flex items-center space-x-3.5 group hover:bg-[#03523d] transition-all shadow-xl shadow-[#04644A]/10">
+            <Link href="#" className="bg-[#04644A] text-white px-9 py-4.5 rounded-full flex items-center space-x-3.5 group hover:bg-[#03523d] transition-all shadow-xl shadow-[#04644A]/10">
               <span className="text-[17px] font-bold">Start Your MVP</span>
               <div className="bg-white rounded-full p-1.5 text-[#04644A] transition-transform group-hover:rotate-45">
                 <ArrowUpRight size={18} />
               </div>
             </Link>
-            <Link href="/contact" className="border-2 border-[#E5E7EB] text-[#444444] px-9 py-4.5 rounded-full flex items-center space-x-3.5 hover:border-[#04644A] hover:text-[#04644A] transition-all group font-bold">
+            <Link href="#" className="border-2 border-[#E5E7EB] text-[#444444] px-9 py-4.5 rounded-full flex items-center space-x-3.5 hover:border-[#04644A] hover:text-[#04644A] transition-all group font-bold">
               <span className="text-[17px]">Get a Free Consultation</span>
               <div className="bg-[#04644A] rounded-full p-1.5 text-white transition-all transform scale-90 group-hover:scale-100 group-hover:rotate-45">
                 <ArrowUpRight size={18} />
@@ -145,47 +145,8 @@ const Hero = () => (
           </motion.div>
         </div>
 
-        <div className="flex-1 relative w-full min-h-[650px]">
+        <div className="flex-1 relative w-full min-h-[750px] lg:min-h-[850px]">
           <div className="relative w-full h-full">
-            {/* Top Left: Mobile Phone */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: -30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="absolute left-0 top-0 w-[46%] z-20 shadow-2xl rounded-[2.5rem] overflow-hidden border-8 border-white bg-white"
-            >
-              <Image src="/hero1.png" alt="Mobile App" width={400} height={600} className="w-full h-auto" />
-            </motion.div>
-
-            {/* Top Right: Circuitry Card (Deep Blue) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: 30 }}
-              whileInView={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="absolute right-0 top-[8%] w-[48%] z-10 shadow-2xl rounded-[1.5rem] overflow-hidden"
-            >
-              <Image src="/hero2.png" alt="Development" width={400} height={400} className="w-full h-auto" />
-            </motion.div>
-
-            {/* Bottom Left: QR Insight */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: -30 }}
-              whileInView={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="absolute left-0 bottom-8 w-[46%] z-20 shadow-2xl rounded-[1.5rem] overflow-hidden border-4 border-white"
-            >
-              <Image src="/hero3.png" alt="Analytics" width={400} height={400} className="w-full h-auto" />
-            </motion.div>
-
-            {/* Bottom Right: Dashboard (White/Green) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 30 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="absolute right-[4%] bottom-0 w-[45%] z-30 shadow-2xl rounded-[1.5rem] overflow-hidden border-8 border-white bg-white"
-            >
-              <Image src="/hero4.png" alt="Dashboard" width={400} height={350} className="w-full h-auto" />
-            </motion.div>
           </div>
         </div>
       </div>
@@ -218,7 +179,7 @@ const Marquee = () => (
 
 const Stats = () => (
   <section className="bg-[#F8F8F8] py-32">
-    <div className="main-container">
+    <div className="container mx-auto">
       <div className="flex flex-col md:flex-row items-center justify-between gap-16">
         {[
           { v: '102+', l: 'Completed Projects' },
@@ -288,7 +249,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-40 bg-white">
-      <div className="main-container">
+      <div className="container mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-32">
           <h2 className="text-[54px] font-bold text-[#111111] leading-tight max-w-2xl">
             Trusted by Founders, Teams, and Growing Businesses
@@ -300,7 +261,7 @@ const Testimonials = () => {
 
         <div className="relative max-w-6xl mx-auto">
           <div className="absolute top-1/2 -left-24 transform -translate-y-1/2 z-10 hidden xl:block">
-            <button 
+            <button
               onClick={prev}
               className="w-16 h-16 rounded-full border-2 border-gray-100 flex items-center justify-center text-gray-400 hover:bg-[#04644A] hover:text-white hover:border-[#04644A] transition-all shadow-sm"
             >
@@ -308,7 +269,7 @@ const Testimonials = () => {
             </button>
           </div>
           <div className="absolute top-1/2 -right-24 transform -translate-y-1/2 z-10 hidden xl:block">
-            <button 
+            <button
               onClick={next}
               className="w-16 h-16 rounded-full border-2 border-gray-100 flex items-center justify-center text-gray-400 hover:bg-[#04644A] hover:text-white hover:border-[#04644A] transition-all shadow-sm"
             >
@@ -316,7 +277,7 @@ const Testimonials = () => {
             </button>
           </div>
 
-          <motion.div 
+          <motion.div
             key={current}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -325,7 +286,7 @@ const Testimonials = () => {
           >
             <h3 className="text-3xl font-bold text-[#111111] mb-10">{testimonials[current].title}</h3>
             <p className="text-[26px] text-[#555555] leading-relaxed max-w-5xl mx-auto mb-16 font-medium italic">
-              "{testimonials[current].content}"
+              &quot;{testimonials[current].content}&quot;
             </p>
             <div className="flex items-center justify-center space-x-5">
               <div className="relative w-20 h-20 rounded-full overflow-hidden border-4 border-[#04644A]/10 shadow-lg bg-gray-50">
@@ -356,7 +317,7 @@ const Testimonials = () => {
 
 const TrustSection = () => (
   <section className="py-40 bg-white overflow-hidden">
-    <div className="main-container">
+    <div className="container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-28">
         <h2 className="text-[54px] font-bold text-[#111111] leading-tight max-w-2xl">Why businesses trust us to build their products</h2>
         <p className="text-[22px] text-[#666666] max-w-lg leading-relaxed font-medium">
@@ -389,7 +350,7 @@ const TrustSection = () => (
         <p className="text-[32px] font-bold text-[#111111] max-w-3xl leading-snug">
           Our interfaces are not just visually appealing they <span className="text-[#04644A]">communicate...</span>
         </p>
-        <Link href="/contact" className="bg-[#04644A] text-white px-14 py-7 rounded-full flex items-center space-x-5 hover:bg-[#03523d] transition-all shadow-2xl shadow-[#04644A]/25 whitespace-nowrap">
+        <Link href="#" className="bg-[#04644A] text-white px-14 py-7 rounded-full flex items-center space-x-5 hover:bg-[#03523d] transition-all shadow-2xl shadow-[#04644A]/25 whitespace-nowrap">
           <span className="text-2xl font-bold">Want to Connect</span>
           <div className="bg-white rounded-full p-2 text-[#04644A]">
             <ArrowUpRight size={28} />
@@ -402,7 +363,7 @@ const TrustSection = () => (
 
 const ServicesOverview = () => (
   <section className="py-40 bg-[#FCFCFC]">
-    <div className="main-container">
+    <div className="container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start gap-16 mb-28">
         <h2 className="text-[54px] font-bold text-[#111111] leading-tight max-w-3xl">Turning Ideas into Intelligent, Scalable Digital Products</h2>
         <p className="text-[22px] text-[#666666] max-w-lg leading-relaxed font-medium">
@@ -427,13 +388,13 @@ const ServicesOverview = () => (
         ))}
       </div>
       <div className="mt-20 flex flex-wrap gap-8">
-        <Link href="/services" className="bg-[#04644A] text-white px-12 py-6 rounded-full flex items-center space-x-4 hover:bg-[#03523d] transition-all shadow-xl">
+        <Link href="#" className="bg-[#04644A] text-white px-12 py-6 rounded-full flex items-center space-x-4 hover:bg-[#03523d] transition-all shadow-xl">
           <span className="text-xl font-bold">View All Services</span>
           <div className="bg-white rounded-full p-2 text-[#04644A]">
             <ArrowUpRight size={24} />
           </div>
         </Link>
-        <Link href="/contact" className="border-2 border-gray-200 text-[#333333] px-12 py-6 rounded-full flex items-center space-x-4 hover:border-[#04644A] hover:text-[#04644A] transition-all group font-bold">
+        <Link href="#" className="border-2 border-gray-200 text-[#333333] px-12 py-6 rounded-full flex items-center space-x-4 hover:border-[#04644A] hover:text-[#04644A] transition-all group font-bold">
           <span className="text-xl">Get a Free Consultation</span>
           <div className="bg-[#04644A] rounded-full p-2 text-white transition-all transform scale-90 group-hover:scale-100 group-hover:rotate-45">
             <ArrowUpRight size={24} />
@@ -446,7 +407,7 @@ const ServicesOverview = () => (
 
 const PortfolioGrid = () => (
   <section className="py-40 bg-white">
-    <div className="main-container">
+    <div className="container mx-auto">
       <div className="text-center mb-32">
         <h2 className="text-[54px] font-bold text-[#111111] mb-8">Real-world examples</h2>
         <p className="text-[24px] text-[#666666] font-medium max-w-3xl mx-auto">of how we have helped companies achieve their marketing objectives.</p>
@@ -476,20 +437,20 @@ const PortfolioGrid = () => (
 
 const FinalCTA = () => (
   <section className="py-40 bg-[#F8F8F8]">
-    <div className="main-container">
+    <div className="container mx-auto">
       <div className="flex flex-col md:flex-row justify-between items-start gap-24">
         <div className="max-w-3xl">
           <h2 className="text-[58px] font-bold text-[#111111] leading-[1.05] mb-14">
-            Let's turn your idea into a product that users love and businesses trust.
+            Let&apos;s turn your idea into a product that users love and businesses trust.
           </h2>
           <div className="flex flex-wrap gap-8">
-            <Link href="/contact" className="bg-[#04644A] text-white px-12 py-6 rounded-full flex items-center space-x-4 hover:bg-[#03523d] transition-all shadow-2xl shadow-[#04644A]/20">
-              <span className="text-xl font-bold">Let's Build Together</span>
+            <Link href="#" className="bg-[#04644A] text-white px-12 py-6 rounded-full flex items-center space-x-4 hover:bg-[#03523d] transition-all shadow-2xl shadow-[#04644A]/20">
+              <span className="text-xl font-bold">Let&apos;s Build Together</span>
               <div className="bg-white rounded-full p-2 text-[#04644A]">
                 <ArrowUpRight size={24} />
               </div>
             </Link>
-            <Link href="/contact" className="border-2 border-gray-300 text-[#333333] px-12 py-6 rounded-full flex items-center space-x-4 hover:border-[#04644A] hover:text-[#04644A] transition-all group font-bold">
+            <Link href="#" className="border-2 border-gray-300 text-[#333333] px-12 py-6 rounded-full flex items-center space-x-4 hover:border-[#04644A] hover:text-[#04644A] transition-all group font-bold">
               <span className="text-xl">Get a Free Consultation</span>
               <div className="bg-[#04644A] rounded-full p-2 text-white transition-all transform scale-90 group-hover:scale-100 group-hover:rotate-45">
                 <ArrowUpRight size={24} />
@@ -509,25 +470,17 @@ const FinalCTA = () => (
 
 const Footer = () => (
   <footer className="bg-white border-t border-gray-100 pt-32 pb-16">
-    <div className="main-container">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-24 mb-24">
+    <div className="container mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-24 mb-24">
         <div className="col-span-1 md:col-span-1">
           <Image src="/logo.png" alt="12Monday" width={180} height={52} className="mb-12 transform hover:scale-105 transition-transform cursor-pointer" />
           <p className="text-[#666666] leading-relaxed mb-12 font-medium text-xl">We turn early-stage ideas into real products using a rapid, structured workflow. Get a polished MVP in 15 days.</p>
           <div className="flex space-x-6">
-            <Link href="#" className="w-14 h-14 rounded-full bg-[#F8F8F8] flex items-center justify-center text-[#333333] hover:bg-[#04644A] hover:text-white transition-all hover:-translate-y-2 shadow-sm"><Linkedin size={24} /></Link>
+            <Link href="https://www.linkedin.com/company/twelve-monday-technologies/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-[#F8F8F8] flex items-center justify-center text-[#333333] hover:bg-[#04644A] hover:text-white transition-all hover:-translate-y-2 shadow-sm"><Linkedin size={24} /></Link>
             <Link href="#" className="w-14 h-14 rounded-full bg-[#F8F8F8] flex items-center justify-center text-[#333333] hover:bg-[#04644A] hover:text-white transition-all hover:-translate-y-2 shadow-sm"><Instagram size={24} /></Link>
-            <Link href="#" className="w-14 h-14 rounded-full bg-[#F8F8F8] flex items-center justify-center text-[#333333] hover:bg-[#04644A] hover:text-white transition-all hover:-translate-y-2 shadow-sm"><Facebook size={24} /></Link>
+            <Link href="https://www.facebook.com/people/Twelve-Monday-Technologies/61585959862216/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-[#F8F8F8] flex items-center justify-center text-[#333333] hover:bg-[#04644A] hover:text-white transition-all hover:-translate-y-2 shadow-sm"><Facebook size={24} /></Link>
+            <Link href="https://github.com/twelveMonday" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full bg-[#F8F8F8] flex items-center justify-center text-[#333333] hover:bg-[#04644A] hover:text-white transition-all hover:-translate-y-2 shadow-sm"><Github size={24} /></Link>
           </div>
-        </div>
-        <div>
-          <h4 className="text-black font-bold text-2xl mb-10">Company</h4>
-          <ul className="space-y-6 text-[#666666] font-semibold text-lg">
-            <li><Link href="/about" className="hover:text-[#04644A] transition-colors">About Us</Link></li>
-            <li><Link href="/services" className="hover:text-[#04644A] transition-colors">Services</Link></li>
-            <li><Link href="/portfolio" className="hover:text-[#04644A] transition-colors">Portfolio</Link></li>
-            <li><Link href="/contact" className="hover:text-[#04644A] transition-colors">Contact</Link></li>
-          </ul>
         </div>
         <div>
           <h4 className="text-black font-bold text-2xl mb-10">Services</h4>
@@ -541,8 +494,8 @@ const Footer = () => (
         <div>
           <h4 className="text-black font-bold text-2xl mb-10">Contact</h4>
           <ul className="space-y-8 text-[#666666] font-semibold text-lg">
-            <li className="flex items-center gap-5 hover:text-[#04644A] transition-colors cursor-pointer"><Phone size={24} className="text-[#04644A]" /> 456456464654</li>
-            <li className="flex items-center gap-5 hover:text-[#04644A] transition-colors cursor-pointer"><Mail size={24} className="text-[#04644A]" /> info@12monday.net</li>
+            <li className="flex items-center gap-5 hover:text-[#04644A] transition-colors cursor-pointer"><Phone size={24} className="text-[#04644A]" /><a href="tel:03132933803"> 03132933803</a></li>
+            <li className="flex items-center gap-5 hover:text-[#04644A] transition-colors cursor-pointer"><Mail size={24} className="text-[#04644A]" /> <a href="mailto:twelvemonday12@gmail.com">twelvemonday12@gmail.com</a></li>
             <li className="flex items-center gap-5 hover:text-[#04644A] transition-colors cursor-pointer"><MapPin size={24} className="text-[#04644A]" /> Karachi, Pakistan</li>
           </ul>
         </div>
