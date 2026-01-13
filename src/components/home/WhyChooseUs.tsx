@@ -1,151 +1,107 @@
-"use client"
-import React from 'react';
-import { ArrowRight, Star, WandSparkles, Zap, Shield, Users } from 'lucide-react';
+'use client';
 
-interface FeatureItemProps {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  title: string;
-  colorClass: string;
-  shadowClass: string;
-}
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-// The main component, WhyChooseUs, which renders the professionally designed banner.
-const WhyChooseUs = () => {
-
-  // Custom styles and animations embedded within the component using a style tag,
-  // as is the standard for self-contained React files in this environment.
-  const customStyles = `
-    /* Custom styles for the grid background */
-    .grid-bg {
-        background-color: #000000;
-        background-image: 
-          repeating-linear-gradient(0deg, rgba(20, 100, 50, 0.08) 0, rgba(20, 100, 50, 0.08) 1px, transparent 1px, transparent 40px),
-          repeating-linear-gradient(90deg, rgba(20, 100, 50, 0.08) 0, rgba(20, 100, 50, 0.08) 1px, transparent 1px, transparent 40px);
-        background-size: 40px 40px;
-    }
-
-    /* Custom keyframes for floating animation */
-    @keyframes float {
-      0% { transform: translateY(0) scale(1); opacity: 0.9; }
-      50% { transform: translateY(-15px) scale(1.05); opacity: 1; }
-      100% { transform: translateY(0) scale(1); opacity: 0.9; }
-    }
-    
-    .animate-float-slow {
-      animation: float 12s ease-in-out infinite;
-    }
-
-    /* Custom keyframes for the soft background glow pulse */
-    @keyframes pulse-soft {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 0.7; transform: scale(1.05); }
-    }
-
-    .animate-pulse-soft {
-      animation: pulse-soft 15s ease-in-out infinite;
-    }
-  `;
- 
-  
-  // Helper component for the feature list items
-  const FeatureItem = ({ icon: Icon, title, colorClass, shadowClass }: FeatureItemProps) => (
-    <div className="pt-2 flex items-start gap-4 hover:bg-white/5 transition-colors p-3 rounded-lg">
-      <div 
-        className={`p-3 rounded-xl ${colorClass} flex-shrink-0`}
-        style={{ boxShadow: shadowClass }}
-      >
-        <Icon className="w-6 h-6 text-white" />
-      </div>
-      <div>
-        <h3 className="text-xl text-white">{title}</h3>
-        {/* <p className="text-gray-400">{description}</p> */}
-      </div>
-    </div>
-  );
-
+export default function WhyChooseUs() {
   return (
-    <>
-      <style>{customStyles}</style>
-      
-      
-      {/* ===================================================================== */}
-      {/* WHY CHOOSE US SECTION (New Content) */}
-      {/* ===================================================================== */}
-      <section className="relative grid-bg py-20 md:py-32 font-inter">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            
-            {/* Left Column: Image/Visual (Using the path /whychooseus.png) */}
-            <div className="flex justify-center md:justify-start relative min-h-[400px]">
-              {/* Centralized Glow behind the image area */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div 
-                  className="w-full h-full max-w-md max-h-md bg-pink-500/10 rounded-full blur-[100px] opacity-50 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                ></div>
-              </div>
-              
-              {/* Placeholder/Actual Image */}
-              <img 
-                src="/whychooseus.png" 
-                alt="Why Choose Us Visual" 
-                className="w-full h-auto max-w-md object-contain relative z-10 rounded-xl shadow-2xl shadow-green-900/50"
-                // Adding a glow effect to the image border for extra pop
-                style={{ filter: 'drop-shadow(0 0 15px rgba(5, 150, 105, 0.4))' }}
-              />
-              
-              {/* Subtle background overlay dots/pattern for extra detail (matching reference image) */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_50%,_rgba(5,150,105,0.05))] z-0 opacity-50"></div>
+    <section className="py-24 bg-[#F9F9F9] font-serotiva overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-16">
+          <motion.h2 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-[40px] font-bold text-black leading-tight max-w-md"
+          >
+            Why businesses trust us to build their products
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-[17px] text-[#555555] max-w-md leading-relaxed"
+          >
+            We combine speed, clarity, and modern engineering to deliver MVPs that are ready to scale.
+          </motion.p>
+        </div>
+
+        {/* Main Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-[32px] p-12 shadow-sm border border-gray-100 mb-12"
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            {/* Left Column */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-black">We Start With Understanding</h3>
+              <p className="text-[16px] text-[#555555] leading-relaxed">
+                Every product begins by deeply understanding the idea, the user, and the business goal. 
+                We listen first, then shape solutions that align with real needs.
+              </p>
             </div>
 
-            {/* Right Column: Text Content and Features */}
-            <div className="text-left">
-              
-              {/* Subtitle */}
-              <p className="text-sm font-semibold uppercase text-emerald-500 tracking-widest mb-2">
-                Why Choose Us
-              </p>
-              
-              {/* Main Heading */}
-              <h2 className="text-4xl md:text-5xl text-white mb-6 leading-tight">
-                Why businesses trust us to build their products
-              </h2>
-              
-              {/* Short Description */}
-              <p className="text-gray-400 text-lg mb-8 max-w-xl">
-                We combine speed, clarity, and modern engineering to deliver MVPs that are ready to scale.
-              </p>
-              
-              {/* Feature List */}
-              <div className="space-y-4 max-w-lg">
-                <FeatureItem 
-                  icon={Zap} 
-                  title="15-Day Build Process"
-                //   description="Rapid prototyping and development to get your product to market faster than traditional methods."
-                  colorClass="bg-emerald-700/50"
-                  shadowClass="0 0 10px rgba(5, 150, 105, 0.5)"
-                />
-                <FeatureItem 
-                  icon={Shield} 
-                  title="Enterprise-grade security and reliability"
-                //   description="Built on secure, robust cloud infrastructure that ensures your product is stable from day one."
-                  colorClass="bg-green-700/50"
-                  shadowClass="0 0 10px rgba(16, 185, 129, 0.5)"
-                />
-                <FeatureItem 
-                  icon={Users} 
-                  title="Experienced professionals dedicated to your success"
-                //   description="Work directly with senior developers and designers who specialize in rapid product launches."
-                  colorClass="bg-teal-700/50"
-                  shadowClass="0 0 10px rgba(20, 184, 166, 0.5)"
+            {/* Center Column - Puzzle Image */}
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-[400px] aspect-square">
+                <Image 
+                  src="/Union.png" 
+                  alt="Puzzle Landscape" 
+                  fill 
+                  className="object-contain"
                 />
               </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-black">Progress Over Perfection</h3>
+              <p className="text-[16px] text-[#555555] leading-relaxed">
+                We believe in momentum. By breaking ideas into focused sprints, we deliver meaningful 
+                progress early and improve continuously.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
-      
-    </>
-  );
-};
+        </motion.div>
 
-export default WhyChooseUs;
+        {/* Section Footer */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-[20px] font-medium text-black max-w-lg"
+          >
+            Our interfaces are not just visually appealing they communicate...
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <Link
+              href="/contact"
+              className="bg-dark-green text-white px-8 py-4 rounded-full flex items-center space-x-3 hover:bg-opacity-95 transition-all shadow-lg shadow-dark-green/20"
+            >
+              <span className="text-base font-semibold">Want to Connect</span>
+              <div className="bg-white rounded-full p-1 text-dark-green">
+                <ArrowUpRight size={20} />
+              </div>
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
