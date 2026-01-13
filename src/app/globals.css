@@ -1,22 +1,12 @@
 @import "tailwindcss";
+/* @import url("https://db.onlinewebfonts.com/c/43beae99a140952ad84b13d8a8a4275c?family=Serotiva"); */
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #ffffff;
+  --foreground: #000000;
   --primary-green: #18C77E;
   --dark-green: #04644A;
   --accent-blue: #3B82F6;
-  --accent-purple: #8B5CF6;
-  --accent-pink: #EC4899;
-  --accent-orange: #F59E0B;
-  --gradient-1: linear-gradient(135deg, #1BC47D 0%, #3B82F6 100%);
-  --gradient-2: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
-  --gradient-3: linear-gradient(135deg, #01624B 0%, #8B5CF6 100%);
-  --gradient-4: linear-gradient(135deg, #F59E0B 0%, #EC4899 100%);
-  --gradient-mesh: radial-gradient(circle at 20% 80%, rgba(27, 196, 125, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 60% 80%, rgba(236, 72, 153, 0.2) 0%, transparent 50%);
 }
 
 @theme inline {
@@ -24,43 +14,37 @@
   --color-foreground: var(--foreground);
   --color-primary-green: var(--primary-green);
   --color-dark-green: var(--dark-green);
-  --color-accent-blue: var(--accent-blue);
-  --color-accent-purple: var(--accent-purple);
-  --color-accent-pink: var(--accent-pink);
-  --color-accent-orange: var(--accent-orange);
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-poppins);
-  --font-display: var(--font-space-grotesk);
-}
-
-/* Custom Card Gradient Border */
-.card-gradient-border {
-  position: relative;
-  background: #000000;
-  /* Match background */
-  border-radius: 1.5rem;
-  /* rounded-3xl */
-  z-index: 1;
-}
-
-.card-gradient-border::before {
-  content: "";
-  position: absolute;
-  inset: 0px;
-  /* Border width */
-  border-radius: 1.6rem;
-  /* Slightly larger than parent */
-  background: linear-gradient(135deg, #000000, #04644A);
-  z-index: -1;
+  --font-serotiva: "Serotiva", sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-serotiva);
   overflow-x: hidden;
 }
-  
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -832,6 +816,6 @@ body {
   animation: floatUp 3s ease-in-out infinite;
 }
 
-button{
+button {
   cursor: pointer !important;
 }

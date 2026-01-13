@@ -89,9 +89,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="12Monday Technologies" />
       </head>
-      <body
-        className={`${inter.variable} ${poppins.variable} ${spaceGrotesk.variable} antialiased`}
-      >
+      <body className="antialiased">
         {children}
       </body>
     </html>
