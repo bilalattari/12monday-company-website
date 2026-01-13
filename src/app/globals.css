@@ -60,11 +60,17 @@ body {
   color: var(--foreground);
   font-family: 'Serotiva', sans-serif;
   overflow-x: hidden;
+  font-weight: 100;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {

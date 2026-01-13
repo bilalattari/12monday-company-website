@@ -1,68 +1,44 @@
-"use client"
+'use client';
 
-import React from "react";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
-export const statsData = [
-  {
-    value: "102+",
-    label: "Projects Completed",
-  },
-  {
-    value: "102+",
-    label: "Happy Clients",
-  },
-  {
-    value: "99%",
-    label: "Success Rate",
-  },
-  {
-    value: "24/7",
-    label: "Support",
-  },
+const stats = [
+  { value: '102+', label: 'Completed Projects' },
+  { value: '150+', label: 'Satisfied or Happy Customers' },
+  { value: '99%', label: 'Satisfaction Rate' },
+  { value: '24/7', label: 'Maintenance / Support' },
 ];
 
-
-const StatsSection = () => {
+export default function StatsSection() {
   return (
-    <section className="w-full bg-black px-4 py-7 pt-10">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        {statsData.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: index * 0.15 }}
-            viewport={{ once: true }}
-            className="
-              rounded-2xl 
-              bg-gray-900/40 
-              border border-gray-800 
-              backdrop-blur-sm 
-              p-8 text-center 
-              shadow-[0_0_20px_-5px_rgba(0,255,150,0.15)]
-              hover:shadow-[0_0_35px_-5px_rgba(0,255,150,0.35)]
-              transition-all duration-300 hover:-translate-y-1
-            "
-          >
-            <h2 className="
-              text-4xl font-bold 
-              bg-gradient-to-r from-green-400 to-green-300 
-              bg-clip-text text-transparent
-            ">
-              {item.value}
-            </h2>
+    <section className="bg-[#F3F3F3] py-16 font-serotiva">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
+          {stats.map((stat, index) => (
+            <div key={index} className="flex flex-1 items-center justify-center w-full">
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center"
+              >
+                <h3 className="text-[44px] font-bold text-black mb-1">{stat.value}</h3>
+                <p className="text-[15px] font-medium text-[#555555]">{stat.label}</p>
+              </motion.div>
 
-            <p className="text-gray-400 mt-2 text-sm font-medium">
-              {item.label}
-            </p>
-          </motion.div>
-        ))}
-
+              {index < stats.length - 1 && (
+                <div className="hidden md:flex items-center justify-center flex-1">
+                  <div className="relative w-6 h-6 rotate-180">
+                     <Image src="/GroupTriangle.png" alt="arrow" fill className="object-contain" />
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
-};
-
-export default StatsSection;
+}
