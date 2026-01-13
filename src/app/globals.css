@@ -60,7 +60,7 @@ body {
   color: var(--foreground);
   font-family: 'Serotiva', sans-serif;
   overflow-x: hidden;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 @keyframes marquee {
@@ -104,7 +104,29 @@ button {
   cursor: pointer !important;
 }
 
-.selection\:bg-primary-green::selection {
-  background-color: var(--primary-green);
-  color: white;
-}
+  .selection\:bg-primary-green::selection {
+    background-color: var(--primary-green);
+    color: white;
+  }
+
+  .main-container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .main-container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .main-container {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
